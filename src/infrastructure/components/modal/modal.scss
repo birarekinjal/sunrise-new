@@ -1,0 +1,61 @@
+@import '../../../application/style/common.scss';
+
+.MuiModal-root{
+  .MuiBackdrop-root{
+    background: rgba(0, 0, 0,  .6);
+  }
+  .MuiDialog-container{
+    .MuiDialog-paper{
+      box-shadow: none;
+      h2{
+        &.MuiDialogTitle-root{
+          color: $color-primary;
+          font-size: 22px;
+          line-height: 30px;
+          padding: 30px 50px 30px 30px;
+          border: 0;
+          font-family: $font-Rubik;
+          font-weight: 400;
+          position: relative;
+          @include bellow-sm{
+            padding: 15px 50px 15px 15px;
+            font-size: 18px;
+            line-height: 22px;
+            font-weight: 500;
+          }
+          button{
+            &.MuiFab-colorInherit{
+              position: absolute;
+              right: 10px;
+              top: 10px;
+              background: transparent;
+              @include bellow-sm{
+                right: 5px;
+                top: 5px;
+              }
+            }
+          }
+        }
+      }
+      
+      .MuiDialogContent-root{
+        border-top: 0;
+        border-bottom: 0;
+        padding: 0 30px 30px;
+        @include bellow-sm{
+          padding: 0 15px 15px;
+        }
+      }
+
+      .MuiDialogActions-root{
+        padding:0 30px 30px;
+        @include bellow-sm{
+          padding: 0 15px 15px;
+        }
+        button{
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

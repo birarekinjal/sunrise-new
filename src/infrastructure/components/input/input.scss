@@ -1,0 +1,67 @@
+@import '../../../application/style/common.scss';
+
+.MuiTextField-root{
+  label{
+    &.MuiInputLabel-formControl, &.Mui-disabled{
+      color: $color-spanishGray;
+    }
+    &.Mui-focused{
+      color: $color-primary;
+    }
+    &.Mui-error{
+      color: $color-danger;
+    }
+  }
+
+  .MuiInputBase-formControl{
+    input{
+      color: $color-black;
+    }
+    &:hover{
+      fieldset{
+        border-color: $color-black;
+      }
+    }
+
+    &.Mui-focused{
+      input{
+        border-color: $color-primary;
+      }
+      fieldset{
+        border-color: $color-primary;
+      }
+      &:hover{
+        fieldset{
+          border-color: $color-primary;
+        }
+      }
+    }
+
+    &.Mui-disabled{
+      input{
+        color: $color-spanishGray;
+      }
+      fieldset{
+        border-color: $color-platinum;
+      }
+      &:hover{
+        fieldset{
+          border-color: $color-platinum;
+        }
+      }
+    }
+
+    &.Mui-error{
+      fieldset{
+        border-color: $color-danger;
+        border-width: 2px;
+      }
+
+      &:hover{
+        fieldset{
+          border-color: $color-danger;
+        }
+      }
+    }
+  }
+}

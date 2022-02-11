@@ -1,0 +1,90 @@
+// Responsive Breakpoint .......
+$screen-sm-max: 599.98px;
+$screen-md-max: 899.98px;
+$screen-lg-max: 1199.98px;
+$screen-xl-max: 1535.98px;
+
+$screen-xl-min: 1536px;
+$screen-lg-min: 1200px;
+$screen-md-min: 900px;
+$screen-sm-min: 600px;
+
+
+// Max width sccs code 
+@mixin bellow-xl {
+  @media all and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
+@mixin bellow-lg {
+  @media all and (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin bellow-md {
+  @media all and (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+@mixin bellow-sm {
+  @media all and (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+
+// Min width sccs code
+@mixin above-xl {
+  @media all and (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin above-lg {
+  @media all and (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin above-md {
+  @media all and (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin above-sm {
+  @media all and (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+
+// Max width & Min width
+@mixin between-xl-lg {
+  @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+@mixin between-xl-md {
+  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+@mixin between-xl-sm {
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+@mixin between-lg-md {
+  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+@mixin between-lg-sm {
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}

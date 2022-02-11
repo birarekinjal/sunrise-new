@@ -1,0 +1,79 @@
+@import '../../../application/style/common.scss';
+
+.MuiCalendarPicker-root{
+  .MuiPickersDay-root{
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    &:not(.Mui-selected){
+      border-color: $color-primary;
+    }
+    &:hover{
+      background: $color-platinum !important;
+    }
+
+    &.Mui-selected{
+      background: $color-primary !important;
+      &:hover{
+        background: lighten($color-primary, 5%) !important;
+      }
+    }
+  }
+  .MuiYearPicker-root{
+    .PrivatePickersYear-root{
+      button{
+        &:hover{
+          background: $color-platinum !important;
+        }
+        &.Mui-selected{
+          background: $color-primary !important;
+        }
+      }
+    }
+  }
+}
+
+
+.css-1ozefeb{
+  .MuiTabs-root{
+    .MuiTabs-flexContainer{
+      button{
+        &:hover{
+          color: $color-primary;
+        }
+        &.Mui-selected{
+          color: $color-primary;
+        }
+      }
+    }
+    .MuiTabs-indicator{
+      background: $color-primary;
+    }
+  }
+  .css-j7qwjs{    
+    .css-epd502{
+      .css-fhpqww{
+        .css-eziifo{
+          .css-12ha4i7, .css-7lip4c, .css-a1rc6s{
+            background: $color-primary;
+          }
+          .css-7lip4c, .css-a1rc6s{
+            .css-118whkv, .css-2ujp1m{
+              background: $color-primary;
+              border-color: $color-primary;
+            }
+          }
+        }
+        button{
+          &.MuiButtonBase-root{
+            &.css-92nr1f-MuiButtonBase-root-MuiIconButton-root, &.css-1s220mh-MuiButtonBase-root-MuiIconButton-root,&.css-1t8wyba-MuiButtonBase-root-MuiIconButton-root, &.css-13go44a-MuiButtonBase-root-MuiIconButton-root{
+              background: $color-primary;
+              span{
+                line-height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

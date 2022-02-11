@@ -1,0 +1,160 @@
+@import '../../../application/style/common.scss';
+
+button{
+  &.MuiButtonBase-root{
+    font-family: $font-Rubik;
+    font-weight: 500;
+    box-shadow: none;
+    &:hover, &:focus{
+      @include box-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  // Filled button scss 
+  &.MuiButton-containedPrimary{
+    background: $color-primary;
+    &:hover{
+      background: lighten($color-primary, 5%);
+    }
+  }
+
+  &.MuiButton-containedSecondary{
+    background: $color-secondary;
+    &:hover{
+      background: lighten($color-secondary, 3%);
+    }
+    &:disabled, .disabled{
+      background: $color-platinum;
+      color: $color-spanishGray;
+    }
+  }
+
+  &.MuiButton-containedSuccess{
+    background: $color-success;
+    &:hover{
+      background: lighten($color-success, 5%);
+    }
+  }
+
+  &.MuiButton-containedError{
+    background: $color-danger;
+    &:hover{
+      background: lighten($color-danger, 5%);
+    }
+    &:disabled, .disabled{
+      background: $color-platinum;
+      color: $color-spanishGray;
+    }
+  }
+
+  &.MuiButton-containedPrimary, &.MuiButton-containedSecondary, &.MuiButton-containedSuccess, &.MuiButton-containedError{
+    &:disabled, .disabled{
+      background: $color-platinum;
+      color: $color-spanishGray;
+    }
+  }
+
+  // Outline button scss
+  &.MuiButton-outlinedPrimary{
+    color: $color-primary;
+    border-color: $color-primary;
+    &:hover{
+      background: lighten($color-primary, 72%);
+    }
+  }
+
+  &.MuiButton-outlinedSecondary{
+    color: $color-secondary;
+    border-color: $color-secondary;
+    &:hover{
+      border-color: $color-secondary;
+      background: lighten($color-secondary, 60%);
+    }
+  }
+
+  &.MuiButton-outlinedSuccess{
+    color: $color-success;
+    border-color: $color-success;
+    &:hover{
+      border-color: $color-success;
+      background: lighten($color-success, 55%);
+    }
+  }
+
+  &.MuiButton-outlinedError{
+    color: $color-danger;
+    border-color: $color-danger;
+    &:hover{
+      border-color: $color-danger;
+      background: lighten($color-danger, 41%);
+    }
+  }
+
+  &.MuiButton-outlinedPrimary, &.MuiButton-outlinedSecondary, &.MuiButton-outlinedSuccess, &.MuiButton-outlinedError{
+    &:disabled, .disabled{
+      color: $color-spanishGray;
+      border-color: $color-spanishGray;
+    }
+  }
+
+  // Only text button scss
+  &.MuiButton-textPrimary{
+    color: $color-primary;
+    &:hover{
+      background: lighten($color-primary, 72%);
+    }
+  }
+
+  &.MuiButton-textSecondary{
+    color: $color-secondary;
+    &:hover{
+      border-color: $color-secondary;
+      background: lighten($color-secondary, 60%);
+    }
+  }
+
+  &.MuiButton-textSuccess{
+    color: $color-success;
+    &:hover{
+      border-color: $color-success;
+      background: lighten($color-success, 55%);
+    }
+  }
+
+  &.MuiButton-textError{
+    color: $color-danger;
+    &:hover{
+      border-color: $color-danger;
+      background: lighten($color-danger, 41%);
+    }
+  }
+
+  &.MuiButton-textPrimary, &.MuiButton-textSecondary, &.MuiButton-textSuccess, &.MuiButton-textError{
+    &:disabled, .disabled{
+      color: $color-spanishGray;
+      border-color: $color-spanishGray;
+    }
+  }
+
+  // Custom button scss
+  &.customFilledBtn{
+    font-size:18px;
+    line-height: 25px;
+    min-height: 56px;
+    padding-right: 45px;
+    padding-left: 45px;
+    letter-spacing: normal;
+    box-shadow: none;
+    @include border-radius(5px);
+    @include above-lg{
+      padding-right: 76px;
+      padding-left: 76px;
+    }
+  }
+
+  &.btn-sm-block{
+    @include bellow-sm{
+      width: 100%;
+    }
+  }
+}

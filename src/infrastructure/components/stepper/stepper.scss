@@ -1,0 +1,44 @@
+@import '../../../application/style/common.scss';
+
+.MuiStepper-root{
+  .MuiStep-root{
+    span{
+      &.MuiStepLabel-root{
+        .MuiStepLabel-iconContainer{
+          svg{
+            width: 30px;
+            height: 30px;
+            color: $color-graniteGray;
+            text{
+              color: $color-white;
+              font: 400 14px/14px $font-Rubik;
+            }
+            &.Mui-active, &.Mui-completed{
+              color: $color-primary;
+            }
+          }
+        }
+        .MuiStepLabel-labelContainer{
+          .MuiStepLabel-label{
+            color: $color-graniteGray;
+            font: 400 16px/18px $font-Rubik;
+            &.Mui-active{
+              color: $color-primary;
+            }
+          }
+          .MuiTypography-caption{
+            color: $color-spanishGray;
+          }
+        }
+      }
+    }
+  }
+
+  .MuiStepConnector-root{
+    span{
+      &.MuiStepConnector-line{
+        border-color: $color-graniteGray;
+      }
+    }
+  }
+}

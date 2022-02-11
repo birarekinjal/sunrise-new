@@ -1,0 +1,26 @@
+@import '../../../application/style/common.scss';
+
+.MuiCheckbox-root{
+  svg{
+    width: 22px;
+    height: 22px;
+  }
+  &:hover{
+    color: $color-darkCharcoal;
+  }
+  &.Mui-disabled{
+    color: $color-platinum !important;
+  }
+  
+  &.MuiCheckbox-colorPrimary{
+    &.Mui-checked{
+      color: $color-cerulean;
+    }
+  }
+
+  &.MuiCheckbox-colorSecondary{
+    &.Mui-checked{
+      color: $color-secondary;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import '../../../application/style/common.scss';
+
+.MuiBox-root{
+  span{
+    &.MuiCircularProgress-colorSecondary{
+      color: $color-secondary;
+    }
+  }
+}

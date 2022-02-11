@@ -1,0 +1,32 @@
+@import '../../../application/style/common.scss';
+
+.MuiBox-root{
+  .MuiTabs-root{
+    .MuiTabs-scroller{
+      .MuiTabs-flexContainer{
+        border-bottom: 2px solid $color-platinum;
+        button{
+          color: $color-graniteGray;
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: unset;
+          line-height: 20px;
+
+          &.Mui-disabled{
+            color: $color-platinum;
+          }
+          &.Mui-selected{
+            color: $color-primary;
+          }
+        }
+      }
+      .MuiTabs-indicator{
+        background: $color-primary;
+      }
+    }
+  }
+
+  .MuiTabPanel-root{
+    padding: 15px;
+  }
+}
