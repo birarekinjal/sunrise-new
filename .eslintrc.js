@@ -29,6 +29,8 @@ module.exports = {
         "tsx": "never"
       }
     ],
+    "default-param-last": "off",
+    "@typescript-eslint/default-param-last": ["error"],
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx', '.ts'] }],
     'react/prop-types': 'off',
@@ -75,6 +77,12 @@ module.exports = {
       {
         selector: "variable",
         format: ["camelCase"]
+      },
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "function-declaration",
       },
     ],
     "@typescript-eslint/naming-convention": [

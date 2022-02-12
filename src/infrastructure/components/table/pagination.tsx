@@ -8,10 +8,11 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import { TablePaginationActionsProps } from './tableProps';
 
-
-const TablePaginationActions = (props: TablePaginationActionsProps) => {
+function TablePaginationActions(props: TablePaginationActionsProps) {
   const theme = useTheme();
-  const { count, page, rowsPerPage, onPageChange } = props;
+  const {
+    count, page, rowsPerPage, onPageChange,
+  } = props;
 
   const handleFirstPageButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>,
@@ -63,6 +64,6 @@ const TablePaginationActions = (props: TablePaginationActionsProps) => {
       </IconButton>
     </Box>
   );
-};
+}
 
 export default TablePaginationActions;

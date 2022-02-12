@@ -1,12 +1,10 @@
-import { combineReducers } from "redux";
-import { userReducer } from "../modules/users";
-// import bankReducer from "./bankReducer"
-
+import { combineReducers } from 'redux';
+import { userReducer } from '../modules/users';
 
 const reducers = combineReducers({
-  user: userReducer
-})
+  user: userReducer,
+});
 
-export default reducers
+export default reducers;
 
-export type RootState = ReturnType<typeof reducers>
+export type RootState = ReturnType<typeof reducers>;

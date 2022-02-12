@@ -2,18 +2,20 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import AdminLayout from '../layout/adminLayout';
 
-const PrivateRoute = ({
+function PrivateRoute({
   component: Component,
   loaderCount,
   isAuthenticated,
   userRole,
   ...rest
-}: any) => {
+}: any) {
 
-  return isAuthenticated ? <AdminLayout
-    component={Component}
-    loaderCount={loaderCount}
-    {...rest}
-  /> : <Navigate to="/login" />;
-};
+  return isAuthenticated ? (
+    <AdminLayout
+      component={Component}
+      loaderCount={loaderCount}
+      {...rest}
+    />
+  ) : <Navigate to="/login" />;
+}
 export default PrivateRoute;

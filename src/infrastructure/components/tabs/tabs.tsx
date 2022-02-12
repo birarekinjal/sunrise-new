@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-shadow */
 import * as React from 'react';

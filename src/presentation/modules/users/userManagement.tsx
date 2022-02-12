@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../reducer/rootReducer';
+import { useDispatch } from 'react-redux';
+// import { RootState } from '../../reducer/rootReducer';
 import { fetchUser } from './action-creators';
 
-const UserManagement = () => {
+function UserManagement() {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const state = useSelector((state: RootState) => state.user)
+  // const stateData = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
-    dispatch(fetchUser({ name: 'Kinjal', age: '23' }));
+    dispatch(fetchUser({ name: 'Kina', age: '23' }));
   }, []);
 
   return (
@@ -18,6 +18,6 @@ const UserManagement = () => {
       User Management
     </div>
   );
-};
+}
 
 export default UserManagement;

@@ -23,7 +23,7 @@ function AddTodoForm() {
 
   return (
     <div>
-      {addTodoLoader && 'Loading'
+      {(addTodoLoader && 'Loading')
         || (
           <form onSubmit={handleSubmit(onSubmit)}>
             <input {...register('firstName')} />

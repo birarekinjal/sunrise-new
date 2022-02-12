@@ -1,4 +1,6 @@
-import React, { Fragment, lazy, Suspense, useEffect } from 'react';
+import React, {
+  lazy, Suspense, useEffect,
+} from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { FullScreenLoader } from '../../infrastructure/components';
 import PrivateRoute from './privateRoute';
+
 const UserManagement = lazy(() => import('../modules/users/userManagement'));
 const ListTodo = lazy(() => import('../modules/todo/listTodo/listTodo'));
 const Layout = lazy(() => import('../modules/layout/layout'));
@@ -28,16 +31,14 @@ function RoutesData() {
     <Router>
       <Suspense fallback={<FullScreenLoader />}>
         <ScrollToTop>
-          <Fragment>
-            <Routes>
-              {/* <Route path="/todo-list" element={<ListTodo />} /> */}
-              <Route path="/user" element={<PrivateRoute isAuthenticated={true} component={UserManagement} />} />
-              <Route path="/" element={<ListTodo />} />
-              <Route path="/layout" element={<Layout />} />
-              {/* <Route path="/demo" element={<DatePickerDemo />} /> */}
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </Fragment>
+          <Routes>
+            {/* <Route path="/todo-list" element={<ListTodo />} /> */}
+            <Route path="/user" element={<PrivateRoute isAuthenticated component={UserManagement} />} />
+            <Route path="/" element={<ListTodo />} />
+            <Route path="/layout" element={<Layout />} />
+            {/* <Route path="/demo" element={<DatePickerDemo />} /> */}
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
         </ScrollToTop>
       </Suspense>
     </Router>

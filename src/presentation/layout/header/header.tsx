@@ -6,9 +6,8 @@ import { dispatch } from 'react-hot-toast/dist/core/store';
 // import { setCollapse } from './redux/headerReducer';
 // import { useHeadersHooks } from './hooks/useHeaderHooks';
 
-const Header = () => {
+function Header() {
   // const [state, { setSideMenuCollapse }] = useHeadersHooks();
-
 
   // console.log(state, 'state');
 
@@ -27,6 +26,6 @@ const Header = () => {
       </IconButton>
     </div>
   );
-};
+}
 
 export default Header;

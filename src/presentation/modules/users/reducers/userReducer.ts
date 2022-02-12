@@ -1,17 +1,17 @@
-import { ActionType } from "../action-types/index"
-import { Action } from "../actions"
+import { ActionType } from '../action-types/index';
+import { Action } from '../actions';
 
 const initialState = {
-      user:{}
+  user: {},
 };
 
 const reducer = (state: any = initialState, action: Action): any => {
-    switch (action.type){
-        case ActionType.FETCH_USERS:
-            return  action.payload;
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    case ActionType.FETCH_USERS:
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
-export default reducer
+export default reducer;
