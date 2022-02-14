@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['airbnb', 'airbnb-typescript'],
+  extends: ["airbnb-typescript"],
   parser: '@typescript-eslint/parser',
   plugins: ['react', "import", '@typescript-eslint',],
   parserOptions: {
@@ -29,8 +29,6 @@ module.exports = {
         "tsx": "never"
       }
     ],
-    "default-param-last": "off",
-    "@typescript-eslint/default-param-last": ["error"],
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx', '.ts'] }],
     'react/prop-types': 'off',
@@ -72,17 +70,15 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'no-else-return': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    "react/ no - unstable - nested - components": [
+      "off" | "warn" | "error",
+      { "allowAsProps": true | false }
+    ],
     "@typescript-eslint/naming-convention": [
       "warn",
       {
         selector: "variable",
         format: ["camelCase"]
-      },
-    ],
-    "react/function-component-definition": [
-      2,
-      {
-        namedComponents: "function-declaration",
       },
     ],
     "@typescript-eslint/naming-convention": [

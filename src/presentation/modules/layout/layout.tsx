@@ -1,6 +1,5 @@
-/* eslint-disable react/no-unstable-nested-components */
 import { Visibility } from '@material-ui/icons';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Send from '@mui/icons-material/Send';
 import {
   Button,

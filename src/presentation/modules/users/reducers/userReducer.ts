@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/default-param-last */
 import { ActionType } from '../action-types/index';
 import { Action } from '../actions';
 
