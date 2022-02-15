@@ -1,5 +1,5 @@
 import UserManagement from './userManagement';
-import userReducer from './reducers/userReducer';
+import userReducer from './redux/reducers/userReducer';
 
 export {
   UserManagement,

@@ -35,7 +35,8 @@ function RoutesData() {
             {/* <Route path="/todo-list" element={<ListTodo />} /> */}
             <Route path="/user" element={<PrivateRoute isAuthenticated component={UserManagement} />} />
             <Route path="/" element={<ListTodo />} />
-            <Route path="/layout" element={<Layout />} />
+            {/* <Route path="/layout" element={<Layout />} /> */}
+            <Route path="/layout" element={<PrivateRoute isAuthenticated component={Layout} />} />
             {/* <Route path="/demo" element={<DatePickerDemo />} /> */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>

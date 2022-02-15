@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { fetchUser } from './redux/action-creators';
 // import { RootState } from '../../reducer/rootReducer';
-import { fetchUser } from './action-creators';
 
 function UserManagement() {
 

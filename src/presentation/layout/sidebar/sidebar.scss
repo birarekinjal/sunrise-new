@@ -1,0 +1,18 @@
+.main-body-container {
+  display: 'flex'
+}
+
+.main-box-container {
+  padding: 0;
+}
+
+.nav-container {
+  .MuiPaper-root {
+    overflow: hidden;
+  }
+}
+
+.header-logo img {
+  width: 240px;
+  height: 100px;
+}
