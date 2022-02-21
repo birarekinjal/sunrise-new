@@ -1,183 +1,222 @@
-/* eslint-disable radix */
 import React, { useState } from 'react';
 import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import Checkbox from '@mui/material/Checkbox';
+import TableFooter from '@mui/material/TableFooter';
 import TableRow from '@mui/material/TableRow';
-import TableBody from '@mui/material/TableBody';
-import TablePagination from '@mui/material/TablePagination';
-
-// import TableSortLabel from '@mui/material/TableSortLabel';
-// import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
+import TablePaginationActions from './pagination';
+import TableHead from '@mui/material/TableHead';
+import { headCells } from './tableConstant';
+import { Checkbox, TablePagination } from '@material-ui/core';
 
-// import IconButton from '@mui/material/IconButton';
-// import Tooltip from '@mui/material/Tooltip';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Switch from '@mui/material/Switch';
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import FilterListIcon from '@mui/icons-material/FilterList';
+type CustomTableProps = {
+  // children?: React.ReactNode,
+  // pageCount?: any,
+  // rowsPerPage?: any,
+  // page?: any,
+  // handleChangePage?:any,
+  // handleChangeRowsPerPage?:any,
+  // handleSelectAll?: any,
 
-interface HeadCell {
-  disablePadding: boolean;
-  id: keyof any;
-  label: string;
-  numeric: boolean;
-  subject: string;
-  role: string;
-}
+  isCheckbox?: boolean,
+  handleSelectAllData?: any;
+  handleSelect?: any;
+  rows?: any
+  // onHeaderClick?: any,
+  // value?: any
+  // checked?: any
+  // selectUser?:any
+};
 
-const headCells: readonly HeadCell[] = [
-  {
-    id: 'name',
-    numeric: false,
-    disablePadding: true,
-    label: 'OrgName',
-    subject: 'subject',
-    role: 'Role',
-  },
-];
 
-const rows = [
-  {
-    id: 1,
-    name: 'Botree',
-    subject: 'Python',
-    role: 'react developer',
-  },
-  {
-    id: 2,
-    name: 'Tntra',
-    subject: 'Java',
-    role: 'python developer',
-  },
-  {
-    id: 3,
-    name: 'amazon',
-    subject: 'React',
-    role: 'AI developer',
-  },
-  {
-    id: 4,
-    name: 'tata',
-    subject: 'Ruby',
-    role: 'Java developer',
-  },
-  {
-    id: 5,
-    name: 'google',
-    subject: 'AWS',
-    role: 'Ruby developer',
-  },
-  {
-    id: 6,
-    name: 'microsoft',
-    subject: 'azure',
-    role: 'azure developer',
-  },
-
-];
-
-function CustomTable() {
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [page, setPage] = useState(0);
-
+const CustomTable: React.FC<CustomTableProps> = ({
+  isCheckbox,
+  // onHeaderClick,
+  // selectUser,
+  handleSelectAllData,
+  handleSelect,
+  rows,
+}) => {
   const [ids, setIds] = useState<Array<number>>([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [check, setCheck] = useState(false);
+  const [sortMethod, setSortMethod] = useState('both');
 
-  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-  const handleChangePage = (event: unknown, newPage: number) => {
+
+  const handleChangePage = (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    newPage: number,
+  ) => {
     setPage(newPage);
   };
 
+
+  // This function will return the Row count of per page
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+
+  // This function will return the particular ID of entire 
   const selectUser = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedId = parseInt(event.target.value);
-    // Check if "ids" contains "selectedIds"
-    // If true, this checkbox is already checked
-    // Otherwise, it is not selected yet
     if (ids.includes(selectedId)) {
-      const newIds = ids.filter((id) => id !== selectedId);
+      const newIds = ids.filter((id: any) => id !== selectedId);
       setIds(newIds);
     } else {
       const newIds = [...ids];
       newIds.push(selectedId);
       setIds(newIds);
     }
+
+    // this function is used to pass id to parent component
+    handleSelect(selectedId);
   };
 
-  // const handleCheckAll = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   console.log('checkAll', event.target.checked);
-  //   if(event.target.checked === true){
-  //     setIds([]);
-  //   } else {
-  //     console.log('sorry')
-  //   };
+  const getPagination = () => {
+    return rowsPerPage > 0
+      ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+      : rows;
+  };
+
+
+  const handleSelectAll = () => {
+    var id: any = [];
+    if (check == false) {
+      rows.map((value: any) => {
+        id.push(value.id);
+      });
+      setIds(id);
+    } else {
+      setIds([]);
+    }
+    setCheck(!check);
+
+    // this function is used to pass id to parent component
+    handleSelectAllData(id);
+  };
+
+
+
+  // useEffect(()=>{
+  //   sortingTableData();
+  // }, []);
+
+  // const sortingTableData = () => {
+  //   var data:any = [];
+
+  //   console.log('data', data);
+
+  //   rows.map((value) => {
+  //     data.push(value);
+  //     console.log('order', _.orderBy(value, [value.id],  ['desc']));
+  //   });
+
   // };
 
+
+  // console.log('order', _.orderBy(rows,  ['desc']));
+
+  const addSortingClassInHeader = (sort: any) => {
+    return sort ? 'sorting' : '';
+  };
+
+  const onHeaderClick = () => {
+    setSortMethod('asc');
+    if (sortMethod === 'asc') {
+      setSortMethod('desc');
+    }
+  };
+
+
   return (
-    <Paper>
+    <>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
           <TableHead>
             <TableRow>
               <TableCell>
-                {/* <Checkbox  
-            color="primary"     
-            onChange={handleCheckAll} 
-            /> */}
+                {
+                  isCheckbox && ids.length > 0 &&
+                  (
+                    <Checkbox
+                      color="primary"
+                      onClick={handleSelectAll}
+                    />
+                  )
+                }
               </TableCell>
               {
-                headCells && headCells.length > 0
-                && headCells.map((v: any) => (
+                headCells && headCells.length > 0 &&
+                headCells.map(({ label, sort }, index: any) => (
                   <>
-                    <TableCell><h6>{v.label}</h6></TableCell>
-                    <TableCell align="right"><h6>{v.subject}</h6></TableCell>
-                    <TableCell align="right"><h6>{v.role}</h6></TableCell>
+                    <TableCell
+                      key={index}
+                      className={addSortingClassInHeader('sort')}
+                      onClick={() => sort && onHeaderClick()}
+                    >
+                      {label.toUpperCase()}
+                    </TableCell>
                   </>
                 ))
               }
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell>
-                  <Checkbox
-                    color="primary"
-                    onChange={selectUser}
-                    value={row.id}
-                    checked={!!ids.includes(row.id)}
-                  />
-                </TableCell>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.subject}</TableCell>
-                <TableCell align="right">{row.role}</TableCell>
-              </TableRow>
-            ))}
+            {
+              getPagination().map((value: any) => (
+                <TableRow>
+                  <TableCell>
+                    {
+                      isCheckbox && (
+                        <Checkbox
+                          color="primary"
+                          onChange={selectUser}
+                          value={value.id}
+                          checked={ids.includes(value.id) ? true : false}
+                        />
+                      )
+                    }
+                  </TableCell>
+                  <TableCell>{value.name}</TableCell>
+                  <TableCell>{value.email}</TableCell>
+                  <TableCell>{value.phone}</TableCell>
+                  <TableCell>{value.role}</TableCell>
+                </TableRow>
+              ))
+            }
           </TableBody>
         </Table>
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              colSpan={3}
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              SelectProps={{
+                inputProps: {
+                  'aria-label': 'rows per page',
+                },
+                native: true,
+              }}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+              ActionsComponent={TablePaginationActions}
+            />
+          </TableRow>
+        </TableFooter>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+    </>
   );
-}
+};
+
 
 export default CustomTable;

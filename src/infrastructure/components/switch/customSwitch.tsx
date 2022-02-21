@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-/* eslint-disable react/function-component-definition */
 import React from 'react';
 import Switch from '@mui/material/Switch';
 import { CustomSwitchProps } from './switch';

@@ -21,7 +21,7 @@ import logo from '../../../application/images/Sunrise-Diamonds-only-white-logo.p
 const Sidebar = () => {
   const dispatch = useDispatch();
   const headerData = useSelector((state: RootState) => state.header);
-  
+
   // This method for responsive
   const handleDrawerToggle = () => {
     dispatch(setCollapse(false));
@@ -32,11 +32,11 @@ const Sidebar = () => {
     document.body.classList.add('collapse-menu');
     dispatch(setCollapseData(true));
   };
-    
+
   const drawerWidth = headerData.collapseData === false ? 350 : 80;
   const drawer = (
-    <div className='aside-drawer-left-Menu'> 
-      <div className='content'> 
+    <div className='aside-drawer-left-Menu'>
+      <div className='content'>
         <a href="#" className="aside-drawer-header-logo">
           <img
             alt="Sunrise Diamonds Ltd."

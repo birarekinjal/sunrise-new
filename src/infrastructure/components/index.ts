@@ -19,6 +19,7 @@ import DateRangePicker from './dateTimePicker/dateRangePicker';
 import Table from './table/table';
 import FullScreenLoader from './fullScreenLoader/fullScreenLoader';
 import Switch from './switch/customSwitch';
+import NumberInput from './numberInput/numberInput';
 
 export {
   Button,
@@ -42,4 +43,5 @@ export {
   Table,
   FullScreenLoader,
   Switch,
+  NumberInput,
 };

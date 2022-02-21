@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { apiHooksValues } from '../models/apiDataModels';
 
 const useFetchApiData = ({
@@ -9,38 +10,47 @@ const useFetchApiData = ({
   errorMessage,
   showSuccessMessage,
   successMessage,
+  // dependencyArray,
 }: apiHooksValues) => {
+
   const [state, setState] = useState({
     isLoading: false,
     isError: false,
+    data: [],
   });
 
-  const { isLoading, isError } = state;
+  const { isLoading, isError, data } = state;
 
-  setState({ ...state, isLoading: true, isError: false });
+  // setState({ ...state, isLoading: true, isError: false });
 
-  (apiFunction(apiParams))
-    .then((res: any) => {
-      if (res.data) {
-        setState({
-          ...state,
-          isLoading: false,
-          isError: false,
-        });
-        showSuccessMessage && alert(successMessage);
-      } else {
-        setState({
-          ...state,
-          isLoading: false,
-          isError: true,
-        });
-        !hideErrorMessage && alert(errorMessage || res.data);
-      }
-    })
-    .catch(() => {
-      setState({ ...state, isLoading: false, isError: true });
-    });
-  return [{ isLoading, isError }];
+  // console.log(apiFunction(apiParams), "apiFunction", apiFunction, apiParams)
+  useEffect(() => {
+    apiFunction(apiParams)
+      .then((res: any) => {
+        if (res.data) {
+          console.log(res.data);
+          setState({
+            ...state,
+            isLoading: false,
+            isError: false,
+            data: res.data,
+          });
+          showSuccessMessage && alert(successMessage);
+        } else {
+          setState({
+            ...state,
+            isLoading: false,
+            isError: true,
+            data: [],
+          });
+          !hideErrorMessage && alert(errorMessage || res.data);
+        }
+      })
+      .catch(() => {
+        setState({ ...state, isLoading: false, isError: true, data: [] });
+      });
+  }, []);
+  return [{ isLoading, isError, data }];
 };
 
 export { useFetchApiData };
