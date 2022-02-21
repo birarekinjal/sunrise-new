@@ -9,10 +9,10 @@ import { RootState } from '../reducer/rootReducer';
 
 
 const AdminLayout = (props: any) => {
-  // const drawerWidth = 350;
+  // const drawerWidth = 300;
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
-  const drawerWidth = collapseData === false ? 350 : 80;
+  const drawerWidth = collapseData === false ? 300 : 80;
   const { component: Component, ...rest } = props;
 
   return (
