@@ -9,30 +9,28 @@ import { RootState } from '../reducer/rootReducer';
 
 
 const AdminLayout = (props: any) => {
-  // const drawerWidth = 240;
+  // const drawerWidth = 350;
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
-  const drawerWidth = collapseData === false ? 240 : 60;
+  const drawerWidth = collapseData === false ? 350 : 80;
   const { component: Component, ...rest } = props;
 
   return (
-    <>
-      <Box className="main-body-container">
+    <section className="main-body-container">
+      <aside>
         <Sidebar />
-        <Box
-          component="main"
-          className="main-box-container"
-          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, ml: { sm: `${drawerWidth}px` } }}
-        >
-          <Header />
-          <Toolbar />
-          <Component {...rest} />
-          <Footer />
-        </Box>
-
-
+      </aside>
+      <Box
+        component="article"
+        className="main-box-container"
+        sx={{ flexGrow: 1, p: 3, width: { md: `calc(100% - ${drawerWidth}px)` }, ml: { md: `${drawerWidth}px` } }}
+      >
+        <Header />
+        <Toolbar />
+        <Component {...rest} />
+        <Footer />
       </Box>
-    </>
+    </section>
   );
 };
 

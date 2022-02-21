@@ -1,10 +1,12 @@
-.main-body-container {
-  display: 'flex'
-}
+@import '../../../application/style/common.scss';
 
-.main-box-container {
-  padding: 0;
-}
+// .main-body-container {
+//   display: 'flex'
+// }
+
+// .main-box-container {
+//   padding: 0;
+// }
 
 .nav-container {
   .MuiPaper-root {
@@ -12,7 +14,130 @@
   }
 }
 
-.header-logo img {
-  width: 240px;
-  height: 100px;
+.aside-drawer-top-bg, .aside-drawer-bottom-bg{
+  position: absolute;
+  z-index: 0;
+}
+.aside-drawer-top-bg{
+  top: -225px;
+  left: -80px;
+}
+.aside-drawer-bottom-bg{
+  bottom: -50px;
+  left: -70px;
+}
+
+.aside-drawer-left-Menu{
+  .content{
+    position: relative;
+    z-index: 2;
+  }
+  .aside-drawer-header-logo{
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    font-size: 28px;
+    text-decoration: none;
+    margin: 20px 0 0 20px;
+    img{
+      width: 40px;
+      height: auto;
+    }
+    small{
+      padding-left: 10px;
+    }
+  }
+
+  span{
+    &.menuIcon{
+      position: fixed;
+      top: 12px;
+      left: 380px;
+      z-index: 1;
+      margin-right: 10px;
+      button{
+        color: $color-spanishGray;
+        &:hover{
+          color: $color-black;
+        }
+      }
+    }
+  }
+
+  .MuiList-root{
+    .MuiListItem-root{
+      padding-left: 25px;
+      .MuiListItemIcon-root{
+        min-width: 40px;
+        color: $color-brightGray;
+      }
+      .MuiListItemText-root{
+        color: $color-brightGray;
+      }
+      &:hover{
+        .MuiListItemIcon-root{
+          min-width: 40px;
+          color: $color-white;
+        }
+        .MuiListItemText-root{
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}
+
+// For desktop view css
+aside{
+  nav{
+    .MuiDrawer-root{
+      .MuiDrawer-paper{
+        background: $color-primary;
+      }
+    }
+  }
+}
+
+.mobile-menu-drawer{
+  .MuiPaper-elevation{
+    background: $color-primary;
+    overflow: hidden;
+    .aside-drawer-left-Menu{
+      .menuIcon{
+        display: none;
+      }
+    }
+  }
+}
+
+.collapse-menu{
+  aside{
+    nav{
+      .MuiDrawer-root{
+        .MuiDrawer-paper{
+          .aside-drawer-left-Menu{  
+            span{
+              &.menuIcon{
+                display: none;
+              }
+            }
+
+            .MuiList-root{
+              .MuiListItem-root{
+                .MuiListItemIcon-root{
+                  min-width: 55px;
+                }
+                .MuiListItemText-root{
+                  span{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

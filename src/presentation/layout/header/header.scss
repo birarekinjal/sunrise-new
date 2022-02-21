@@ -1,0 +1,29 @@
+@import '../../../application/style/common.scss';
+
+header{
+  &.MuiAppBar-colorPrimary{
+    background: $color-white;
+    color: $color-black;
+    @include box-shadow(0 0px 4px rgba(0,0,0,0.2));
+    .MuiToolbar-regular{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    span{
+      &.menuIconClose{
+        margin-right: 10px;
+        button{
+          color: $color-spanishGray;
+          &:hover{
+            color: $color-black;
+          }
+          &:nth-child(2n){
+            @include bellow-md{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

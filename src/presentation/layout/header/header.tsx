@@ -3,10 +3,12 @@ import { IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Toolbar from '@mui/material/Toolbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCollapse, setCollapseData } from './redux/action-creators';
 import { RootState } from '../../reducer/rootReducer';
+import './header.scss';
 
 function Header(props: any) {
   const dispatch = useDispatch();
@@ -23,47 +25,59 @@ function Header(props: any) {
     document.body.classList.remove('collapse-menu');
   };
 
-  // const drawerWidth = 240;
-  const drawerWidth = collapseData === false ? 240 : 60;
+  // const drawerWidth = 350;
+  const drawerWidth = collapseData === false ? 350 : 80;
   return (
-    <div className="header">
+    <>
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
         }}
       >
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={() => handleDrawerToggle()}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
 
           {/* for chrome  */}
-          {collapseData == true ?
+          <span className='menuIconClose'>
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              onClick={() => handleDrawerCollapse()}
-            // sx={{ mr: 2, display: { sm: 'none' } }}
+              onClick={() => handleDrawerToggle()}
+              sx={{ display: { md: 'none' } }}
             >
               <MenuIcon />
             </IconButton>
-            : ''}
+            {collapseData == true ?
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={() => handleDrawerCollapse()}
+              // sx={{ mr: 2, display: { sm: 'none' } }}
+              >
+                <ArrowForwardIcon />
+              </IconButton>
+              : 
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={() => handleDrawerCollapse()}
+              // sx={{ mr: 2, display: { sm: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+            }
+          </span>
           {/* for chrome */}
           <Typography variant="h6" noWrap component="div">
             Responsive drawer
           </Typography>
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   );
 }
 
