@@ -11,7 +11,7 @@ import { RootState } from '../reducer/rootReducer';
 const WithContainerLayout = ({ children }: any) => {
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
-  const drawerWidth = collapseData === false ? 350 : 80;
+  const drawerWidth = collapseData === false ? 300 : 80;
 
   return (
     <section className="main-body-container">

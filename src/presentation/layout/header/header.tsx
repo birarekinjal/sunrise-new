@@ -25,8 +25,8 @@ function Header(props: any) {
     document.body.classList.remove('collapse-menu');
   };
 
-  // const drawerWidth = 350;
-  const drawerWidth = collapseData === false ? 350 : 80;
+  // const drawerWidth = 300;
+  const drawerWidth = collapseData === false ? 300 : 80;
   return (
     <>
       <AppBar

@@ -19,12 +19,24 @@
   z-index: 0;
 }
 .aside-drawer-top-bg{
-  top: -225px;
-  left: -80px;
+  @include above-sm{
+    top: -235px;
+    left: -100px;
+  }
+  @include bellow-sm{
+    top: -245px;
+    left: -110px;
+  }
 }
 .aside-drawer-bottom-bg{
-  bottom: -50px;
-  left: -70px;
+  @include above-sm{
+    bottom: -50px;
+    left: -100px;
+  }
+  @include bellow-sm{
+    bottom: -80px;
+    left: -130px;
+  }  
 }
 
 .aside-drawer-left-Menu{
@@ -36,11 +48,16 @@
     display: flex;
     align-items: center;
     color: $color-white;
-    font-size: 28px;
+    font-size: 24px;
     text-decoration: none;
-    margin: 20px 0 0 20px;
+    @include above-sm{
+      margin: 20px 0 0 20px; 
+    }
+    @include bellow-sm{
+      margin: 14px 0 0 14px;
+    }
     img{
-      width: 40px;
+      width: 34px;
       height: auto;
     }
     small{
@@ -52,7 +69,7 @@
     &.menuIcon{
       position: fixed;
       top: 12px;
-      left: 380px;
+      left: 330px;
       z-index: 1;
       margin-right: 10px;
       button{
@@ -65,8 +82,13 @@
   }
 
   .MuiList-root{
-    .MuiListItem-root{
-      padding-left: 25px;
+    .MuiListItem-root{      
+      @include above-sm{
+        padding-left: 25px;
+      }
+      @include bellow-sm{
+        padding-left: 14px;
+      }
       .MuiListItemIcon-root{
         min-width: 40px;
         color: $color-brightGray;
@@ -102,6 +124,9 @@ aside{
   .MuiPaper-elevation{
     background: $color-primary;
     overflow: hidden;
+    @include bellow-sm{
+      max-width: 280px;
+    }
     .aside-drawer-left-Menu{
       .menuIcon{
         display: none;
@@ -115,7 +140,12 @@ aside{
     nav{
       .MuiDrawer-root{
         .MuiDrawer-paper{
-          .aside-drawer-left-Menu{  
+          .aside-drawer-left-Menu{
+            .aside-drawer-header-logo{
+              small{
+                display: none;
+              }
+            }
             span{
               &.menuIcon{
                 display: none;

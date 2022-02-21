@@ -16,8 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { leftBarBgSvg } from '../../../application/constants/svgConstants';
 
 import './sidebar.scss';
-
 import logo from '../../../application/images/Sunrise-Diamonds-only-white-logo.png';
+
 const Sidebar = () => {
   const dispatch = useDispatch();
   const headerData = useSelector((state: RootState) => state.header);
@@ -33,7 +33,7 @@ const Sidebar = () => {
     dispatch(setCollapseData(true));
   };
 
-  const drawerWidth = headerData.collapseData === false ? 350 : 80;
+  const drawerWidth = headerData.collapseData === false ? 300 : 80;
   const drawer = (
     <div className='aside-drawer-left-Menu'>
       <div className='content'>
@@ -46,7 +46,7 @@ const Sidebar = () => {
           {headerData.collapseData === false ?
             <small>Sunrise Diamonds Ltd.</small>
             :
-            ''
+            <small>Sunrise Diamonds Ltd.</small>
           }
         </a>
         <span className='menuIcon'>
@@ -97,7 +97,7 @@ const Sidebar = () => {
         }}
         sx={{
           display: { xs: 'block', sm: 'block', md: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 350 },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 300 },
         }}
       >
         {drawer}
