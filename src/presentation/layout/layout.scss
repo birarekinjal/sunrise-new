@@ -1,3 +1,7 @@
-.main-box-container {
-  padding: 0 !important
+article{
+  padding: 0 !important;
+  .main-container{
+    padding-left: 30px;
+    padding-right: 30px;
+  }  
 }

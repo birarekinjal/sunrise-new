@@ -7,9 +7,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="App">
+      <main className="App">
         <RoutesData />
-      </div>
+      </main>
     </Provider>
   );
 }

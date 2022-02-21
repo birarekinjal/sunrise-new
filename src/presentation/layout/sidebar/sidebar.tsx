@@ -13,13 +13,15 @@ import { RootState } from '../../reducer/rootReducer';
 import { setCollapse, setCollapseData } from '../header/redux/action-creators';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { leftBarBgSvg } from '../../../application/constants/svgConstants';
+
 import './sidebar.scss';
 
-import logo from '../../../application/images/logo.png';
+import logo from '../../../application/images/Sunrise-Diamonds-only-white-logo.png';
 const Sidebar = () => {
   const dispatch = useDispatch();
   const headerData = useSelector((state: RootState) => state.header);
-
+  
   // This method for responsive
   const handleDrawerToggle = () => {
     dispatch(setCollapse(false));
@@ -30,47 +32,49 @@ const Sidebar = () => {
     document.body.classList.add('collapse-menu');
     dispatch(setCollapseData(true));
   };
-
-  const drawerWidth = headerData.collapseData === false ? 240 : 60;
+    
+  const drawerWidth = headerData.collapseData === false ? 350 : 80;
   const drawer = (
-    <div>
-      <a href="#" className="header-logo">
-        {headerData.collapseData === false ?
+    <div className='aside-drawer-left-Menu'> 
+      <div className='content'> 
+        <a href="#" className="aside-drawer-header-logo">
           <img
-            alt="Icon logo"
-            className="small-logo"
+            alt="Sunrise Diamonds Ltd."
+            className="logo"
             src={logo}
           />
-          :
-          <img
-            alt="Icon logo"
-            className="small-logo"
-            src={logo}
-          />
-        }
-      </a>
-
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        edge="start"
-        onClick={handleDrawerCollapse}
-      // sx={{ mr: 2, display: { sm: 'none' } }}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Toolbar />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div >
+          {headerData.collapseData === false ?
+            <small>Sunrise Diamonds Ltd.</small>
+            :
+            ''
+          }
+        </a>
+        <span className='menuIcon'>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerCollapse}
+          // sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </span>
+        <Toolbar />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </div>
+      <span className='aside-drawer-top-bg'>{leftBarBgSvg}</span>
+      <span className='aside-drawer-bottom-bg'>{leftBarBgSvg}</span>
+    </div>
   );
 
   return (
@@ -87,12 +91,13 @@ const Sidebar = () => {
         variant="temporary"
         open={headerData?.collapse}
         onClose={handleDrawerToggle}
+        className={'mobile-menu-drawer'}
         ModalProps={{
           keepMounted: true,   // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          display: { xs: 'block', sm: 'block', md: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 350 },
         }}
       >
         {drawer}
@@ -101,7 +106,7 @@ const Sidebar = () => {
       <Drawer
         variant="permanent"
         sx={{
-          display: { xs: 'none', sm: 'block' },
+          display: { xs: 'none', sm: 'none', md: 'block' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
         }}
         open

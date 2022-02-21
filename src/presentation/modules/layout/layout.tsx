@@ -137,7 +137,7 @@ function Layout() {
   };
 
   return (
-    <div>
+    <section className='main-container'>
       <h1>Switch</h1>
       <Switch color="secondary" onChange={(e: any) => handleSwitch(e)} />
       <h1>DateTimePicker</h1>
@@ -480,7 +480,7 @@ function Layout() {
         allowSelectAll
         value={selectOption}
       />
-    </div>
+    </section>
   );
 }
 
