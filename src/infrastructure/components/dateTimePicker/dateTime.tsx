@@ -25,25 +25,24 @@ const CustomDateTimePicker: React.FC<DateTimePickerProps> = ({
 }) => {
   return (
     <LocalizationProvider dateAdapter={DateAdapter}>
-   
-          <DateTimePicker
-            renderInput={(props) => <TextField {...props} />}
-            label={label}
-            className={className}
-            ref={ref}
-            value={value}
-            onChange={onChange}
-            disabled={disabled}
-            clearText={clearText}
-            clearable={clearable}
-            desktopModeMediaQuery={desktopModeMediaQuery}
-            mask={mask}
-            open={open}
-            openTo={openTo}
-            orientation={orientation}
-            readOnly={readOnly}
-            views={views}
-          />
+      <DateTimePicker
+        renderInput={(props) => <TextField {...props} />}
+        label={label}
+        className={className}
+        ref={ref}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        clearText={clearText}
+        clearable={clearable}
+        desktopModeMediaQuery={desktopModeMediaQuery}
+        mask={mask}
+        open={open}
+        openTo={openTo}
+        orientation={orientation}
+        readOnly={readOnly}
+        views={views}
+      />
     </LocalizationProvider>
   );
 };

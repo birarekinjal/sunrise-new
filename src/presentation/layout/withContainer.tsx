@@ -8,12 +8,10 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../reducer/rootReducer';
 
 
-const AdminLayout = (props: any) => {
-  // const drawerWidth = 300;
+const WithContainerLayout = ({ children }: any) => {
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
   const drawerWidth = collapseData === false ? 300 : 80;
-  const { component: Component, ...rest } = props;
 
   return (
     <section className="main-body-container">
@@ -27,13 +25,13 @@ const AdminLayout = (props: any) => {
       >
         <Header />
         <Toolbar />
-        <Component {...rest} />
+        {children}
         <Footer />
       </Box>
     </section>
   );
 };
 
-export default AdminLayout;
+export default WithContainerLayout;
 
 

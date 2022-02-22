@@ -23,4 +23,5 @@ export type CustomInputProps = {
   error?: any;
   showError?: boolean;
   helperText?: React.ReactNode;
+  isPassword?:boolean;
 };
