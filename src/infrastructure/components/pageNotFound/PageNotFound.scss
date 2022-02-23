@@ -1,0 +1,45 @@
+@import '../../../application/style/common.scss';
+
+.page-not-found{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  .inner{
+    position: relative;
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    h1{
+      color: $color-primary;
+      position: relative;
+      z-index: 2;
+      font-size: 120px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 80px;
+    }
+    h2{
+      color: $color-black;
+      position: relative;
+      z-index: 2;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 30px;
+    }
+    button{
+      position: relative;
+      z-index: 2;
+      margin-top: 20px;
+    }
+    img{
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      @include transform(translateX(-50%));
+    }
+  }
+}

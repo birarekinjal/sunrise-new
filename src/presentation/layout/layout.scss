@@ -1,7 +1,29 @@
+@import '../../application/style/common.scss';
 article{
   padding: 0 !important;
   .main-container{
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 25px;
+    h1{
+      color: $color-primary;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
   }  
+}
+
+.layout-page{
+  .sub-head{
+    margin-bottom: 0;
+  }
+  .sub-head-2{
+  }
+  
+  .btn-compo{
+    button{
+      margin: 0 10px 10px 0;
+    }
+  }
 }
