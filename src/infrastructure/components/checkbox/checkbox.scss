@@ -1,5 +1,14 @@
 @import '../../../application/style/common.scss';
 
+label{
+  &.MuiFormControlLabel-root{
+    margin-left: 0;
+  }
+  .MuiFormControlLabel-label{
+    margin-left: 5px !important;
+  }
+}
+
 .MuiCheckbox-root{
   svg{
     width: 22px;
