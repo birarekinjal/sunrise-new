@@ -13,7 +13,10 @@ const UserManagement = lazy(() => import('../modules/users/userList/userManageme
 const ListTodo = lazy(() => import('../modules/todo/listTodo/listTodo'));
 const Layout = lazy(() => import('../modules/layout/layout'));
 const PageNotFound = lazy(() => import('../../infrastructure/components/pageNotFound/PageNotFound'));
-const Login = lazy(() => import('../modules/login/login'));
+const Login = lazy(() => import('../modules/authentication/login/login'));
+const ForgotPassword = lazy(() => import('../modules/authentication/forgotPassword/forgotPassword'));
+const ResetPassword = lazy(() => import('../modules/authentication/resetPassword/resetPassword'));
+
 
 const ScrollToTop = (props: { children: any; }) => {
   const { pathname } = useLocation();
@@ -35,6 +38,9 @@ function RoutesData() {
             {/* <Route path="/todo-list" element={<ListTodo />} /> */}
             <Route path="/user" element={<PrivateRoute isAuthenticated component={UserManagement} />} />
             <Route path="/ListTodo" element={<ListTodo />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/" element={<Login />} />
             {/* <PrivateRoute path="/layout" element={<Layout />} /> */}
             <Route path="/layout" element={<PrivateRoute isAuthenticated component={Layout} />} />

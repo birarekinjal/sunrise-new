@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../../infrastructure/components';
-import imgNotFound from '../../images/404-page-not-found-min.png';
+//import imgNotFound from '../images/404-page-not-found-min.png';
+import imgNotFound from '../../../application/images/404-page-not-found-min.png';
 import './PageNotFound.scss';
 
 const PageNotFound = () => {
@@ -11,7 +12,7 @@ const PageNotFound = () => {
         <h2>404 - Page not found</h2>
         <Button
           label="Back to home"
-          color="secondary"          
+          color="secondary"
           className={'customFilledBtn'}
           onClick={() => ''}
         />

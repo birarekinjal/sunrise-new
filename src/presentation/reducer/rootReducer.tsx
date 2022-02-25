@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import headerReducer from '../layout/header/redux/reducers/headerReducer';
-import loginReducer from '../modules/login/redux/reducers/loginReducer';
+import loginReducer from '../modules/authentication/login/redux/reducers/loginReducer';
 
 const reducers = combineReducers({
   header: headerReducer,

@@ -2,11 +2,11 @@ import React from 'react';
 import { useSetUserData } from './hook/useSetUserData';
 import LoginForm from './loginForm';
 import Grid from '@mui/material/Grid';
-import { authenticationBottomSvg } from '../../../application/constants/svgConstants';
-import { authenticationTopSvg } from '../../../application/constants/svgConstants';
-import logo from '../../images/sunrise-diamond-logo.webp';
+import { authenticationBottomSvg } from '../../../../application/constants/svgConstants';
+import { authenticationTopSvg } from '../../../../application/constants/svgConstants';
+import logo from '../../../../application/images/sunrise-diamond-logo.webp';
 import Link from '@mui/material/Link';
-import './authentication.scss';
+import '../authentication.scss';
 
 const Login = () => {
 
@@ -17,7 +17,7 @@ const Login = () => {
         <article>
           <Grid container spacing={2} className="main-content">
             <Grid item xs={12} md={6} className="left-content">
-              <Link href="#"><img src={logo} alt="Sunrise Diamond"/></Link>
+              <Link href="#"><img src={logo} alt="Sunrise Diamond" /></Link>
             </Grid>
             <Grid item xs={12} md={6} className="right-content">
               <h1>Welcome back <span className='color-cerulean'>:)</span></h1>

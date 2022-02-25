@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useForm } from 'react-hook-form';
-import { Button, Input, Checkbox } from '../../../infrastructure/components';
+import { Button, Input, Checkbox } from '../../../../infrastructure/components';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema/login';
 import Link from '@material-ui/core/Link';

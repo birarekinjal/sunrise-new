@@ -20,6 +20,7 @@ import Table from './table/table';
 import FullScreenLoader from './fullScreenLoader/fullScreenLoader';
 import Switch from './switch/customSwitch';
 import NumberInput from './numberInput/numberInput';
+import OtpInput from './otpSection/customOtp';
 
 export {
   Button,
@@ -44,4 +45,5 @@ export {
   FullScreenLoader,
   Switch,
   NumberInput,
+  OtpInput,
 };

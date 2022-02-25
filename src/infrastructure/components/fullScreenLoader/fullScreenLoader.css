@@ -1,0 +1,74 @@
+* {
+  outline: none;
+}
+
+body {
+  font: 400 16px/26px "Rubik", sans-serif;
+  color: #000;
+}
+
+a {
+  color: #000;
+}
+a:hover, a:focus {
+  color: #00C19A;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  color: #000;
+  letter-spacing: 0;
+}
+
+h1, .h1 {
+  font-size: 26px;
+  line-height: 36px;
+  margin: 20px 0 34px;
+}
+
+h2, .h2 {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 20px 0 30px;
+}
+
+h3, .h3 {
+  font-size: 22px;
+  line-height: 34px;
+  margin: 20px 0 30px;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 20px 0 30px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0 28px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 20px 0 26px;
+}
+
+ul, ol {
+  margin-top: 0;
+  padding-left: 30px;
+}
+ul li, ol li {
+  margin-bottom: 10px;
+}
+ul li:last-child, ol li:last-child {
+  margin-bottom: 0;
+}
+
+.MuiBackdrop-root {
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 11;
+}/*# sourceMappingURL=fullScreenLoader.css.map */

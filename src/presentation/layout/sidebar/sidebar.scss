@@ -14,94 +14,117 @@
   }
 }
 
-.aside-drawer-top-bg, .aside-drawer-bottom-bg{
+.aside-drawer-top-bg,
+.aside-drawer-bottom-bg {
   position: absolute;
   z-index: 0;
 }
-.aside-drawer-top-bg{
-  @include above-sm{
+
+.aside-drawer-top-bg {
+  @include above-sm {
     top: -235px;
     left: -100px;
   }
-  @include bellow-sm{
+
+  @include bellow-sm {
     top: -245px;
     left: -110px;
   }
 }
-.aside-drawer-bottom-bg{
-  @include above-sm{
+
+.aside-drawer-bottom-bg {
+  @include above-sm {
     bottom: -50px;
     left: -100px;
   }
-  @include bellow-sm{
+
+  @include bellow-sm {
     bottom: -80px;
     left: -130px;
-  }  
+  }
 }
 
-.aside-drawer-left-Menu{
-  .content{
+.aside-drawer-left-Menu {
+  .content {
     position: relative;
     z-index: 2;
   }
-  .aside-drawer-header-logo{
+
+  .aside-drawer-header-logo {
     display: flex;
     align-items: center;
     color: $color-white;
     font-size: 24px;
     text-decoration: none;
-    @include above-sm{
-      margin: 20px 0 0 20px; 
+
+    @include above-sm {
+      margin: 20px 0 0 20px;
     }
-    @include bellow-sm{
+
+    @include bellow-sm {
       margin: 14px 0 0 14px;
     }
-    img{
+
+    img {
       width: 34px;
       height: auto;
     }
-    small{
+
+    small {
       padding-left: 10px;
     }
   }
 
-  span{
-    &.menuIcon{
+  .left-menu {
+    max-height: calc(100vh - 60px);
+    min-height: 400px;
+    overflow-y: auto;
+  }
+
+  span {
+    &.menuIcon {
       position: fixed;
       top: 12px;
       left: 330px;
       z-index: 1;
       margin-right: 10px;
-      button{
+
+      button {
         color: $color-spanishGray;
-        &:hover{
+
+        &:hover {
           color: $color-black;
         }
       }
     }
   }
 
-  .MuiList-root{
-    .MuiListItem-root{      
-      @include above-sm{
+  .MuiList-root {
+    .MuiListItem-root {
+      @include above-sm {
         padding-left: 25px;
       }
-      @include bellow-sm{
+
+      @include bellow-sm {
         padding-left: 14px;
       }
-      .MuiListItemIcon-root{
+
+      .MuiListItemIcon-root {
         min-width: 40px;
         color: $color-brightGray;
       }
-      .MuiListItemText-root{
+
+      .MuiListItemText-root {
         color: $color-brightGray;
       }
-      &:hover{
-        .MuiListItemIcon-root{
+
+      &:hover {
+        .MuiListItemIcon-root {
           min-width: 40px;
           color: $color-white;
         }
-        .MuiListItemText-root{
+
+        .MuiListItemText-root {
           color: $color-secondary;
         }
       }
@@ -110,55 +133,59 @@
 }
 
 // For desktop view css
-aside{
-  nav{
-    .MuiDrawer-root{
-      .MuiDrawer-paper{
+aside {
+  nav {
+    .MuiDrawer-root {
+      .MuiDrawer-paper {
         background: $color-primary;
       }
     }
   }
 }
 
-.mobile-menu-drawer{
-  .MuiPaper-elevation{
+.mobile-menu-drawer {
+  .MuiPaper-elevation {
     background: $color-primary;
     overflow: hidden;
-    @include bellow-sm{
+
+    @include bellow-sm {
       max-width: 280px;
     }
-    .aside-drawer-left-Menu{
-      .menuIcon{
+
+    .aside-drawer-left-Menu {
+      .menuIcon {
         display: none;
       }
     }
   }
 }
 
-.collapse-menu{
-  aside{
-    nav{
-      .MuiDrawer-root{
-        .MuiDrawer-paper{
-          .aside-drawer-left-Menu{
-            .aside-drawer-header-logo{
-              small{
-                display: none;
-              }
-            }
-            span{
-              &.menuIcon{
+.collapse-menu {
+  aside {
+    nav {
+      .MuiDrawer-root {
+        .MuiDrawer-paper {
+          .aside-drawer-left-Menu {
+            .aside-drawer-header-logo {
+              small {
                 display: none;
               }
             }
 
-            .MuiList-root{
-              .MuiListItem-root{
-                .MuiListItemIcon-root{
+            span {
+              &.menuIcon {
+                display: none;
+              }
+            }
+
+            .MuiList-root {
+              .MuiListItem-root {
+                .MuiListItemIcon-root {
                   min-width: 55px;
                 }
-                .MuiListItemText-root{
-                  span{
+
+                .MuiListItemText-root {
+                  span {
                     white-space: nowrap;
                     text-overflow: ellipsis;
                   }

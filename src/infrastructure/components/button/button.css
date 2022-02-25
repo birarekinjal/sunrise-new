@@ -1,0 +1,201 @@
+* {
+  outline: none;
+}
+
+body {
+  font: 400 16px/26px "Rubik", sans-serif;
+  color: #000;
+}
+
+a {
+  color: #000;
+}
+a:hover, a:focus {
+  color: #00C19A;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  color: #000;
+  letter-spacing: 0;
+}
+
+h1, .h1 {
+  font-size: 26px;
+  line-height: 36px;
+  margin: 20px 0 34px;
+}
+
+h2, .h2 {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 20px 0 30px;
+}
+
+h3, .h3 {
+  font-size: 22px;
+  line-height: 34px;
+  margin: 20px 0 30px;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 20px 0 30px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0 28px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 20px 0 26px;
+}
+
+ul, ol {
+  margin-top: 0;
+  padding-left: 30px;
+}
+ul li, ol li {
+  margin-bottom: 10px;
+}
+ul li:last-child, ol li:last-child {
+  margin-bottom: 0;
+}
+
+button.MuiButtonBase-root {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  box-shadow: none;
+}
+button.MuiButtonBase-root:hover, button.MuiButtonBase-root:focus {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+button.MuiButton-containedPrimary {
+  background: #014A7E;
+}
+button.MuiButton-containedPrimary:hover {
+  background: #015997;
+}
+button.MuiButton-containedSecondary {
+  background: #00C19A;
+}
+button.MuiButton-containedSecondary:hover {
+  background: #00d0a6;
+}
+button.MuiButton-containedSecondary:disabled, button.MuiButton-containedSecondary .disabled {
+  background: #e5e5e5;
+  color: #999;
+}
+button.MuiButton-containedSuccess {
+  background: #27ae60;
+}
+button.MuiButton-containedSuccess:hover {
+  background: #2cc36b;
+}
+button.MuiButton-containedError {
+  background: #E74C3C;
+}
+button.MuiButton-containedError:hover {
+  background: #ea6153;
+}
+button.MuiButton-containedError:disabled, button.MuiButton-containedError .disabled {
+  background: #e5e5e5;
+  color: #999;
+}
+button.MuiButton-containedPrimary:disabled, button.MuiButton-containedPrimary .disabled, button.MuiButton-containedSecondary:disabled, button.MuiButton-containedSecondary .disabled, button.MuiButton-containedSuccess:disabled, button.MuiButton-containedSuccess .disabled, button.MuiButton-containedError:disabled, button.MuiButton-containedError .disabled {
+  background: #e5e5e5;
+  color: #999;
+}
+button.MuiButton-outlinedPrimary {
+  color: #014A7E;
+  border-color: #014A7E;
+}
+button.MuiButton-outlinedPrimary:hover {
+  background: #eff8ff;
+}
+button.MuiButton-outlinedSecondary {
+  color: #00C19A;
+  border-color: #00C19A;
+}
+button.MuiButton-outlinedSecondary:hover {
+  border-color: #00C19A;
+  background: #f4fffd;
+}
+button.MuiButton-outlinedSuccess {
+  color: #27ae60;
+  border-color: #27ae60;
+}
+button.MuiButton-outlinedSuccess:hover {
+  border-color: #27ae60;
+  background: #f2fcf6;
+}
+button.MuiButton-outlinedError {
+  color: #E74C3C;
+  border-color: #E74C3C;
+}
+button.MuiButton-outlinedError:hover {
+  border-color: #E74C3C;
+  background: #fef7f6;
+}
+button.MuiButton-outlinedPrimary:disabled, button.MuiButton-outlinedPrimary .disabled, button.MuiButton-outlinedSecondary:disabled, button.MuiButton-outlinedSecondary .disabled, button.MuiButton-outlinedSuccess:disabled, button.MuiButton-outlinedSuccess .disabled, button.MuiButton-outlinedError:disabled, button.MuiButton-outlinedError .disabled {
+  color: #999;
+  border-color: #999;
+}
+button.MuiButton-textPrimary {
+  color: #014A7E;
+}
+button.MuiButton-textPrimary:hover {
+  background: #eff8ff;
+}
+button.MuiButton-textSecondary {
+  color: #00C19A;
+}
+button.MuiButton-textSecondary:hover {
+  border-color: #00C19A;
+  background: #f4fffd;
+}
+button.MuiButton-textSuccess {
+  color: #27ae60;
+}
+button.MuiButton-textSuccess:hover {
+  border-color: #27ae60;
+  background: #f2fcf6;
+}
+button.MuiButton-textError {
+  color: #E74C3C;
+}
+button.MuiButton-textError:hover {
+  border-color: #E74C3C;
+  background: #fef7f6;
+}
+button.MuiButton-textPrimary:disabled, button.MuiButton-textPrimary .disabled, button.MuiButton-textSecondary:disabled, button.MuiButton-textSecondary .disabled, button.MuiButton-textSuccess:disabled, button.MuiButton-textSuccess .disabled, button.MuiButton-textError:disabled, button.MuiButton-textError .disabled {
+  color: #999;
+  border-color: #999;
+}
+button.customFilledBtn {
+  font-size: 18px;
+  line-height: 25px;
+  min-height: 56px;
+  padding-right: 45px;
+  padding-left: 45px;
+  letter-spacing: normal;
+  box-shadow: none;
+  border-radius: 5px;
+}
+@media all and (min-width: 1200px) {
+  button.customFilledBtn {
+    padding-right: 76px;
+    padding-left: 76px;
+  }
+}
+@media all and (max-width: 599.98px) {
+  button.btn-sm-block {
+    width: 100%;
+  }
+}/*# sourceMappingURL=button.css.map */

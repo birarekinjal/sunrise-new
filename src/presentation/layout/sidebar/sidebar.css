@@ -1,0 +1,201 @@
+* {
+  outline: none;
+}
+
+body {
+  font: 400 16px/26px "Rubik", sans-serif;
+  color: #000;
+}
+
+a {
+  color: #000;
+}
+a:hover, a:focus {
+  color: #00C19A;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  color: #000;
+  letter-spacing: 0;
+}
+
+h1, .h1 {
+  font-size: 26px;
+  line-height: 36px;
+  margin: 20px 0 34px;
+}
+
+h2, .h2 {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 20px 0 30px;
+}
+
+h3, .h3 {
+  font-size: 22px;
+  line-height: 34px;
+  margin: 20px 0 30px;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 20px 0 30px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0 28px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 20px 0 26px;
+}
+
+ul, ol {
+  margin-top: 0;
+  padding-left: 30px;
+}
+ul li, ol li {
+  margin-bottom: 10px;
+}
+ul li:last-child, ol li:last-child {
+  margin-bottom: 0;
+}
+
+.nav-container .MuiPaper-root {
+  overflow: hidden;
+}
+
+.aside-drawer-top-bg, .aside-drawer-bottom-bg {
+  position: absolute;
+  z-index: 0;
+}
+
+@media all and (min-width: 600px) {
+  .aside-drawer-top-bg {
+    top: -235px;
+    left: -100px;
+  }
+}
+@media all and (max-width: 599.98px) {
+  .aside-drawer-top-bg {
+    top: -245px;
+    left: -110px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .aside-drawer-bottom-bg {
+    bottom: -50px;
+    left: -100px;
+  }
+}
+@media all and (max-width: 599.98px) {
+  .aside-drawer-bottom-bg {
+    bottom: -80px;
+    left: -130px;
+  }
+}
+
+.aside-drawer-left-Menu .content {
+  position: relative;
+  z-index: 2;
+}
+.aside-drawer-left-Menu .aside-drawer-header-logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+@media all and (min-width: 600px) {
+  .aside-drawer-left-Menu .aside-drawer-header-logo {
+    margin: 20px 0 0 20px;
+  }
+}
+@media all and (max-width: 599.98px) {
+  .aside-drawer-left-Menu .aside-drawer-header-logo {
+    margin: 14px 0 0 14px;
+  }
+}
+.aside-drawer-left-Menu .aside-drawer-header-logo img {
+  width: 34px;
+  height: auto;
+}
+.aside-drawer-left-Menu .aside-drawer-header-logo small {
+  padding-left: 10px;
+}
+.aside-drawer-left-Menu span.menuIcon {
+  position: fixed;
+  top: 12px;
+  left: 330px;
+  z-index: 1;
+  margin-right: 10px;
+}
+.aside-drawer-left-Menu span.menuIcon button {
+  color: #999;
+}
+.aside-drawer-left-Menu span.menuIcon button:hover {
+  color: #000;
+}
+@media all and (min-width: 600px) {
+  .aside-drawer-left-Menu .MuiList-root .MuiListItem-root {
+    padding-left: 25px;
+  }
+}
+@media all and (max-width: 599.98px) {
+  .aside-drawer-left-Menu .MuiList-root .MuiListItem-root {
+    padding-left: 14px;
+  }
+}
+.aside-drawer-left-Menu .MuiList-root .MuiListItem-root .MuiListItemIcon-root {
+  min-width: 40px;
+  color: #e6edf2;
+}
+.aside-drawer-left-Menu .MuiList-root .MuiListItem-root .MuiListItemText-root {
+  color: #e6edf2;
+}
+.aside-drawer-left-Menu .MuiList-root .MuiListItem-root:hover .MuiListItemIcon-root {
+  min-width: 40px;
+  color: #fff;
+}
+.aside-drawer-left-Menu .MuiList-root .MuiListItem-root:hover .MuiListItemText-root {
+  color: #00C19A;
+}
+
+aside nav .MuiDrawer-root .MuiDrawer-paper {
+  background: #014A7E;
+}
+
+.mobile-menu-drawer .MuiPaper-elevation {
+  background: #014A7E;
+  overflow: hidden;
+}
+@media all and (max-width: 599.98px) {
+  .mobile-menu-drawer .MuiPaper-elevation {
+    max-width: 280px;
+  }
+}
+.mobile-menu-drawer .MuiPaper-elevation .aside-drawer-left-Menu .menuIcon {
+  display: none;
+}
+
+.collapse-menu aside nav .MuiDrawer-root .MuiDrawer-paper .aside-drawer-left-Menu .aside-drawer-header-logo small {
+  display: none;
+}
+.collapse-menu aside nav .MuiDrawer-root .MuiDrawer-paper .aside-drawer-left-Menu span.menuIcon {
+  display: none;
+}
+.collapse-menu aside nav .MuiDrawer-root .MuiDrawer-paper .aside-drawer-left-Menu .MuiList-root .MuiListItem-root .MuiListItemIcon-root {
+  min-width: 55px;
+}
+.collapse-menu aside nav .MuiDrawer-root .MuiDrawer-paper .aside-drawer-left-Menu .MuiList-root .MuiListItem-root .MuiListItemText-root span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=sidebar.css.map */

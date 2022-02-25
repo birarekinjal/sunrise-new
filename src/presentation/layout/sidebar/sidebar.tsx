@@ -1,22 +1,15 @@
 import React from 'react';
-// import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import Drawer from '@mui/material/Drawer';
-import { Box, Toolbar } from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import { Box } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../reducer/rootReducer';
 import { setCollapse, setCollapseData } from '../header/redux/action-creators';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { leftBarBgSvg } from '../../../application/constants/svgConstants';
-
 import './sidebar.scss';
 import logo from '../../../application/images/Sunrise-Diamonds-only-white-logo.png';
+import Menu from './menu';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -55,22 +48,11 @@ const Sidebar = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerCollapse}
-          // sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
         </span>
-        <Toolbar />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <Menu />
       </div>
       <span className='aside-drawer-top-bg'>{leftBarBgSvg}</span>
       <span className='aside-drawer-bottom-bg'>{leftBarBgSvg}</span>
