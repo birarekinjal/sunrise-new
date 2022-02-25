@@ -13,12 +13,14 @@ body{
   color: $color-black;
 }
 
-a {
-  color: $color-black;
-  &:hover, &:focus {
-    color: $color-secondary;
+a{
+  &.MuiLink-root{
+    color: $color-black;
+    &:hover, &:focus {
+      color: $color-secondary;
+    }
   }
-}
+} 
 
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -76,6 +78,7 @@ ul, ol{
 
 .mt-0{margin-top: 0;}
 .mb-2{margin-bottom: 20px}
+.color-cerulean{color: $color-cerulean}
 
 /* Card common css */
 .MuiCard-root{

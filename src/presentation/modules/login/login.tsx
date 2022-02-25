@@ -1,15 +1,35 @@
 import React from 'react';
 import { useSetUserData } from './hook/useSetUserData';
 import LoginForm from './loginForm';
+import Grid from '@mui/material/Grid';
+import { authenticationBottomSvg } from '../../../application/constants/svgConstants';
+import { authenticationTopSvg } from '../../../application/constants/svgConstants';
+import logo from '../../images/sunrise-diamond-logo.webp';
+import Link from '@mui/material/Link';
+import './authentication.scss';
 
 const Login = () => {
 
   const { handleOnSubmit } = useSetUserData();
   return (
-    <div>
-      <h2> Login Page</h2>
-      <LoginForm handleOnSubmit={handleOnSubmit} />
-    </div>
+    <section className='authentication'>
+      <main>
+        <article>
+          <Grid container spacing={2} className="main-content">
+            <Grid item xs={12} md={6} className="left-content">
+              <Link href="#"><img src={logo} alt="Sunrise Diamond"/></Link>
+            </Grid>
+            <Grid item xs={12} md={6} className="right-content">
+              <h1>Welcome back <span className='color-cerulean'>:)</span></h1>
+              <p>To keep connected with us please login with your personal information by email address &amp; password.</p>
+              <LoginForm handleOnSubmit={handleOnSubmit} />
+            </Grid>
+          </Grid>
+        </article>
+        {authenticationTopSvg}
+        {authenticationBottomSvg}
+      </main>
+    </section>
   );
 };
 

@@ -67,4 +67,38 @@
       }
     }
   }
+
+  .password-field{
+    position: relative;
+    .MuiTextField-root{    
+      .MuiInputBase-formControl{
+        input{
+          padding-right: 60px;
+        }
+      }
+    }
+    .showIcon{
+      position: absolute;
+      right: 15px;
+      top: 3px;
+      button{
+        span{
+          &.MuiIconButton-label{
+            svg{
+              color: $color-platinum;
+            }
+          }
+        }
+        &:hover, &:focus{
+          span{
+            &.MuiIconButton-label{
+              svg{
+                color: $color-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

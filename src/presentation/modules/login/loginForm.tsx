@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { useForm } from 'react-hook-form';
-import { Button, Input } from '../../../infrastructure/components';
+import { Button, Input, Checkbox } from '../../../infrastructure/components';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema/login';
+import Link from '@material-ui/core/Link';
 
 const LoginForm = (props: any) => {
   const { handleOnSubmit } = props;
@@ -23,11 +24,11 @@ const LoginForm = (props: any) => {
   });
 
   return (
-    <form>
+    <form className='login-panel'>
       {/* This input used for email */}
       <Input
         placeholder="Enter Email Here..."
-        label="Email"
+        label="Email address"
         variant="outlined"
         registeredEvents={register('email')}
         name="email"
@@ -36,8 +37,6 @@ const LoginForm = (props: any) => {
         showError={touchedFields && touchedFields.email}
         required
       />
-      <br></br><br></br>
-
       {/* This input used for password */}
       <Input
         placeholder="Enter Password Here..."
@@ -51,10 +50,19 @@ const LoginForm = (props: any) => {
         error={errors.password?.message}
         required
       />
+      <div className='mb-2 forgot-password'>
+        <div className='remember'>
+          <Checkbox label={'Remember me'} color='primary' checked />
+        </div>
+        <div className='forgot-password'>
+          <Link href="#">Forgot password</Link>
+        </div>
+      </div>
       <Button
         type='button'
-        label='submit'
-        color='secondary'
+        label='Sign in'
+        color='primary'
+        className='customFilledBtn'
         onClick={handleSubmit(handleOnSubmit)}
       />
     </form>

@@ -47,7 +47,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
           onClick={managePasswordVisibility}
           edge="end"
         >
-          {hidePassword ? <VisibilityOff /> : <Visibility />}
+          {hidePassword ? <Visibility /> : <VisibilityOff />}
         </IconButton>
       );
     }
@@ -56,7 +56,8 @@ const CustomInput: React.FC<CustomInputProps> = ({
 
   return (
     <FormControl variant='standard'>
-      <div>
+      <div className='mb-2 password-field'>
+      {/* <div className='mb-2'>   Conditionally class show "password-field" when input type password  */}
         {isControlled ? (
           <TextField
             id={id}

@@ -13,6 +13,7 @@ button{
   // Filled button scss 
   &.MuiButton-containedPrimary{
     background: $color-primary;
+    color: $color-white;
     &:hover{
       background: lighten($color-primary, 5%);
     }
@@ -20,6 +21,7 @@ button{
 
   &.MuiButton-containedSecondary{
     background: $color-secondary;
+    color: $color-white;
     &:hover{
       background: lighten($color-secondary, 3%);
     }
@@ -31,6 +33,7 @@ button{
 
   &.MuiButton-containedSuccess{
     background: $color-success;
+    color: $color-white;
     &:hover{
       background: lighten($color-success, 5%);
     }
@@ -38,6 +41,7 @@ button{
 
   &.MuiButton-containedError{
     background: $color-danger;
+    color: $color-white;
     &:hover{
       background: lighten($color-danger, 5%);
     }
