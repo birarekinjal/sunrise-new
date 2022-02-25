@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Regex } from '../../../application/constants/constantsRegex';
 import { Input, Button } from '../index';
 import { NumberInputType } from './numberModel';
+import './numberInput.scss';
 
 const NumberInput: React.FC<NumberInputType> = ({ onChange }: any) => {
 
@@ -25,11 +26,13 @@ const NumberInput: React.FC<NumberInputType> = ({ onChange }: any) => {
   };
 
   return (
-    <>
-      <Button label='+' onClick={handleIncrement} />
+    <div className='MuiTextFieldNumber'>
       <Input type='input' value={count} onChange={(e) => handleChange(e)} />
-      <Button label='-' onClick={handleDecrement} />
-    </>
+      <span className='right-btn'>
+        <Button className="plus" label='+' onClick={handleIncrement} />
+        <Button className="minus" label='-' onClick={handleDecrement} />
+      </span>
+    </div>
   );
 };
 
