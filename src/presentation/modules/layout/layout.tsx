@@ -489,6 +489,16 @@ function Layout() {
           </Card>
         </Grid>
       </Grid>
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <AddForm />
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
       
         <br />
         <CheckboxDropdown
@@ -498,7 +508,6 @@ function Layout() {
           value={selectOption}
         />
       </section>
-      <AddForm />
     </WithContainerLayout>
   );
 }
