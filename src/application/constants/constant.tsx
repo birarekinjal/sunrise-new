@@ -24,8 +24,7 @@ export const constants = {
   },
   resetPassword: {
     heading: 'Reset Password',
-    title:
-      'Enter your Email address so we will verify your email id and send you to otp number',
+    title:  'Enter your new password for reset new password.',
     NewPasswordPlaceholder: 'Enter New Password Here...',
     NewLabel: 'New Password',
     confirmPasswordPlaceholder: 'Enter Confirm Password Here...',

@@ -185,6 +185,17 @@
               }
             }
 
+            &.reset-panel{
+              .btn-group{
+                display: flex;
+                justify-content: space-between;
+                button{
+                  margin-top: 0;
+                  width: calc(50% - 15px);
+                }
+              }
+            }
+
             .otp-field{
               div{
                 display: flex;
@@ -222,6 +233,7 @@
                 }
               }
             }
+            
           }
         }
       }
