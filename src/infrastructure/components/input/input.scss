@@ -16,6 +16,9 @@
     }
   
     .MuiInputBase-formControl{
+      fieldset{
+        border-color: $color-platinum;
+      }
       input{
         color: $color-black;
       }

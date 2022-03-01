@@ -109,7 +109,6 @@
 
         .right-content {
           align-items: flex-start;
-
           @include above-md {
             padding: 50px;
           }
@@ -120,6 +119,21 @@
 
           @media (min-height: 550px) and (max-height: 767px){
             padding: 20px 50px;
+          }
+
+          .go-back{
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            a{
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: $color-cerulean;
+              &:hover{
+                color: $color-black;
+              }
+            }
           }
 
           h1 {
@@ -157,6 +171,52 @@
                   a {
                     &.MuiLink-root {
                       color: $color-cerulean;
+                    }
+                  }
+                }
+              }
+            }
+
+            &.forgot-panel{
+              button{
+                &.customFilledBtn{
+                  margin-top: 0;
+                }
+              }
+            }
+
+            .otp-field{
+              div{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                .col{
+                  width: 100%;
+                  max-width: 100px;
+                  input{
+                    width: 100% !important;
+                    height: 52px;
+                    border:1px solid $color-platinum;
+                    font-size: 34px;
+                    line-height: 34px;
+                    font-weight: 300;
+                    @include border-radius(5px);
+
+                    &:hover{
+                      border-color: $color-black;
+                    }
+                    &:focus{
+                      border-color: $color-primary;
+                      box-shadow: inset 1px 1px $color-primary, inset -1px -1px $color-primary;
+                    }
+                    &:disabled, .disabled{
+                      color: $color-spanishGray;
+                      &:hover{
+                        border-color: $color-platinum;
+                      }
+                    }
+                    & + span{
+                      display: none;
                     }
                   }
                 }

@@ -24,7 +24,7 @@ const ForgotPasswordForm = (props: any) => {
     resolver: yupResolver(schema),
   });
 
-  const { backToLogin, emailPlaceholder, emailLabel, heading, title } =
+  const { emailPlaceholder, emailLabel } =
     constants.forgotPassword;
 
   const handleChange = (id: any) => {
@@ -32,45 +32,44 @@ const ForgotPasswordForm = (props: any) => {
   };
 
   return (
-    <div>
-      <form>
-        <p>
-          <a href='/login' id='link' rel='nofollow'>
-            {backToLogin}
-          </a>
-        </p>
-        {/* Email */}
-        <h1>{heading}</h1>
-        <h6>{title}</h6>
-        <Input
-          placeholder={emailPlaceholder}
-          label={emailLabel}
-          variant='outlined'
-          registeredEvents={register('email')}
-          name='email'
-          type='email'
-          error={errors.email?.message}
-          showError={true}
-          required
+    <form className='forgot-panel'>
+      <Input
+        placeholder={emailPlaceholder}
+        label={emailLabel}
+        variant='outlined'
+        registeredEvents={register('email')}
+        name='email'
+        type='email'
+        error={errors.email?.message}
+        showError={true}
+        required
+      />
+      <div className='mb-2'>
+        <Button
+          type='button'
+          label='submit'
+          color='primary'
+          className='mt-0 customFilledBtn'
+          onClick={handleSubmit(handleOnSubmit)}
         />
-        <br></br>
-        <br></br>
-
+      </div>
+      <div className='mb-2'>
         <OtpInput
           value={otp}
           onChange={handleChange}
           numInputs={4}
           separator={<span>-</span>}
         />
-
-        <Button
-          type='button'
-          label='submit'
-          color='primary'
-          onClick={handleSubmit(handleOnSubmit)}
-        />
-      </form>
-    </div>
+      </div>
+      <Button
+        type='button'
+        label='Submit my otp'
+        color='primary'
+        className='customFilledBtn'
+        disabled={true}
+        onClick={handleSubmit(handleOnSubmit)}
+      />
+    </form>
   );
 };
 
