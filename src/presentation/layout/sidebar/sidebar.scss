@@ -75,12 +75,6 @@
     }
   }
 
-  .left-menu {
-    max-height: calc(100vh - 60px);
-    min-height: 400px;
-    overflow-y: auto;
-  }
-
   span {
     &.menuIcon {
       position: fixed;
@@ -197,8 +191,4 @@ aside {
       }
     }
   }
-}
-
-.active {
-  background-color: red;
 }

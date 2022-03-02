@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { Collapse, List } from '@mui/material';
 import { data } from '../../../application/constants/menuItem';
-
+import './menu.scss';
 const Menu = () => {
   const [currentMenu, setCurrentMenu] = useState<number[]>([]);
 
@@ -33,7 +33,7 @@ const Menu = () => {
         return (
           <div key={subOption.id}
             onClick={() => handleClick([...parentIDs, subOption?.id], subOption?.id)}
-            className={currentMenu.includes(subOption.id) ? 'active' : ''}
+            className={currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}
           >
             <ListItemIcon>
               {subOption.icon}
@@ -56,7 +56,7 @@ const Menu = () => {
       return (
         <div key={subOption?.id}>
           <div
-            className={currentMenu.includes(subOption.id) ? 'active' : ''}>
+            className={currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}>
             <ListItemIcon>
               {subOption.icon}
             </ListItemIcon>
@@ -67,8 +67,8 @@ const Menu = () => {
                 inset
                 primary={subOption?.name} />
               {currentMenu.includes(subOption.id) ?
-                <ExpandLess /> :
-                <ExpandMore />
+                <ExpandLess className='arrow' /> :
+                <ExpandMore className='arrow' />
               }
             </ListItem>
           </div>
@@ -86,9 +86,7 @@ const Menu = () => {
 
   return (
     <div className="left-menu">
-      <List>
-        {handler(data, [])}
-      </List>
+      {handler(data, [])}
     </div>
   );
 };

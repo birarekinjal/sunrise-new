@@ -1,21 +1,22 @@
 import InboxIcon from '@mui/icons-material/MoveToInbox';
+import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
 
 export const data = [
   {
-    name: 'User',
-    navigation: 'user',
+    name: 'User Management',
+    navigation: 'user-management',
     id: 1,
     url: '/user',
-    icon: <InboxIcon />,
+    icon: <PeopleOutlineOutlinedIcon />,
     childrens: [{
-      name: 'ListTodo',
-      navigation: 'listTodo',
+      name: 'User listing',
+      navigation: 'user-listing',
       id: 2,
       url: '/layout',
       icon: <InboxIcon />,
     }, {
-      name: 'All Mail',
-      navigation: 'allmail',
+      name: 'Add new user',
+      navigation: 'add-new-user',
       id: 3,
       url: '/layout',
       icon: <InboxIcon />,
@@ -35,8 +36,8 @@ export const data = [
     }],
   },
   {
-    name: 'Layout',
-    navigation: 'layout',
+    name: 'Memo Management',
+    navigation: 'memo-management',
     id: 6,
     url: '/layout',
     icon: <InboxIcon />,
