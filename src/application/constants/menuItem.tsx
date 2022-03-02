@@ -10,25 +10,25 @@ export const data = [
     childrens: [{
       name: 'ListTodo',
       navigation: 'listTodo',
-      id: 5,
+      id: 2,
       url: '/layout',
       icon: <InboxIcon />,
     }, {
       name: 'All Mail',
       navigation: 'allmail',
-      id: 6,
+      id: 3,
       url: '/layout',
       icon: <InboxIcon />,
       childrens: [{
         name: 'ListTodo',
         navigation: 'listTodo',
-        id: 5,
+        id: 4,
         url: '/layout',
         icon: <InboxIcon />,
       }, {
         name: 'All Mail',
         navigation: 'allmail',
-        id: 6,
+        id: 5,
         url: '/layout',
         icon: <InboxIcon />,
       }],
@@ -37,7 +37,7 @@ export const data = [
   {
     name: 'Layout',
     navigation: 'layout',
-    id: 2,
+    id: 6,
     url: '/layout',
     icon: <InboxIcon />,
   },
