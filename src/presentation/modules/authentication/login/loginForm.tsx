@@ -7,7 +7,7 @@ import schema from './schema/login';
 import Link from '@material-ui/core/Link';
 
 const LoginForm = (props: any) => {
-  const { handleOnSubmit } = props;
+  const { handleOnSubmit, loading } = props;
   const {
     register,
     handleSubmit,
@@ -64,6 +64,7 @@ const LoginForm = (props: any) => {
         color='primary'
         className='customFilledBtn'
         onClick={handleSubmit(handleOnSubmit)}
+        isLoading={loading}
       />
     </form>
 

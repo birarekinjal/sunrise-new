@@ -9,7 +9,7 @@ const initialState = {
 const reducer = (state: any = initialState, action: Action): any => {
   switch (action.type) {
     case ActionType.LOGIN:
-      return action.payload;
+      return { ...state, token :action.payload };
     default:
       return state;
   }

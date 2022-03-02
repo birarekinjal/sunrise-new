@@ -11,6 +11,17 @@ export const options = [
   { value: 'silver', label: 'Silver', color: '#666666' },
 ];
 
+export const roles = [
+  { name: 'Admin', value: '1' },
+  { name: 'KYC', value: '2' },
+  { name: 'User', value: '3' },
+];
+
+export const permission = [
+  { name: 'Admin', value: '1' },
+  { name: 'KYC', value: '2' },
+  { name: 'User', value: '3' },
+];
 export const constants = {
   loginPage: {
     title: 'Account Login',
@@ -38,6 +49,7 @@ export const constants = {
     emailLabel: 'Email',
     backToLogin: 'Back To Login',
   },
+
   addNewUser: {
     firstNamePlaceholder: 'Enter First Name Here...',
     firstNameLabel: 'First Name',
@@ -68,6 +80,15 @@ export const constants = {
     secretaryLabel: 'Select Secretary',
     accountNumberPlaceholder: 'Enter Confirm Account Number Here...',
     accountNumberLabel: 'Confirm Account Number',
+    buttons: {
+      submit: 'submit',
+    },
+  },
+  createUser: {
+    emailPlaceholder: 'Email',
+    passwordPlaceholder: 'Password',
+    role: 'choose role',
+    permissions: 'choose permission',
     buttons: {
       submit: 'submit',
     },

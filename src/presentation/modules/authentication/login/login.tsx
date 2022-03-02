@@ -10,7 +10,7 @@ import '../authentication.scss';
 
 const Login = () => {
 
-  const { handleOnSubmit } = useSetUserData();
+  const { handleOnSubmit, isLoading } = useSetUserData();
   return (
     <section className='authentication'>
       <main>
@@ -22,7 +22,7 @@ const Login = () => {
             <Grid item xs={12} md={6} className="right-content">
               <h1>Welcome back <span className='color-cerulean'>:)</span></h1>
               <p>To keep connected with us please login with your personal information by email address &amp; password.</p>
-              <LoginForm handleOnSubmit={handleOnSubmit} />
+              <LoginForm handleOnSubmit={handleOnSubmit} loading={isLoading} />
             </Grid>
           </Grid>
         </article>

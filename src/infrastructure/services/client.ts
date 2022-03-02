@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { getBaseURL, getToken } from '../utility/commonMethod';
+
 
 const client = axios.create({
-  // baseURL: getBaseURL(),
-  baseURL : 'https://jsonplaceholder.typicode.com',
+  baseURL: 'http://e8a07314b9a0.ngrok.io/',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -24,10 +25,18 @@ const patch = (url: string, body?: object, headers = {}) =>
 const del = (url: string, body?: object) =>
   client.delete(url, body );
 
-// client.interceptors.request.use(async (config) => {
-//   config.headers.Authorization = await getToken();
-//   return config;
-// });
+client.interceptors.request.use(async (config:any) => {
+
+  let authenticationToken = await getToken();
+
+  if (authenticationToken) {
+    config.headers.Authorization = authenticationToken;
+  }   
+  return config;
+}, function (error) {
+  return Promise.reject(error);
+});
+
   
 // client.interceptors.response.use(
 //   function (response) {

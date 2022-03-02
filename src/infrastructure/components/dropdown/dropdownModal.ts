@@ -4,4 +4,6 @@ export type SelectDropdownProps = {
   label?:string,
   value ?:any,
   onChange?:any,
+  error :string,
+  showError:boolean,
 };

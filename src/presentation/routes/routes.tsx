@@ -1,13 +1,17 @@
 import React, {
   lazy, Suspense, useEffect,
 } from 'react';
+import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from 'react-router-dom';
-import { FullScreenLoader } from '../../infrastructure/components';
+import { FullScreenLoader, Toaster } from '../../infrastructure/components';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
+import { RootState } from '../reducer/rootReducer';
 import PrivateRoute from './privateRoute';
 const UserManagement = lazy(() => import('../modules/users/userList/userManagement'));
 const ListTodo = lazy(() => import('../modules/todo/listTodo/listTodo'));
@@ -30,26 +34,39 @@ const ScrollToTop = (props: { children: any; }) => {
 };
 
 function RoutesData() {
+
+  const { token } = useSelector((state: RootState) => state.login);
+  let isAuthenticated = token;
+
   return (
-    <Router>
-      <Suspense fallback={<FullScreenLoader />}>
-        <ScrollToTop>
-          <Routes>
-            {/* <Route path="/todo-list" element={<ListTodo />} /> */}
-            <Route path="/user" element={<PrivateRoute isAuthenticated component={UserManagement} />} />
-            <Route path="/ListTodo" element={<ListTodo />} />
-            <Route path="/" element={<Login />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/" element={<Login />} />
-            {/* <PrivateRoute path="/layout" element={<Layout />} /> */}
-            <Route path="/layout" element={<PrivateRoute isAuthenticated component={Layout} />} />
-            {/* <Route path="/demo" element={<DatePickerDemo />} /> */}
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </ScrollToTop>
-      </Suspense>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <Suspense fallback={<FullScreenLoader />}>
+          <ScrollToTop>
+            <Routes>
+              {/* <Route path="/todo-list" element={<ListTodo />} /> */}
+              <Route
+                path={'/'}
+                element={
+                  isAuthenticated ? <Login /> :
+                    <Navigate to={'/layout'} />
+                }
+              />
+              <Route path="/user" element={<PrivateRoute isAuthenticated={isAuthenticated} component={UserManagement} />} />
+              <Route path="/ListTodo" element={<ListTodo />} />
+              {/* <Route path="/" element={<Login />} /> */}
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              {/* <PrivateRoute path="/layout" element={<Layout />} /> */}
+              <Route path="/layout" element={<PrivateRoute isAuthenticated={isAuthenticated} component={Layout} />} />
+              {/* <Route path="/demo" element={<DatePickerDemo />} /> */}
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+            <Toaster />
+          </ScrollToTop>
+        </Suspense>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

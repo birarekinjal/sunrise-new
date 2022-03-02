@@ -12,4 +12,4 @@ interface SetActionData {
   
 
 export type Action = SetAction ;
-export type ActionData = SetActionData;
+export type ActionData = SetActionData ;
