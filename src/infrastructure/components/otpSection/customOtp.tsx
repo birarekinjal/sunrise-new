@@ -16,7 +16,7 @@ const CustomOtp = ({
   data_testid,
 }: CustomOtpProps) => {
   return (
-    <>
+    <div className='otp-field'>
       <OtpInput
         numInputs={numInputs}
         onChange={onChange}
@@ -29,8 +29,9 @@ const CustomOtp = ({
         isInputNum={isInputNum}
         isInputSecure={isInputSecure}
         data-testid={data_testid}
+        className={'col'}
       />
-    </>
+    </div>
   );
 };
 

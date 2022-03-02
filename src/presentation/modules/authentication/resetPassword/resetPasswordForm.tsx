@@ -24,62 +24,55 @@ const ResetPasswordForm = (props: any) => {
   });
 
   const {
-    heading,
-    title,
     NewLabel,
     NewPasswordPlaceholder,
     confirmLabel,
     confirmPasswordPlaceholder,
-    backToLogin,
   } = constants.resetPassword;
 
   return (
-    <div>
-      <form>
-        <p>
-          <a href='/login' id='link' rel='nofollow'>
-            {backToLogin}
-          </a>
-        </p>
-        {/* Email */}
-        <h1>{heading}</h1>
-        <h6>{title}</h6>
-        <Input
-          placeholder={NewPasswordPlaceholder}
-          label={NewLabel}
-          variant='outlined'
-          registeredEvents={register('password')}
-          name='password'
-          type='password'
-          error={errors.password?.message}
-          showError={true}
-          required
+    <form className='reset-panel'>
+      <Input
+        placeholder={NewPasswordPlaceholder}
+        label={NewLabel}
+        variant='outlined'
+        registeredEvents={register('password')}
+        name='password'
+        type='password'
+        error={errors.password?.message}
+        showError={true}
+        required
+      />
+      <Input
+        placeholder={confirmPasswordPlaceholder}
+        label={confirmLabel}
+        variant='outlined'
+        registeredEvents={register('confirm_password')}
+        name='confirm_password'
+        type='password'
+        error={errors.confirm_password?.message}
+        showError={true}
+        required
+      />
+      
+      <div className='btn-group'>
+        <Button
+          type='button'
+          label='Cancel'
+          color='primary'
+          variant="outlined"
+          className='customFilledBtn'
+          onClick={handleSubmit(handleOnSubmit)}
         />
-        <br></br>
-        <br></br>
-
-        <Input
-          placeholder={confirmPasswordPlaceholder}
-          label={confirmLabel}
-          variant='outlined'
-          registeredEvents={register('confirm_password')}
-          name='confirm_password'
-          type='password'
-          error={errors.confirm_password?.message}
-          showError={true}
-          required
-        />
-        <br></br>
-        <br></br>
-
         <Button
           type='button'
           label='submit'
           color='primary'
+          className='customFilledBtn'
           onClick={handleSubmit(handleOnSubmit)}
         />
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 
