@@ -1,0 +1,29 @@
+@import '../../../application/style/common.scss';
+
+.select-dropdown{
+  .MuiFormControl-root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    label{
+      &.MuiInputLabel-root{
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.MuiMenu-root{
+  .MuiMenu-paper{
+    ul{
+      &.MuiMenu-list{
+        li{
+          &:hover{
+            background: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
