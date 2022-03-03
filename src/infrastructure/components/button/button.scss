@@ -162,3 +162,21 @@ button{
     }
   }
 }
+
+/* Fab button ui */
+button{
+  &.MuiFab-root{
+    &.MuiFab-secondary{
+      background: $color-secondary;
+      color: $color-white;
+      &:hover{
+        background: lighten($color-secondary, 3%);
+      }
+      &:disabled, .disabled{
+        background: $color-platinum;
+        color: $color-spanishGray;
+      }
+    }
+  }
+
+}

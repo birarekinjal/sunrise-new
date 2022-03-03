@@ -1,0 +1,24 @@
+@import '../../../application/style/common.scss';
+
+.MuiTable-root{
+  th, td{
+    font: 400 16px/26px $font-Rubik;
+  }
+  thead{
+    tr{
+      th{
+        color: $color-black;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        color: $color-graniteGray;
+      }
+      &:hover{
+        background: $color-platinum;
+      }
+    }
+  }
+}
