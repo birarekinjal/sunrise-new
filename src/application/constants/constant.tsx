@@ -12,15 +12,15 @@ export const options = [
 ];
 
 export const roles = [
-  { name: 'Admin', value: '1' },
-  { name: 'KYC', value: '2' },
-  { name: 'User', value: '3' },
+  { name: 'Admin', value: 1 },
+  { name: 'KYC', value: 2 },
+  { name: 'User', value: 3 },
 ];
 
 export const permission = [
-  { name: 'Admin', value: '1' },
-  { name: 'KYC', value: '2' },
-  { name: 'User', value: '3' },
+  { name: 'Admin', value: 1 },
+  { name: 'KYC', value: 2 },
+  { name: 'User', value: 3 },
 ];
 export const constants = {
   loginPage: {
@@ -35,7 +35,7 @@ export const constants = {
   },
   resetPassword: {
     heading: 'Reset Password',
-    title:  'Enter your new password for reset new password.',
+    title: 'Enter your new password for reset new password.',
     NewPasswordPlaceholder: 'Enter New Password Here...',
     NewLabel: 'New Password',
     confirmPasswordPlaceholder: 'Enter Confirm Password Here...',

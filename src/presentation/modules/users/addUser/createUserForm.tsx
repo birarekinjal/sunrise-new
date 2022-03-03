@@ -14,7 +14,14 @@ import {
 import schema from './schema/createUserSchema';
 
 const CreateUserForm = (props: any) => {
-  const { handleOnSubmit } = props;
+  const { handleOnSubmit, isLoading } = props;
+
+  type FormValues = {
+    email: string,
+    password: string,
+    role: string,
+    permissions: any,
+  };
 
   const {
     register,
@@ -22,7 +29,7 @@ const CreateUserForm = (props: any) => {
     formState: { errors },
     control,
     // reset,
-  } = useForm({
+  } = useForm<FormValues>({
     mode: 'onChange',
     reValidateMode: 'onChange',
     defaultValues: {
@@ -42,7 +49,6 @@ const CreateUserForm = (props: any) => {
       <form>
         <Input
           placeholder={emailPlaceholder}
-          data_testid='email'
           label='Email'
           variant='outlined'
           registeredEvents={register('email')}
@@ -55,7 +61,6 @@ const CreateUserForm = (props: any) => {
 
         <Input
           placeholder={passwordPlaceholder}
-          data_testid='password'
           label='Password'
           variant='outlined'
           registeredEvents={register('password')}
@@ -102,6 +107,7 @@ const CreateUserForm = (props: any) => {
           label={buttons.submit}
           color='primary'
           onClick={handleSubmit(handleOnSubmit)}
+          isLoading={isLoading}
         />
       </form>
     </div>

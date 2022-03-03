@@ -5,4 +5,4 @@ interface LoginAction {
   payload: any
 }
 
-export type Action = LoginAction ;
+export type Action =  LoginAction ;

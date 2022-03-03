@@ -21,9 +21,6 @@ const useFetchApiData = ({
 
   const { isLoading, isError, data } = state;
 
-  // setState({ ...state, isLoading: true, isError: false });
-
-  // console.log(apiFunction(apiParams), "apiFunction", apiFunction, apiParams)
   useEffect(() => {
     apiFunction(apiParams)
       .then((res: any) => {

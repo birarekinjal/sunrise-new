@@ -1,9 +1,14 @@
 export type SelectDropdownProps = {
-  options?:{ name : string, value : string }[],
-  multiple?:boolean,
-  label?:string,
-  value ?:any,
-  onChange?:any,
-  error :string,
-  showError:boolean,
+  names?: any;
+  label?: string;
+  isCheckbox?: boolean;
+  isMultiple?: boolean;
+  value?: any;
+  onChange?: any;
+  children?: any;
+  renderValue?: any;
+  options?: any;
+  multiple?: boolean;
+  error?: string | null | undefined | any;
+  showError?: boolean;
 };
