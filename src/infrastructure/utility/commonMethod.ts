@@ -1,6 +1,3 @@
-import { useEffect, useReducer, useRef, useState } from 'react';
-import { Reducer } from 'redux';
-
 export const saveToken = async (token : string) => {
   try {
     await localStorage.setItem('TOKEN', token);

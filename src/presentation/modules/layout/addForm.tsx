@@ -9,7 +9,6 @@ import {
   DateTimePicker,
   Switch,
   Checkbox,
-  SelectDropdown,
   // SelectDropdown,
 } from '../../../infrastructure/components';
 // import OutlinedInput from '@mui/material/OutlinedInput';
@@ -21,16 +20,6 @@ import {
 // import Checkbox from '@mui/material/Checkbox';
 
 const AddForm = () => {
-
-  const options = [
-    { name: 'Oliver Hansen', value: 'Oliver Hansen' },
-    { name: 'Van Henry', value: 'Van Henry ' },
-    { name: 'April Tucker', value: 'April Tucker' },
-    { name: 'Ralph Hubbard', value: 'Ralph Hubbard' },
-    { name: 'Omar Alexander', value: 'Omar Alexander' },
-    { name: 'Carlos Abbott', value: 'Carlos Abbott' },
-  ];
-
   const {
     register,
     handleSubmit,
@@ -55,7 +44,6 @@ const AddForm = () => {
   });
 
   const onSubmit = () => {
-    // console.log(data, 'Submit Data');
     // reset();
   };
 

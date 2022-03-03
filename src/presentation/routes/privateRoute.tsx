@@ -8,7 +8,6 @@ function PrivateRoute({
   userRole,
   ...rest
 }: any) {
-  console.log(isAuthenticated, "isAuthenticated");
   return isAuthenticated ? (
     <Component  {...rest} />
   ) : <Navigate to="/" />;

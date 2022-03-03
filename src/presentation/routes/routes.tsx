@@ -38,7 +38,6 @@ function RoutesData() {
 
   const { token } = useSelector((state: RootState) => state.login);
   let isAuthenticated = token;
-  console.log(isAuthenticated, "ghii")
   return (
     <ErrorBoundary>
       <Router>

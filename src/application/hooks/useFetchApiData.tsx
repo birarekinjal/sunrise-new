@@ -6,10 +6,10 @@ import { apiHooksValues } from '../models/apiDataModels';
 const useFetchApiData = ({
   apiFunction,
   apiParams,
-  hideErrorMessage,
-  errorMessage,
-  showSuccessMessage,
-  successMessage,
+  // hideErrorMessage,
+  // errorMessage,
+  // showSuccessMessage,
+  // successMessage,
   // dependencyArray,
 }: apiHooksValues) => {
 
@@ -24,15 +24,14 @@ const useFetchApiData = ({
   useEffect(() => {
     apiFunction(apiParams)
       .then((res: any) => {
-        if (res.data) {
-          console.log(res.data);
+        if (res?.ok || res?.data?.status_code === 200) {
           setState({
             ...state,
             isLoading: false,
             isError: false,
             data: res.data,
           });
-          showSuccessMessage && alert(successMessage);
+          // alert(res.data.message);
         } else {
           setState({
             ...state,
@@ -40,7 +39,7 @@ const useFetchApiData = ({
             isError: true,
             data: [],
           });
-          !hideErrorMessage && alert(errorMessage || res.data);
+          // alert(res.data.message);
         }
       })
       .catch(() => {
