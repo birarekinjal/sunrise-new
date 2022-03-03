@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useFetchApiData } from '../../../../application/hooks/useFetchApiData';
-import { Table } from '../../../../infrastructure/components/index';
+import { Button, Loader, Table } from '../../../../infrastructure/components/index';
 import { userService } from '../../../../infrastructure/services/users/user.service';
-import Header from '../../../layout/header/header';
+import WithContainerLayout from '../../../layout/withContainer';
+// import { useHistory } from 'react-router-dom';
 
 // import { useDispatch } from 'react-redux';
 // import { fetchUser } from './redux/action-creators';
 // import { RootState } from '../../reducer/rootReducer';
 
-function UserManagement() {
-
+const UserManagement = ({ history }: any) => {
+  // const history = useHistory();
   const userServiceApi = new userService();
 
   // const dispatch = useDispatch();
@@ -37,14 +38,23 @@ function UserManagement() {
   };
 
 
-  // console.log(usersDetails, "usersDetails", isUsersDetailsAPILoading);
   return (
-    <div>
-      <Header />
-      User Management
-      <Table rows={usersDetails} handleSelect={handleSelect} handleSelectAllData={handleSelectAllData} />
-    </div>
+    <WithContainerLayout>
+      <section className='main-container layout-page'>
+        User Management
+
+        <Button
+          label="Add-user"
+          color="primary"
+          variant="outlined"
+          onClick={() => history.push('/add-user')}
+        />
+
+        {isUsersDetailsAPILoading ? <Loader /> :
+          <Table rows={usersDetails} handleSelect={handleSelect} handleSelectAllData={handleSelectAllData} />}
+      </section>
+    </WithContainerLayout>
   );
-}
+};
 
 export default UserManagement;

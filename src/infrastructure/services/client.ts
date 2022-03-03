@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
 import { getBaseURL, getToken } from '../utility/commonMethod';
 
 
 const client = axios.create({
-  baseURL: 'http://e8a07314b9a0.ngrok.io/',
+  baseURL: 'https://1f076c82b943.ngrok.io/',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -30,7 +31,7 @@ client.interceptors.request.use(async (config:any) => {
   let authenticationToken = await getToken();
 
   if (authenticationToken) {
-    config.headers.Authorization = authenticationToken;
+    config.headers.Authorization = 'jwt' + ' ' + authenticationToken;
   }   
   return config;
 }, function (error) {

@@ -3,7 +3,7 @@ import { ActionType } from '../action-types/index';
 import { Action } from '../actions';
 
 const initialState = {
-  token: {},
+  token: '',
 };
 
 const reducer = (state: any = initialState, action: Action): any => {

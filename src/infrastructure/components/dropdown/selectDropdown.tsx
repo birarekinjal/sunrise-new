@@ -12,6 +12,8 @@ const SelectDropdown = ({
   label,
   value,
   onChange,
+  error,
+  showError,
 }: SelectDropdownProps) => {
   return (
     <div>
@@ -36,6 +38,11 @@ const SelectDropdown = ({
               </MenuItem>
             ))}
           </Select>
+          {showError && error && (
+            <>
+              <span>{error}</span>
+            </>
+          )}
         </FormControl>
       </div>
     </div>

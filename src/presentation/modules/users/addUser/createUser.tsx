@@ -1,13 +1,16 @@
 import React from 'react';
 import { useSetUserForm } from './hook/useSetUserForm';
 import CreateUserForm from './createUserForm';
+import WithContainerLayout from '../../../layout/withContainer';
 
 const CreateUser = () => {
-  const { handleOnSubmit } = useSetUserForm();
+  const { handleOnSubmit, isLoading } = useSetUserForm();
   return (
-    <div>
-      <CreateUserForm handleOnSubmit={handleOnSubmit} />
-    </div>
+    <WithContainerLayout>
+      <section className='main-container layout-page'>
+        <CreateUserForm handleOnSubmit={handleOnSubmit} isLoading={isLoading} />
+      </section>
+    </WithContainerLayout>
   );
 };
 

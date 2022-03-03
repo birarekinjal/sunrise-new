@@ -20,6 +20,7 @@ const PageNotFound = lazy(() => import('../../infrastructure/components/pageNotF
 const Login = lazy(() => import('../modules/authentication/login/login'));
 const ForgotPassword = lazy(() => import('../modules/authentication/forgotPassword/forgotPassword'));
 const ResetPassword = lazy(() => import('../modules/authentication/resetPassword/resetPassword'));
+const CreateUser = lazy(() => import('../modules/users/addUser/createUser'));
 
 
 const ScrollToTop = (props: { children: any; }) => {
@@ -37,22 +38,22 @@ function RoutesData() {
 
   const { token } = useSelector((state: RootState) => state.login);
   let isAuthenticated = token;
-
+  console.log(isAuthenticated, "ghii")
   return (
     <ErrorBoundary>
       <Router>
         <Suspense fallback={<FullScreenLoader />}>
           <ScrollToTop>
             <Routes>
-              {/* <Route path="/todo-list" element={<ListTodo />} /> */}
               <Route
                 path={'/'}
                 element={
-                  isAuthenticated ? <Login /> :
+                  !isAuthenticated ? <Login /> :
                     <Navigate to={'/layout'} />
                 }
               />
               <Route path="/user" element={<PrivateRoute isAuthenticated={isAuthenticated} component={UserManagement} />} />
+              <Route path="/add-user" element={<PrivateRoute isAuthenticated={isAuthenticated} component={CreateUser} />} />
               <Route path="/ListTodo" element={<ListTodo />} />
               {/* <Route path="/" element={<Login />} /> */}
               <Route path="/forgot-password" element={<ForgotPassword />} />
