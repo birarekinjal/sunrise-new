@@ -9,19 +9,38 @@ import Tooltip from '@mui/material/Tooltip';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useState } from 'react';
+import { useSetUserList } from '../hooks/useSetTablePagination';
+
+
+export type userModal = {
+  data?: any;
+  iisLoading?: boolean;
+  setPagination?: any;
+  setRowPerPage?: any;
+  parms?: any;
+  usersDetails?: any;
+  isUsersDetailsAPILoading?: any;
+};
+
 
 const UserManagement = () => {
 
   const navigate = useNavigate();
-  const userServiceApi = new userService();
+  const { data: usersDetails, isLoading: isUsersDetailsAPILoading, setPagination, setRowPerPage, parms } = useSetUserList();
 
-  const [{ data: usersDetails = [], isLoading: isUsersDetailsAPILoading }] = useFetchApiData({
-    apiFunction: userServiceApi.fetchUser,
-    defaultResponseValue: [],
-    dependencyArray: [],
-    apiParams: '',
-    apiCallCondition: true,
-  });
+
+  const handlePageChange = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number,
+  ) => {
+    setPagination(newPage);
+  };
+
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setRowPerPage(parseInt(event.target.value, 10));
+  };
+
 
   return (
     <WithContainerLayout>
@@ -37,7 +56,13 @@ const UserManagement = () => {
         <Card>
           <CardContent className='p-0'>
             {isUsersDetailsAPILoading ? <Loader /> :
-              <TableData rows={usersDetails} />}
+              <TableData
+                rows={usersDetails}
+                handlePageChange={handlePageChange}
+                page={parms?.page_no}
+                handleChangeRowsPerPage={handleChangeRowsPerPage}
+                rowsPerPage={parms?.page_size}
+              />}
           </CardContent>
         </Card>
       </section>

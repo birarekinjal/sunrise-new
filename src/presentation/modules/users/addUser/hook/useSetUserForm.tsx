@@ -19,7 +19,7 @@ export const useSetUserForm = () => {
     });
     userServiceApi.createUser(data)
       .then((res: any) => {
-        if (res.status_code === 200) {
+        if (res?.data?.status_code === 200) {
           setState({
             ...state,
             isLoading: false,
@@ -30,7 +30,7 @@ export const useSetUserForm = () => {
             ...state,
             isLoading: false,
           });
-          toast(res?.message);
+          toast(res?.data?.message);
         }
       })
       .catch((err: any) => {
