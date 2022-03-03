@@ -1,6 +1,9 @@
 @import '../../application/style/common.scss';
 article{
   padding: 0 !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   .main-container{
     padding-left: 30px;
     padding-right: 30px;
