@@ -1,0 +1,94 @@
+@import '../../../application/style/common.scss';
+
+.left-menu{
+  margin: 40px 20px 0;
+  max-height: calc(100vh - 60px);
+  min-height: 400px;
+  overflow-y: auto;
+  .menu{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .MuiListItemIcon-root{
+      min-width: 34px;
+      svg{
+        fill: $color-white;
+      }
+    }
+    .MuiButtonBase-root{
+      padding: 0;
+      a{
+        text-decoration: none;
+      }
+      .MuiListItemText-root{
+        padding-left: 0;
+        margin: 0;
+        span{
+          color: $color-white;
+        }
+      }
+
+      &:hover{
+        background: transparent;
+      }
+      .MuiTouchRipple-root{
+        display: none;
+      }
+    }
+    svg{
+      &.arrow{
+        fill: $color-white;
+        @include transform(rotate(-90deg));
+      }
+    }
+    &:hover{
+      .MuiListItemIcon-root{
+        svg{
+          fill: $color-secondary;
+        }
+      }
+      .MuiButtonBase-root{
+        .MuiListItemText-root{
+          span{
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+
+    &.active{
+      .MuiListItemIcon-root{
+        svg{
+          fill: $color-secondary;
+        }
+      }
+      .MuiButtonBase-root{
+        .MuiListItemText-root{
+          span{
+            color: $color-secondary;
+          }
+        }
+      }
+      svg{
+        &.arrow{
+          @include transform(rotate(180deg));
+        }
+      }
+    }
+  }
+
+  .MuiCollapse-root{
+    margin-left: 34px;
+    margin-bottom: 30px;
+    .menu{
+      margin-bottom: 10px;
+      .MuiListItemIcon-root{
+        display: none;
+      }
+    }
+    .MuiCollapse-root{
+      margin-left: 15px;
+      margin-bottom: 00px;
+    }
+  }
+}
