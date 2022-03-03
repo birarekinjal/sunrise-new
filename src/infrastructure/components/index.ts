@@ -16,7 +16,7 @@ import DatePicker from './dateTimePicker/datePicker';
 import TimePicker from './dateTimePicker/timePicker';
 import DateTimePicker from './dateTimePicker/dateTime';
 import DateRangePicker from './dateTimePicker/dateRangePicker';
-import Table from './table/table';
+import TableData from './table/table';
 import FullScreenLoader from './fullScreenLoader/fullScreenLoader';
 import Switch from './switch/customSwitch';
 import NumberInput from './numberInput/numberInput';
@@ -41,7 +41,7 @@ export {
   TimePicker,
   DateTimePicker,
   DateRangePicker,
-  Table,
+  TableData,
   FullScreenLoader,
   Switch,
   NumberInput,
