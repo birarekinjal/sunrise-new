@@ -4,6 +4,11 @@ import { Button, Loader, TableData } from '../../../../infrastructure/components
 import { userService } from '../../../../infrastructure/services/users/user.service';
 import WithContainerLayout from '../../../layout/withContainer';
 import { useNavigate } from 'react-router-dom';
+import Fab from '@mui/material/Fab';
+import Tooltip from '@mui/material/Tooltip';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 const UserManagement = () => {
 
@@ -20,19 +25,21 @@ const UserManagement = () => {
 
   return (
     <WithContainerLayout>
-      <section className='main-container layout-page'>
-        User Management
-
-        <Button
-          label="Add-user"
-          color="primary"
-          variant="outlined"
-          onClick={() => navigate('/add-user')}
-        />
-
-        {isUsersDetailsAPILoading ? <Loader /> :
-          <TableData rows={usersDetails} />}
-
+      <section className='main-container'>
+        <div className='title-btn'>
+          <h1>User Management</h1>
+          <Tooltip title="Add User" placement="top">
+            <Fab color="secondary" size="medium" aria-label="Add User" onClick={() => navigate('/add-user')}>
+              <AddCircleOutlineIcon />
+            </Fab>
+          </Tooltip>
+        </div>
+        <Card>
+          <CardContent className='p-0'>
+            {isUsersDetailsAPILoading ? <Loader /> :
+              <TableData rows={usersDetails} />}
+          </CardContent>
+        </Card>
       </section>
     </WithContainerLayout>
   );

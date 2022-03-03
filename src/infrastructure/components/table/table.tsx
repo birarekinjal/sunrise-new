@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import './table.scss';
 
 const TableData = ({ rows }: any) => {
   return (
@@ -23,7 +24,7 @@ const TableData = ({ rows }: any) => {
               key={index}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell component="td" scope="row">
                 {index}
               </TableCell>
               <TableCell align="right">{row.email}</TableCell>
