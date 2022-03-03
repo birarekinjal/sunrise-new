@@ -16,6 +16,9 @@
       td{
         color: $color-graniteGray;
       }
+      &:hover{
+        background: $color-platinum;
+      }
     }
   }
 }
