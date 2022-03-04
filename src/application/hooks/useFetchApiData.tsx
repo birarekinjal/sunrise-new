@@ -10,7 +10,7 @@ const useFetchApiData = ({
   // errorMessage,
   // showSuccessMessage,
   // successMessage,
-  // dependencyArray,
+  dependencyArray,
 }: apiHooksValues) => {
 
   const [state, setState] = useState({
@@ -29,7 +29,7 @@ const useFetchApiData = ({
             ...state,
             isLoading: false,
             isError: false,
-            data: res.data,
+            data: res.data.users,
           });
           // alert(res.data.message);
         } else {
@@ -45,7 +45,7 @@ const useFetchApiData = ({
       .catch(() => {
         setState({ ...state, isLoading: false, isError: true, data: [] });
       });
-  }, []);
+  }, dependencyArray);
   return [{ isLoading, isError, data }];
 };
 
