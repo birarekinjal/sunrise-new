@@ -13,6 +13,7 @@ const useFetchAPIActionData = ({
   showSuccessMessage,
   successMessage,
 }: apiHooksValues) => {
+
   const [state, setState] = useState({
     data: defaultResponseValue,
     isLoading: false,
@@ -33,7 +34,6 @@ const useFetchAPIActionData = ({
               isLoading: false,
               isError: false,
               data: res.data,
-              // data: getNestedObject(res.data, accessPath) || defaultResponseValue,
             });
             showSuccessMessage && alert(successMessage);
           } else {

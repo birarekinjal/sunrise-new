@@ -16,7 +16,7 @@ const useFetchApiData = ({
   const [state, setState] = useState({
     isLoading: false,
     isError: false,
-    data: [],
+    data: {},
   });
 
   const { isLoading, isError, data } = state;
@@ -29,7 +29,7 @@ const useFetchApiData = ({
             ...state,
             isLoading: false,
             isError: false,
-            data: res.data.users,
+            data: res.data,
           });
           // alert(res.data.message);
         } else {
@@ -37,13 +37,13 @@ const useFetchApiData = ({
             ...state,
             isLoading: false,
             isError: true,
-            data: [],
+            data: {},
           });
           // alert(res.data.message);
         }
       })
       .catch(() => {
-        setState({ ...state, isLoading: false, isError: true, data: [] });
+        setState({ ...state, isLoading: false, isError: true, data: {} });
       });
   }, dependencyArray);
   return [{ isLoading, isError, data }];

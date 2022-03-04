@@ -7,16 +7,16 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
-import { Collapse, List } from '@mui/material';
-import { data } from '../../../application/constants/menuItem';
+import { Collapse } from '@mui/material';
+import { menuItem } from '../../../application/constants/menuItem';
 import './menu.scss';
+
 const Menu = () => {
   const [currentMenu, setCurrentMenu] = useState<number[]>([]);
 
   const handleClick = (ids: number[], currentId: number) => {
 
     if (currentMenu.includes(currentId)) {
-      // let index = currentMenu.findIndex(0: nu currentId: number);
       const position = currentMenu.findIndex((id) => {
         return id === currentId;
       });
@@ -86,7 +86,7 @@ const Menu = () => {
 
   return (
     <div className="left-menu">
-      {handler(data, [])}
+      {handler(menuItem, [])}
     </div>
   );
 };

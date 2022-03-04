@@ -1,17 +1,3 @@
-// import { useDispatch } from 'react-redux';
-// import { applyMiddleware, createStore } from 'redux';
-// import thunk from 'redux-thunk';
-// import reducers from '../../presentation/reducer/rootReducer';
-
-// export const store = createStore(
-//   reducers,
-//   {},
-//   applyMiddleware(thunk),
-// );
-
-
-
-
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
@@ -28,6 +14,7 @@ const persistConfig = {
 const initialState = {};
 
 const persistedReducer = persistReducer(persistConfig, reducers);
+
 // To add redux devtools extension support
 const composeEnhancers =
   (typeof window !== 'undefined' &&
@@ -44,5 +31,3 @@ const store = createStore(persistedReducer, initialState, enhancer);
 const persistor = persistStore(store);
 
 export { store, persistor };
-
-

@@ -11,6 +11,7 @@ import { RootState } from '../../reducer/rootReducer';
 import './header.scss';
 
 function Header(props: any) {
+
   const dispatch = useDispatch();
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
@@ -25,7 +26,6 @@ function Header(props: any) {
     document.body.classList.remove('collapse-menu');
   };
 
-  // const drawerWidth = 300;
   const drawerWidth = collapseData === false ? 300 : 80;
   return (
     <>
@@ -54,26 +54,21 @@ function Header(props: any) {
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
-                onClick={() => handleDrawerCollapse()}
-              // sx={{ mr: 2, display: { sm: 'none' } }}
-              >
+                onClick={() => handleDrawerCollapse()}>
                 <ArrowForwardIcon />
               </IconButton>
-              : 
+              :
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 edge="start"
-                onClick={() => handleDrawerCollapse()}
-              // sx={{ mr: 2, display: { sm: 'none' } }}
-              >
+                onClick={() => handleDrawerCollapse()}>
                 <MenuIcon />
               </IconButton>
             }
           </span>
-          {/* for chrome */}
           <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+            Header
           </Typography>
         </Toolbar>
       </AppBar>
