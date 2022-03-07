@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { IconButton, Tooltip } from '@mui/material';
+import { useMenu } from '../../../../application/hooks/useMenu';
+import { useNavigate } from 'react-router-dom';
+import { constants } from '../../../../application/constants/constant';
 
 
 const Notification = () => {
+  const { menuProps, openMenu, closeMenu } = useMenu();
 
-  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleClose = () => {
-    setOpen(!open);
+  const handleRoute = () => {
+    navigate('/user');
   };
 
-
+  const { user, notification } = constants.notifications;
 
   return (
     <div>
       <Tooltip title="Notification">
           <IconButton
-            onClick={handleClose}
+            onClick={openMenu}
             size='medium'
             sx={{ ml: 2 }}
           >
@@ -27,17 +29,17 @@ const Notification = () => {
           </IconButton>
         </Tooltip>
     
-    <Menu 
-    id='menu'
-    open={open}
-    onClose={handleClose}
-    >
-        <MenuItem 
-        id='menu'
-        onClick={handleClose} disableRipple>
-            Notification
-        </MenuItem>
+    <Menu {...menuProps}>
+        <div 
+        onClick={handleRoute} >
+            {user}
+        </div>
+        <div 
+        onClick={closeMenu} >
+            {notification}
+        </div>
         </Menu>
+        
     </div>
   );
 };

@@ -93,4 +93,15 @@ export const constants = {
       submit: 'submit',
     },
   },
+  profile:{
+    manageProfile:'Manage Profile',
+    changePassword:'Change Password',
+  },
+  notifications: {
+    user:'User Created account at Tntra',
+    notification:' Notification is Created from Botree technologies',
+  },
+  searchBar: {
+    searchPlaceholder:'Search',
+  },
 };
