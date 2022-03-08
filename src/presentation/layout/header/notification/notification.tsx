@@ -26,7 +26,7 @@ const Notification = () => {
             size='medium'
             sx={{ ml: 2 }}
           >
-            <Badge badgeContent={5} color='success'>
+            <Badge badgeContent={3} color='success'>
            <NotificationsIcon />
            </Badge>
           </IconButton>
