@@ -1,1 +1,17 @@
-.search-input{background: red;}
+.search-input{
+    margin-left: 20px;
+    .mb-2{
+        margin-bottom: 0;
+    .MuiOutlinedInput-root{
+        border-radius: 50px;
+        padding-left: 20px;
+    .MuiSvgIcon-root{
+        fill: #999999;
+        margin-right: 10px;
+    }
+    .MuiOutlinedInput-input{
+        height:0.8em;
+    }
+   }
+  }
+ }

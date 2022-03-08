@@ -17,8 +17,7 @@ const SearchBar = () => {
         startAdornment: (
           <SearchIcon />
         ),
-      }}
-      
+      }} 
       />
     </div>
   );

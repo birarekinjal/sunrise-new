@@ -77,10 +77,10 @@ function Header(props: any) {
             {/* for chrome */}
             <SearchBar />
           </div>
+          
           <Typography variant="h6" noWrap component="div" className="right-panel">
+          <div className='noti-icon'><Notification /></div>
             <ManageProfile />
-            Responsive drawer
-            <Notification />
           </Typography>
         </Toolbar>
       </AppBar>
