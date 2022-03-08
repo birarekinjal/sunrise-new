@@ -9,17 +9,29 @@ header{
       padding-left: 30px;
       padding-right: 30px;
     }
-    span{
-      &.menuIconClose{
-        margin-right: 10px;
-        button{
-          color: $color-spanishGray;
-          &:hover{
-            color: $color-black;
-          }
-          &:nth-child(2n){
-            @include bellow-md{
-              display: none;
+    .top-header{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .left-panel, .right-panel{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .left-panel{
+        span{
+          &.menuIconClose{
+            margin-right: 10px;
+            button{
+              color: $color-spanishGray;
+              &:hover{
+                color: $color-black;
+              }
+              &:nth-child(2n){
+                @include bellow-md{
+                  display: none;
+                }
+              }
             }
           }
         }
