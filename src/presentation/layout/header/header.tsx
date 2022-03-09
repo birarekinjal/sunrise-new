@@ -68,7 +68,7 @@ function Header(props: any) {
                   aria-label="open drawer"
                   edge="start"
                   onClick={() => handleDrawerCollapse()}
-                // sx={{ mr: 2, display: { sm: 'none' } }}
+                sx={{ mr: 2, display: { sm: 'none' } }}
                 >
                   <MenuIcon />
                 </IconButton>

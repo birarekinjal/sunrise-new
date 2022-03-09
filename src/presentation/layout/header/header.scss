@@ -16,7 +16,13 @@ header{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        // @include above-md{
+        //   .menuIconClose{
+        //     display:none;
+        //   }        
+        // }
       }
+      
       .left-panel{
         span{
           &.menuIconClose{
