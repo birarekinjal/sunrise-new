@@ -15,6 +15,7 @@ import schema from './schema/createUserSchema';
 import { Grid } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import FileUploadDropZone from '../../../../infrastructure/components/dropzone/dropzone';
 
 const CreateUserForm = (props: any) => {
   const { handleOnSubmit, isLoading } = props;
@@ -24,6 +25,7 @@ const CreateUserForm = (props: any) => {
     password: string,
     role: string,
     permissions: any,
+    upload: any,
   };
 
   const {
@@ -40,6 +42,7 @@ const CreateUserForm = (props: any) => {
       password: '',
       role: '',
       permissions: [],
+      upload: [],
     },
     resolver: yupResolver(schema),
   });
@@ -53,6 +56,24 @@ const CreateUserForm = (props: any) => {
       <Card>
         <CardContent>
           <form>
+            <form >
+              <Controller
+                name='upload'
+                control={control}
+                render={({ fieldState: { invalid }, field: { onChange } }) => (
+                  <>
+                    <FileUploadDropZone
+                      disabled={false}
+                      registeredEvents={register('upload')}
+                      onDrop={onChange}
+                      showError={invalid}
+                      error={errors.upload?.message}
+                      accept={'.png , .jpg , .gpeg , .pdf'}
+                    />
+                  </>
+                )}
+              />
+            </form>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6} md={6}>
                 <Input
@@ -66,7 +87,6 @@ const CreateUserForm = (props: any) => {
                   showError={true}
                   required
                 />
-
                 <Input
                   placeholder={passwordPlaceholder}
                   label='Password'
@@ -124,7 +144,7 @@ const CreateUserForm = (props: any) => {
             </Grid>
           </form>
         </CardContent>
-      </Card>
+      </Card >
     </>
   );
 };

@@ -22,6 +22,7 @@ export const permission = [
   { name: 'KYC', value: 2 },
   { name: 'User', value: 3 },
 ];
+
 export const constants = {
   loginPage: {
     title: 'Account Login',
@@ -49,7 +50,6 @@ export const constants = {
     emailLabel: 'Email',
     backToLogin: 'Back To Login',
   },
-
   addNewUser: {
     firstNamePlaceholder: 'Enter First Name Here...',
     firstNameLabel: 'First Name',

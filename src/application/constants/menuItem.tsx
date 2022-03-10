@@ -6,7 +6,7 @@ export const menuItem = [
     name: 'User Management',
     navigation: 'user-management',
     id: 1,
-    url: '/user',
+    // url: '/user',
     icon: <PeopleOutlineOutlinedIcon />,
     childrens: [{
       name: 'User listing',
@@ -23,3 +23,15 @@ export const menuItem = [
     }],
   },
 ];
+
+export const menuItemMapper: menuBlo = {
+  ['/add-user']: [1, 3],
+  ['/user']: [1, 2],
+  ['/']: [1],
+  ['/layout']: [1],
+};
+
+
+type menuBlo = {
+  [key: string]: number[];
+};

@@ -130,376 +130,376 @@ function Layout() {
   return (
     <WithContainerLayout>
       <section className='main-container layout-page'>
-      <h1>Common Components</h1>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={6}>
-          <Card>
-            <CardContent className='btn-compo'>
-              <h2 className='sub-head mt-0'>Button Component </h2>
-              <Typography variant="body2">
-              <h4 className="sub-head-2">Using Color</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                onClick={() => alert('success')}
-              />
-              <Button label="error" color="error" onClick={() => alert('error')} />
-              <Button label="info" color="info" onClick={() => alert('info')} />
-              <Button
-                label="warning"
-                color="warning"
-                onClick={() => alert('warning')}
-              />
-              <br />
-              <h4 className="sub-head-2">Variant outlined</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                variant="outlined"
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                variant="outlined"
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                variant="outlined"
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                variant="outlined"
-                onClick={() => alert('success')}
-              />
-              <Button
-                label="error"
-                color="error"
-                variant="outlined"
-                onClick={() => alert('error')}
-              />
-              <Button
-                label="info"
-                color="info"
-                variant="outlined"
-                onClick={() => alert('info')}
-              />
-              <Button
-                label="warning"
-                color="warning"
-                variant="outlined"
-                onClick={() => alert('warning')}
-              />
-              <br />
-              
-              <h4 className="sub-head-2">Append Icons</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                variant="text"
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                variant="text"
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                variant="text"
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                variant="text"
-                onClick={() => alert('success')}
-              />
-              <Button
-                label="error"
-                color="error"
-                variant="text"
-                onClick={() => alert('error')}
-              />
-              <Button
-                label="info"
-                color="info"
-                variant="text"
-                onClick={() => alert('info')}
-              />
-              <Button
-                label="warning"
-                color="warning"
-                variant="text"
-                onClick={() => alert('warning')}
-              />
-              <br />
+        <h1>Common Components</h1>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={6}>
+            <Card>
+              <CardContent className='btn-compo'>
+                <h2 className='sub-head mt-0'>Button Component </h2>
+                <Typography variant="body2">
+                  <h4 className="sub-head-2">Using Color</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    onClick={() => alert('success')}
+                  />
+                  <Button label="error" color="error" onClick={() => alert('error')} />
+                  <Button label="info" color="info" onClick={() => alert('info')} />
+                  <Button
+                    label="warning"
+                    color="warning"
+                    onClick={() => alert('warning')}
+                  />
+                  <br />
+                  <h4 className="sub-head-2">Variant outlined</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    variant="outlined"
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    variant="outlined"
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    variant="outlined"
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    variant="outlined"
+                    onClick={() => alert('success')}
+                  />
+                  <Button
+                    label="error"
+                    color="error"
+                    variant="outlined"
+                    onClick={() => alert('error')}
+                  />
+                  <Button
+                    label="info"
+                    color="info"
+                    variant="outlined"
+                    onClick={() => alert('info')}
+                  />
+                  <Button
+                    label="warning"
+                    color="warning"
+                    variant="outlined"
+                    onClick={() => alert('warning')}
+                  />
+                  <br />
 
-              <h4 className="sub-head-2">Prepend Icon</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                // startIcon={<Visibility/>}
-                withStartSvg={offerLabel}
-                withEndSvg={offerLabel}
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                startIcon={<Visibility />}
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                startIcon={<Visibility />}
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                startIcon={<Visibility />}
-                onClick={() => alert('success')}
-              />
-              <Button
-                label="error"
-                color="error"
-                startIcon={<Visibility />}
-                onClick={() => alert('error')}
-              />
-              <Button
-                label="info"
-                color="info"
-                startIcon={<Visibility />}
-                onClick={() => alert('info')}
-              />
-              <Button
-                label="warning"
-                color="warning"
-                startIcon={<Visibility />}
-                onClick={() => alert('warning')}
-              />
-              <br />
-              
-              <h4 className="sub-head-2">Append Icon</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                endIcon={<Send />}
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                endIcon={<Send />}
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                endIcon={<Send />}
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                endIcon={<Send />}
-                onClick={() => alert('success')}
-              />
-              <Button
-                label="error"
-                color="error"
-                endIcon={<Send />}
-                onClick={() => alert('error')}
-              />
-              <Button
-                label="info"
-                color="info"
-                endIcon={<Send />}
-                onClick={() => alert('info')}
-              />
-              <Button
-                label="warning"
-                color="warning"
-                endIcon={<Send />}
-                onClick={() => alert('warning')}
-              />
-              <br />
+                  <h4 className="sub-head-2">Append Icons</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    variant="text"
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    variant="text"
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    variant="text"
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    variant="text"
+                    onClick={() => alert('success')}
+                  />
+                  <Button
+                    label="error"
+                    color="error"
+                    variant="text"
+                    onClick={() => alert('error')}
+                  />
+                  <Button
+                    label="info"
+                    color="info"
+                    variant="text"
+                    onClick={() => alert('info')}
+                  />
+                  <Button
+                    label="warning"
+                    color="warning"
+                    variant="text"
+                    onClick={() => alert('warning')}
+                  />
+                  <br />
 
-              <h4 className="sub-head-2">With Loader</h4>
-              <Button
-                label="inherit"
-                color="inherit"
-                isLoading
-                onClick={() => alert('inherit')}
-              />
-              <Button
-                label="primary"
-                color="primary"
-                isLoading
-                onClick={() => alert('primary')}
-              />
-              <Button
-                label="secondary"
-                color="secondary"
-                isLoading
-                onClick={() => alert('secondary')}
-              />
-              <Button
-                label="success"
-                color="success"
-                isLoading
-                onClick={() => alert('Test')}
-              />
-              <Button
-                label="info"
-                color="info"
-                isLoading
-                onClick={() => alert('info')}
-              />
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={6} md={6}>
-          <Card>
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item xs={6} md={6}>
-                  <h2 className='sub-head mt-0'>Calender Picker</h2>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>DateTimePicker</h4>
-                    <DateTimePicker
-                      value={dateTime}
-                      onChange={(e: any) => setDateTime(e)}
-                    />
-                  </Typography>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>TimePicker</h4>
-                    <TimePicker
-                      value={time}
-                      onChange={(e: any) => setTime(e)}
-                    />
-                  </Typography>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>DatePicker</h4>
-                    <DatePicker
-                      value={date}
-                      onChange={(e: any) => setDate(e)}
-                    />
-                  </Typography>
+                  <h4 className="sub-head-2">Prepend Icon</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    // startIcon={<Visibility/>}
+                    withStartSvg={offerLabel}
+                    withEndSvg={offerLabel}
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('success')}
+                  />
+                  <Button
+                    label="error"
+                    color="error"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('error')}
+                  />
+                  <Button
+                    label="info"
+                    color="info"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('info')}
+                  />
+                  <Button
+                    label="warning"
+                    color="warning"
+                    startIcon={<Visibility />}
+                    onClick={() => alert('warning')}
+                  />
+                  <br />
+
+                  <h4 className="sub-head-2">Append Icon</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    endIcon={<Send />}
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    endIcon={<Send />}
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    endIcon={<Send />}
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    endIcon={<Send />}
+                    onClick={() => alert('success')}
+                  />
+                  <Button
+                    label="error"
+                    color="error"
+                    endIcon={<Send />}
+                    onClick={() => alert('error')}
+                  />
+                  <Button
+                    label="info"
+                    color="info"
+                    endIcon={<Send />}
+                    onClick={() => alert('info')}
+                  />
+                  <Button
+                    label="warning"
+                    color="warning"
+                    endIcon={<Send />}
+                    onClick={() => alert('warning')}
+                  />
+                  <br />
+
+                  <h4 className="sub-head-2">With Loader</h4>
+                  <Button
+                    label="inherit"
+                    color="inherit"
+                    isLoading
+                    onClick={() => alert('inherit')}
+                  />
+                  <Button
+                    label="primary"
+                    color="primary"
+                    isLoading
+                    onClick={() => alert('primary')}
+                  />
+                  <Button
+                    label="secondary"
+                    color="secondary"
+                    isLoading
+                    onClick={() => alert('secondary')}
+                  />
+                  <Button
+                    label="success"
+                    color="success"
+                    isLoading
+                    onClick={() => alert('Test')}
+                  />
+                  <Button
+                    label="info"
+                    color="info"
+                    isLoading
+                    onClick={() => alert('info')}
+                  />
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Card>
+              <CardContent>
+                <Grid container spacing={2}>
+                  <Grid item xs={6} md={6}>
+                    <h2 className='sub-head mt-0'>Calender Picker</h2>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>DateTimePicker</h4>
+                      <DateTimePicker
+                        value={dateTime}
+                        onChange={(e: any) => setDateTime(e)}
+                      />
+                    </Typography>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>TimePicker</h4>
+                      <TimePicker
+                        value={time}
+                        onChange={(e: any) => setTime(e)}
+                      />
+                    </Typography>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>DatePicker</h4>
+                      <DatePicker
+                        value={date}
+                        onChange={(e: any) => setDate(e)}
+                      />
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6} md={6}>
+                    <h2 className='sub-head mt-0'>Input View</h2>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>Input with type and required props</h4>
+                      <Input type="text" required placeholder="Enter Text.." label="Enter Text" name="text" />
+                    </Typography>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>Input with multiline props</h4>
+                      <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
+                    </Typography>
+                    <Typography variant="body2">
+                      <h4 className='sub-head-2'>Select dropdown</h4>
+                      <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
+                    </Typography>
+                  </Grid>
                 </Grid>
-                <Grid item xs={6} md={6}>
-                  <h2 className='sub-head mt-0'>Input View</h2>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>Input with type and required props</h4>
-                    <Input type="text" required placeholder="Enter Text.." label="Enter Text" name="text" />
-                  </Typography>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>Input with multiline props</h4>
-                    <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
-                  </Typography>
-                  <Typography variant="body2">
-                    <h4 className='sub-head-2'>Select dropdown</h4>
-                    <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
-                  </Typography>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <h2 className='sub-head mt-0'>Tabs</h2>
-              <Tabs data={TabsConstant} />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent>
-              <Grid container spacing={2}>
-                <Grid item xs={6} md={3}>
-                  <h2 className='sub-head mt-0'>Modal</h2>
-                  {
-                    open && (
-                      <Modal
-                        buttons={modalFooterButtons}
-                        title="Heading Title"
-                        isModalVisible={open}
-                        toggleModal={handleModalClose}
-                      >
-                        <div>Modal with Footer Button</div>
-                      </Modal>
-                    )
-                  }
-                  <Button type="button" label="Open" onClick={() => handleModalOpen()} />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <h2 className='sub-head mt-0'>Switch</h2>
-                  <Switch color="secondary" onChange={(e: any) => handleSwitch(e)} />
-                </Grid>
-                <Grid item xs={6} md={3}>
-                  <h2 className='sub-head mt-0'>Loader</h2>
-                  <Loader color="secondary" />
-                  {/* <Loader color='primary' thickness={1.5}/>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <h2 className='sub-head mt-0'>Tabs</h2>
+                <Tabs data={TabsConstant} />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent>
+                <Grid container spacing={2}>
+                  <Grid item xs={6} md={3}>
+                    <h2 className='sub-head mt-0'>Modal</h2>
+                    {
+                      open && (
+                        <Modal
+                          buttons={modalFooterButtons}
+                          title="Heading Title"
+                          isModalVisible={open}
+                          toggleModal={handleModalClose}
+                        >
+                          <div>Modal with Footer Button</div>
+                        </Modal>
+                      )
+                    }
+                    <Button type="button" label="Open" onClick={() => handleModalOpen()} />
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <h2 className='sub-head mt-0'>Switch</h2>
+                    <Switch color="secondary" onChange={(e: any) => handleSwitch(e)} />
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <h2 className='sub-head mt-0'>Loader</h2>
+                    <Loader color="secondary" />
+                    {/* <Loader color='primary' thickness={1.5}/>
                   <Loader color='secondary' thickness={15} /> */}
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <h2 className='sub-head mt-0'>Check</h2>
+                    <Checkbox color="default" label="default" checked size="small" />
+                  </Grid>
                 </Grid>
-                <Grid item xs={6} md={3}>
-                  <h2 className='sub-head mt-0'>Check</h2>
-                  <Checkbox color="default" label="default" checked size="small" />
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
-      </Grid>
-      
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Card>
-            <CardContent className='btn-compo'>
-              <h2 className='sub-head mt-0'>Stepper Form</h2>
-              <Stepper
-                getStepContent={getStepContents}
-                steps={steps}
-                activeStep={1}
-                optionalPageNumber={2}
-              />
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
 
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Card>
-            <CardContent>
-              <AddForm />
-            </CardContent>
-          </Card>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Card>
+              <CardContent className='btn-compo'>
+                <h2 className='sub-head mt-0'>Stepper Form</h2>
+                <Stepper
+                  getStepContent={getStepContents}
+                  steps={steps}
+                  activeStep={1}
+                  optionalPageNumber={2}
+                />
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
-      </Grid>
-      
+
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Card>
+              <CardContent>
+                <AddForm />
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+
         <br />
         <CheckboxDropdown
           options={options}

@@ -5,14 +5,37 @@ import React, { useState } from 'react';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { Collapse } from '@mui/material';
-import { menuItem } from '../../../application/constants/menuItem';
+import { menuItem, menuItemMapper } from '../../../application/constants/menuItem';
 import './menu.scss';
 
+type LocationState = {
+  pathname: string;
+  state: any;
+  search: string;
+  hash: string;
+  key: string;
+};
+
+// interface LocationState {
+//   from: {
+//     pathname: string;
+//   };
+// }
+
+// interface LocationState {
+//   from: {
+//     pathname: string;
+//   };
+// }
+
 const Menu = () => {
-  const [currentMenu, setCurrentMenu] = useState<number[]>([]);
+
+
+  const { pathname } = useLocation();
+  const [currentMenu, setCurrentMenu] = useState<number[]>(menuItemMapper[pathname]);
 
   const handleClick = (ids: number[], currentId: number) => {
 
@@ -33,7 +56,7 @@ const Menu = () => {
         return (
           <div key={subOption.id}
             onClick={() => handleClick([...parentIDs, subOption?.id], subOption?.id)}
-            className={currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}
+            className={currentMenu && currentMenu.length > 0 && currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}
           >
             <ListItemIcon>
               {subOption.icon}
@@ -56,7 +79,7 @@ const Menu = () => {
       return (
         <div key={subOption?.id}>
           <div
-            className={currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}>
+            className={currentMenu && currentMenu.length > 0 && currentMenu.includes(subOption.id) ? 'menu active' : 'menu'}>
             <ListItemIcon>
               {subOption.icon}
             </ListItemIcon>
@@ -66,14 +89,14 @@ const Menu = () => {
               <ListItemText
                 inset
                 primary={subOption?.name} />
-              {currentMenu.includes(subOption.id) ?
+              {currentMenu && currentMenu.length > 0 && currentMenu.includes(subOption.id) ?
                 <ExpandLess className='arrow' /> :
                 <ExpandMore className='arrow' />
               }
             </ListItem>
           </div>
           <Collapse
-            in={currentMenu.includes(subOption.id)}
+            in={currentMenu && currentMenu.length > 0 && currentMenu.includes(subOption.id)}
             timeout="auto"
             unmountOnExit
           >

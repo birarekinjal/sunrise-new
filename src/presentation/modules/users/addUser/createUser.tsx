@@ -5,6 +5,7 @@ import WithContainerLayout from '../../../layout/withContainer';
 
 const CreateUser = () => {
   const { handleOnSubmit, isLoading } = useSetUserForm();
+
   return (
     <WithContainerLayout>
       <section className='main-container layout-page'>

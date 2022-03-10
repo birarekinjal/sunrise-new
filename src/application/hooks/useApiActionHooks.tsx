@@ -8,7 +8,7 @@ const useFetchAPIActionData = ({
   dependencyArray,
   apiCallCondition = true,
   defaultResponseValue,
-  hideErrorMessage,
+  showErrorMessage,
   errorMessage,
   showSuccessMessage,
   successMessage,
@@ -43,7 +43,7 @@ const useFetchAPIActionData = ({
               isError: true,
               data: defaultResponseValue,
             });
-            !hideErrorMessage && alert(errorMessage || res.data);
+            showErrorMessage && alert(errorMessage || res.data);
           }
         })
         .catch(() => {

@@ -1,16 +1,19 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { useEffect, useState } from 'react';
+import { showToast } from '../../infrastructure/utility/commonMethod';
 import { apiHooksValues } from '../models/apiDataModels';
 
 const useFetchApiData = ({
   apiFunction,
   apiParams,
-  // hideErrorMessage,
-  // errorMessage,
-  // showSuccessMessage,
-  // successMessage,
+  showErrorMessage,
+  errorMessage,
+  showSuccessMessage,
+  successMessage,
   dependencyArray,
+  apiCallCondition,
+  successCallback,
 }: apiHooksValues) => {
 
   const [state, setState] = useState({
@@ -22,30 +25,35 @@ const useFetchApiData = ({
   const { isLoading, isError, data } = state;
 
   useEffect(() => {
-    apiFunction(apiParams)
-      .then((res: any) => {
-        if (res?.ok || res?.data?.status_code === 200) {
-          setState({
-            ...state,
-            isLoading: false,
-            isError: false,
-            data: res.data,
-          });
-          // alert(res.data.message);
-        } else {
-          setState({
-            ...state,
-            isLoading: false,
-            isError: true,
-            data: {},
-          });
-          // alert(res.data.message);
-        }
-      })
-      .catch(() => {
-        setState({ ...state, isLoading: false, isError: true, data: {} });
-      });
+    if (apiCallCondition) {
+      apiFunction(apiParams)
+        .then((res: any) => {
+          if (res?.ok || res?.data?.status_code === 200) {
+            setState({
+              ...state,
+              isLoading: false,
+              isError: false,
+              data: res.data,
+            });
+            successCallback && successCallback();
+            showSuccessMessage && showToast(successMessage || res.data.message);
+          } else {
+            setState({
+              ...state,
+              isLoading: false,
+              isError: true,
+              data: {},
+            });
+            showErrorMessage && showToast(errorMessage || res.data.message);
+          }
+        })
+        .catch((error: any) => {
+          showErrorMessage && showToast(errorMessage || error.response.data.message);
+          setState({ ...state, isLoading: false, isError: true, data: {} });
+        });
+    }
   }, dependencyArray);
+
   return [{ isLoading, isError, data }];
 };
 
