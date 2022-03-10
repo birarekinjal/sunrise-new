@@ -1,6 +1,6 @@
 import {  useState } from 'react';
-import { userService } from '../../../../infrastructure/services/users/user.service';
-import { useFetchApiData } from '../../../../application/hooks/useFetchApiData';
+import { userService } from '../../../../../infrastructure/services/users/user.service';
+import { useFetchApiData } from '../../../../../application/hooks/useFetchApiHooks';
 
 export type paginationModal = {
   parms: { page_no:number, page_size: number };
@@ -19,7 +19,7 @@ const useSetUserList = () => {
 
   const { parms } = state || {};
 
-  const [{ data = [], isLoading }] = useFetchApiData({
+  const [{ data = {}, isLoading }] = useFetchApiData({
     apiFunction: userServiceApi.fetchUser,
     defaultResponseValue: [],
     dependencyArray: [parms],
@@ -27,22 +27,22 @@ const useSetUserList = () => {
     apiCallCondition: true,
   });
 
-  const setPagination = (newPage:number) => {
+  const setPagination = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
     setState({
       ...state,
       parms: {
-        page_no: newPage,
+        page_no: newPage + 1,
         page_size: parms?.page_size,
       },
     });
   };
 
-  const setRowPerPage = (page_size:any) => {
+  const setRowPerPage = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setState({
       ...state,
       parms: {
         page_no: 1,
-        page_size: page_size,
+        page_size:( +event?.target?.value),
       },
     });
   };

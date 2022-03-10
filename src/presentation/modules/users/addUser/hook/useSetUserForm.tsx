@@ -1,47 +1,42 @@
 import { useState } from 'react';
-import toast from 'react-hot-toast';
 import { userService } from '../../../../../infrastructure/services/users/user.service';
 import { UserModal } from '../createUserModal';
+import { useNavigate } from 'react-router-dom';
+import { useFetchApiData } from '../../../../../application/hooks/useFetchApiHooks';
 
 export const useSetUserForm = () => {
-
+  const navigate = useNavigate();
   const userServiceApi = new userService();
+
   const [state, setState] = useState({
-    isLoading: false,
+    submitData: {},
+    isFirst: true,
   });
 
-  const { isLoading } = state;
+  const { isFirst, submitData } = state;
 
-  const handleOnSubmit = (data: UserModal) => {
-    setState({
-      ...state,
-      isLoading: true,
-    });
-    userServiceApi.createUser(data)
-      .then((res: any) => {
-        if (res?.data?.status_code === 200) {
-          setState({
-            ...state,
-            isLoading: false,
-          });
-          toast(res?.data?.message);
-        } else {
-          setState({
-            ...state,
-            isLoading: false,
-          });
-          toast(res?.data?.message);
-        }
-      })
-      .catch((err: any) => {
-        setState({
-          ...state,
-          isLoading: false,
-        });
-        toast(err?.response?.data?.message);
-      });
+  const handleNavigate = () => {
+    navigate('/navigate');
   };
 
-  return { isLoading, handleOnSubmit };
+  const [{ data = {}, isLoading }] = useFetchApiData({
+    apiFunction: userServiceApi.createUser,
+    defaultResponseValue: [],
+    dependencyArray: [submitData],
+    apiParams: submitData,
+    apiCallCondition: !isFirst,
+    showSuccessMessage: true,
+    showErrorMessage: true,
+    successCallback: handleNavigate,
+  });
+
+  const handleOnSubmit = (userFormData: UserModal) => {
+    setState({
+      ...state,
+      isFirst: false,
+      submitData: userFormData,
+    });
+  };
+  return { isLoading, handleOnSubmit, data };
 
 };

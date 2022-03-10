@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useForm } from 'react-hook-form';
 import { Button, Input, Checkbox } from '../../../../infrastructure/components';
 import { yupResolver } from '@hookform/resolvers/yup';

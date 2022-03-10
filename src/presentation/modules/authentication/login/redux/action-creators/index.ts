@@ -18,14 +18,3 @@ export const Login = (loginData:LoginDataType) => async (dispatch:Dispatch<Actio
 
   return response.data;
 };
-
-// export const Login = (loginData:LoginDataType): AppThunk<Promise<string>> => async (dispatch) => {
-//   let response =   await loginService.login(loginData);
-   
-//   saveToken(response?.data?.payload?.token);
-//   dispatch({
-//     type: ActionType.LOGIN,
-//     payload: response?.data?.payload?.token,
-//   });
-//   return response.data
-// }

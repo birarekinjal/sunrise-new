@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
-import { getBaseURL, getToken } from '../utility/commonMethod';
+import messages from '../../application/constants/messages';
+import { getBaseURL, getToken, showToast } from '../utility/commonMethod';
 
 
 const client = axios.create({
-  baseURL: 'http://0a16943a2da7.ngrok.io/',
+  baseURL: 'http://67318c1024ee.ngrok.io/',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -39,19 +40,19 @@ client.interceptors.request.use(async (config:any) => {
 });
 
   
-// client.interceptors.response.use(
-//   function (response) {
-//     if (response.data && response.data.data && response.data.data.logout) {
-//       localStorage.removeItem('TOKEN');
-//       localStorage.setItem('SHOW_TOAST', 'true');
-//     }
-//     return response;
-//   },
-//   function (error) {
-//     showToast(messages.tryAgain);
-//     return Promise.reject(error);
-//   },
-// );
+client.interceptors.response.use(
+  function (response) {
+    if (response.data && response.data.data && response.data.data.logout) {
+      localStorage.removeItem('TOKEN');
+      localStorage.setItem('SHOW_TOAST', 'true');
+    }
+    return response;
+  },
+  function (error) {
+    // showToast(messages.tryAgain);
+    return Promise.reject(error);
+  },
+);
 
 export { get, post, put, del, patch };
 
