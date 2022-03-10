@@ -9,7 +9,6 @@ import {
   Modal,
   Loader,
   Tabs,
-  // FullScreenLoader,
   Stepper,
   DatePicker,
   TimePicker,
@@ -23,7 +22,6 @@ import AddForm from './addForm';
 import WithContainerLayout from '../../layout/withContainer';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 
 function Layout() {
   const [selectOption, setSelectOption] = useState<string>('');
@@ -136,7 +134,7 @@ function Layout() {
             <Card>
               <CardContent className='btn-compo'>
                 <h2 className='sub-head mt-0'>Button Component </h2>
-                <Typography variant="body2">
+                <div>
                   <h4 className="sub-head-2">Using Color</h4>
                   <Button
                     label="inherit"
@@ -379,7 +377,7 @@ function Layout() {
                     isLoading
                     onClick={() => alert('info')}
                   />
-                </Typography>
+                </div>
               </CardContent>
             </Card>
           </Grid>
@@ -389,42 +387,47 @@ function Layout() {
                 <Grid container spacing={2}>
                   <Grid item xs={6} md={6}>
                     <h2 className='sub-head mt-0'>Calender Picker</h2>
-                    <Typography variant="body2">
+                    <div>
                       <h4 className='sub-head-2'>DateTimePicker</h4>
                       <DateTimePicker
                         value={dateTime}
                         onChange={(e: any) => setDateTime(e)}
                       />
-                    </Typography>
-                    <Typography variant="body2">
+                    </div>
+
+                    <div>
                       <h4 className='sub-head-2'>TimePicker</h4>
                       <TimePicker
                         value={time}
                         onChange={(e: any) => setTime(e)}
                       />
-                    </Typography>
-                    <Typography variant="body2">
+                    </div>
+                    <div>
                       <h4 className='sub-head-2'>DatePicker</h4>
                       <DatePicker
                         value={date}
                         onChange={(e: any) => setDate(e)}
                       />
-                    </Typography>
+                    </div>
+
                   </Grid>
                   <Grid item xs={6} md={6}>
                     <h2 className='sub-head mt-0'>Input View</h2>
-                    <Typography variant="body2">
+                    <div>
                       <h4 className='sub-head-2'>Input with type and required props</h4>
                       <Input type="text" required placeholder="Enter Text.." label="Enter Text" name="text" />
-                    </Typography>
-                    <Typography variant="body2">
+                    </div>
+
+                    <div>
                       <h4 className='sub-head-2'>Input with multiline props</h4>
                       <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
-                    </Typography>
-                    <Typography variant="body2">
+                    </div>
+
+                    <div>
                       <h4 className='sub-head-2'>Select dropdown</h4>
                       <Input type="text" maxRows="10" multiLine color="primary" placeholder="Enter Text.." label="Enter Text" name="text" />
-                    </Typography>
+                    </div>
+
                   </Grid>
                 </Grid>
               </CardContent>
@@ -466,7 +469,12 @@ function Layout() {
                   </Grid>
                   <Grid item xs={6} md={3}>
                     <h2 className='sub-head mt-0'>Check</h2>
-                    <Checkbox color="default" label="default" checked size="small" />
+                    <Checkbox color="default" label="default" checked
+
+
+                    // size="small"
+
+                    />
                   </Grid>
                 </Grid>
               </CardContent>
@@ -508,7 +516,7 @@ function Layout() {
           value={selectOption}
         />
       </section>
-    </WithContainerLayout>
+    </WithContainerLayout >
   );
 }
 

@@ -109,12 +109,11 @@ const AddForm = () => {
         <Controller
           control={control}
           name={'date'}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <DatePicker
               onChange={onChange}
               value={value}
               onBlur={onBlur}
-              ref={ref}
             />
           )}
         /> <br></br><br></br>
@@ -124,12 +123,11 @@ const AddForm = () => {
         <Controller
           control={control}
           name={'time'}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <TimePicker
               onChange={onChange}
               value={value}
               onBlur={onBlur}
-              ref={ref}
             />
           )}
         /> <br></br><br></br>
@@ -139,12 +137,11 @@ const AddForm = () => {
         <Controller
           control={control}
           name={'dateTime'}
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <DateTimePicker
               onChange={onChange}
               value={value}
               onBlur={onBlur}
-              ref={ref}
             />
           )}
         /> <br></br><br></br>
