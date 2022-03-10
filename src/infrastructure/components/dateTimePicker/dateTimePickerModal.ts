@@ -25,18 +25,12 @@ export type DateTimePickerProps = {
   control?: any;
   name?: any;
   onBlur?: any;
-  ref?: any;
-
-  // date Range picker
-
   allowSameDateSelection?: boolean;
   calendars?: 1 | 2 | 3;
   inputFormat?: string;
   startText?: React.ReactNode;
   endText?: React.ReactNode;
   dateValue?: any;
-
-  // time picker
   timeOpenTo?: 'hours' | 'minutes' | 'seconds';
   timeViews?: Array<'hours' | 'minutes' | 'seconds'>;
 };

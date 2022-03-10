@@ -12,16 +12,12 @@ export const saveToken = async (token : string) => {
 };
 
 export const getBaseURL = () => {
-  switch (true) {
-    case !process.env.REACT_APP_ENV:
-      return process.env.REACT_APP_LOCAL_URL;
-    case process.env.REACT_APP_ENV === 'staging':
-      return process.env.REACT_APP_STAGING_URL;
-    case process.env.REACT_APP_ENV === 'production':
-      return process.env.REACT_APP_PRODUCTION_URL;
-    default: {
-      return;
-    }
+  if (!process.env.REACT_APP_ENV) {
+    return process.env.REACT_APP_LOCAL_URL;
+  } else if (process.env.REACT_APP_ENV === 'staging') {
+    return process.env.REACT_APP_STAGING_URL;
+  } else if (process.env.NODE_ENV === 'production') {
+    return process.env.REACT_APP_PRODUCTION_URL;
   }
 };
 

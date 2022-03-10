@@ -67,9 +67,12 @@ function Header(props: any) {
               </IconButton>
             }
           </span>
-          <Typography variant="h6" noWrap component="div">
+          {/* <Typography variant="h6" noWrap component="div">
+          Header
+          </Typography> */}
+          <h4>
             Header
-          </Typography>
+          </h4>
         </Toolbar>
       </AppBar>
     </>

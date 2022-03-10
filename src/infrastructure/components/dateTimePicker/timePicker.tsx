@@ -21,28 +21,26 @@ const CustomTimePicker: React.FC<DateTimePickerProps> = ({
   timeOpenTo,
   readOnly,
   timeViews,
-  ref,
 }) => {
   return (
     <LocalizationProvider dateAdapter={DateAdapter}>
-          <TimePicker
-            label={label}
-            className={className}
-            orientation={orientation}
-            openTo={timeOpenTo}
-            readOnly={readOnly}
-            disabled={disabled}
-            clearText={clearText}
-            clearable={clearable}
-            desktopModeMediaQuery={desktopModeMediaQuery}
-            mask={mask}
-            open={open}
-            value={value}
-            onChange={onChange}
-            views={timeViews}
-            ref={ref}
-            renderInput={(params) => <TextField {...params} />}
-          />
+      <TimePicker
+        label={label}
+        className={className}
+        orientation={orientation}
+        openTo={timeOpenTo}
+        readOnly={readOnly}
+        disabled={disabled}
+        clearText={clearText}
+        clearable={clearable}
+        desktopModeMediaQuery={desktopModeMediaQuery}
+        mask={mask}
+        open={open}
+        value={value}
+        onChange={onChange}
+        views={timeViews}
+        renderInput={(params) => <TextField {...params} />}
+      />
     </LocalizationProvider>
   );
 };

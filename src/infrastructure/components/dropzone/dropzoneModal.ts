@@ -8,5 +8,4 @@ export type DropZoneProps = {
   disabled?: boolean,
   name?: string,
   maxFiles?: number;
-  inputRef?: any;
 };

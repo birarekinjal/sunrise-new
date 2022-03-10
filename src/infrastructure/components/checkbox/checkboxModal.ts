@@ -17,7 +17,6 @@ export type CheckboxProps = {
   required?: boolean;
   size?: 'medium' | 'small';
   value?: any;
-  // inputRef?: any;
   label?: any;
   registeredEvents?: any;
   isControlled?: boolean;
