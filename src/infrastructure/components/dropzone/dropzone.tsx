@@ -39,8 +39,7 @@ const FileUploadDropZone = ({
           {...(registeredEvents || {})}
           type='file'
           name={name}
-          controlId={controlId}
-          isRequired
+          controlid={controlId}
           label='Upload Certificate File'
         />
       </div>

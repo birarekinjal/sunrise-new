@@ -11,7 +11,7 @@ const user = Yup.object({
     .max(12, maxPassword),
   role: Yup.string().required(required),
   permissions: Yup.array().min(1, required),
-  upload: Yup.array().min(1, required),
+  // upload: Yup.array().min(1, required),
 });
 
 export default user;
