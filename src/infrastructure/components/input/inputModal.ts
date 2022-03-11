@@ -21,7 +21,7 @@ export type CustomInputProps = {
   maxRows?: number | string;
   minRows?: number | string;
   error?: any;
-  showError?: boolean;
+  showError?: any;
   helperText?: React.ReactNode;
   isPassword?:boolean;
 };

@@ -2,10 +2,10 @@
 import { Reducer, useEffect, useReducer, useRef } from 'react';
 import toast from 'react-hot-toast';
 
-export const saveToken = async (token : string) => {
+export const saveToken = async (token : string, refreshToken : string) => {
   try {
-    await localStorage.setItem('TOKEN', token);
-    // await localStorage.setItem('TOKEN', token);
+    await localStorage.setItem('ACCESS_TOKEN', token);
+    await localStorage.setItem('REFRESH_TOKEN', refreshToken);
   } catch (e) {
     return e;
   }
@@ -23,7 +23,7 @@ export const getBaseURL = () => {
 
 export const getToken = async () => {
   try {
-    const token = await localStorage.getItem('TOKEN');
+    const token = await localStorage.getItem('ACCESS_TOKEN');
     if (token !== null) {
       return token;
     }

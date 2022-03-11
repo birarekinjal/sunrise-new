@@ -42,7 +42,7 @@ const CreateUserForm = (props: any) => {
       password: '',
       role: '',
       permissions: [],
-      upload: [],
+      // upload: [],
     },
     resolver: yupResolver(schema),
   });
@@ -55,25 +55,23 @@ const CreateUserForm = (props: any) => {
       <h1>Add User</h1>
       <Card>
         <CardContent>
-          <form>
-            <form >
-              <Controller
-                name='upload'
-                control={control}
-                render={({ fieldState: { invalid }, field: { onChange } }) => (
-                  <>
-                    <FileUploadDropZone
-                      disabled={false}
-                      registeredEvents={register('upload')}
-                      onDrop={onChange}
-                      showError={invalid}
-                      error={errors.upload?.message}
-                      accept={'.png , .jpg , .gpeg , .pdf'}
-                    />
-                  </>
-                )}
-              />
-            </form>
+          <form >
+            {/* <Controller
+              name='upload'
+              control={control}
+              render={({ fieldState: { invalid }, field: { onChange } }) => (
+                <>
+                  <FileUploadDropZone
+                    disabled={false}
+                    registeredEvents={register('upload')}
+                    onDrop={onChange}
+                    showError={invalid}
+                    error={errors.upload?.message}
+                    accept={'.png , .jpg , .gpeg , .pdf'}
+                  />
+                </>
+              )}
+            /> */}
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6} md={6}>
                 <Input
