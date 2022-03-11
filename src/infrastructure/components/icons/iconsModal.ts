@@ -3,7 +3,7 @@ export type IconProps = {
   height: string;
   srcSet?: string;
   alt?: string;
-  src?: any;
+  src?: string;
   withText?: boolean;
   text?: string;
 };

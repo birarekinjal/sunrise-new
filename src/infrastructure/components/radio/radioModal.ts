@@ -1,9 +1,9 @@
 export type RadioButtonProps = {
-  label?: any;
+  label?: string;
   value?: string;
-  radioLabel?: any;
+  radioLabel?: string;
   id?: string;
   name?: string;
-  data?: any;
+  data?: object[];
   registeredEvents?: any;
 };

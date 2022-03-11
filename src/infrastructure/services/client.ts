@@ -5,7 +5,7 @@ import { getBaseURL, getToken, showToast } from '../utility/commonMethod';
 
 
 const client = axios.create({
-  baseURL: 'http://67318c1024ee.ngrok.io/',
+  baseURL: 'http://7119-203-88-147-114.ngrok.io',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',

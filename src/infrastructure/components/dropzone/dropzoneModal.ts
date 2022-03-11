@@ -1,10 +1,10 @@
 export type DropZoneProps = {
-  showError?: any;
-  error?: any;
-  controlId?: any;
+  showError?: boolean;
+  error?: string;
+  controlId?: string;
   registeredEvents?: any;
   onDrop?: any;
-  accept?: any;
+  accept?: string;
   disabled?: boolean,
   name?: string,
   maxFiles?: number;
