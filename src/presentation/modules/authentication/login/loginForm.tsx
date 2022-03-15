@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useForm } from 'react-hook-form';
 import { Button, Input, Checkbox } from '../../../../infrastructure/components';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -27,24 +26,24 @@ const LoginForm = (props: any) => {
     <form className='login-panel'>
       {/* This input used for email */}
       <Input
-        placeholder="Enter Email Here..."
-        label="Email address"
-        variant="outlined"
-        registeredEvents={register('email')}
-        name="email"
-        type="email"
-        error={errors.email?.message}
-        showError={touchedFields && touchedFields.email}
-        required
+          placeholder='Enter Email Here...'
+          label='Email address'
+          variant='outlined'
+          registeredEvents={register('email')}
+          name='email'
+          type='email'
+          error={errors.email?.message}
+          showError={touchedFields && touchedFields.email}
+          required
       />
       {/* This input used for password */}
       <Input
-        placeholder="Enter Password Here..."
-        label="Password"
-        variant="outlined"
+        placeholder='Enter Password Here...'
+        label='Password'
+        variant='outlined'
         registeredEvents={register('password')}
-        name="password"
-        type="password"
+        name='password'
+        type='password'
         isPassword={true}
         showError={touchedFields && touchedFields.password}
         error={errors.password?.message}
@@ -55,7 +54,7 @@ const LoginForm = (props: any) => {
           <Checkbox label={'Remember me'} color='primary' checked />
         </div>
         <div className='forgot-password'>
-          <Link href="#">Forgot password</Link>
+          <Link href='#'>Forgot password</Link>
         </div>
       </div>
       <Button
@@ -67,7 +66,6 @@ const LoginForm = (props: any) => {
         isLoading={loading}
       />
     </form>
-
   );
 };
 

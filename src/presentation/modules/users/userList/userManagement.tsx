@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useFetchApiData } from '../../../../application/hooks/useFetchApiData';
-import { Button, Loader, TableData } from '../../../../infrastructure/components/index';
-import { userService } from '../../../../infrastructure/services/users/user.service';
+import { Loader, TableData } from '../../../../infrastructure/components/index';
 import WithContainerLayout from '../../../layout/withContainer';
 import { useNavigate } from 'react-router-dom';
 import Fab from '@mui/material/Fab';
@@ -9,38 +7,12 @@ import Tooltip from '@mui/material/Tooltip';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { useState } from 'react';
-import { useSetUserList } from '../hooks/useSetTablePagination';
-
-
-export type userModal = {
-  data?: any;
-  iisLoading?: boolean;
-  setPagination?: any;
-  setRowPerPage?: any;
-  parms?: any;
-  usersDetails?: any;
-  isUsersDetailsAPILoading?: any;
-};
-
+import { useSetUserList } from './hooks/useSetTablePagination';
 
 const UserManagement = () => {
 
   const navigate = useNavigate();
   const { data: usersDetails, isLoading: isUsersDetailsAPILoading, setPagination, setRowPerPage, parms } = useSetUserList();
-
-
-  const handlePageChange = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number,
-  ) => {
-    setPagination(newPage);
-  };
-
-  const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setRowPerPage(parseInt(event.target.value, 10));
-  };
-
 
   return (
     <WithContainerLayout>
@@ -57,12 +29,13 @@ const UserManagement = () => {
           <CardContent className='p-0'>
             {isUsersDetailsAPILoading ? <Loader /> :
               <TableData
-                rows={usersDetails}
-                handlePageChange={handlePageChange}
+                usersDetails={usersDetails}
+                handlePageChange={setPagination}
                 page={parms?.page_no}
-                handleChangeRowsPerPage={handleChangeRowsPerPage}
+                handleChangeRowsPerPage={setRowPerPage}
                 rowsPerPage={parms?.page_size}
-              />}
+              />
+            }
           </CardContent>
         </Card>
       </section>

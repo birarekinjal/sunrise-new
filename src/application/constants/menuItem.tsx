@@ -1,45 +1,37 @@
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
 
-export const data = [
+export const menuItem = [
   {
     name: 'User Management',
     navigation: 'user-management',
     id: 1,
-    url: '/user',
+    // url: '/user',
     icon: <PeopleOutlineOutlinedIcon />,
     childrens: [{
       name: 'User listing',
       navigation: 'user-listing',
       id: 2,
-      url: '/layout',
+      url: '/user',
       icon: <InboxIcon />,
     }, {
       name: 'Add new user',
       navigation: 'add-new-user',
       id: 3,
-      url: '/layout',
+      url: '/add-user',
       icon: <InboxIcon />,
-      childrens: [{
-        name: 'ListTodo',
-        navigation: 'listTodo',
-        id: 4,
-        url: '/layout',
-        icon: <InboxIcon />,
-      }, {
-        name: 'All Mail',
-        navigation: 'allmail',
-        id: 5,
-        url: '/layout',
-        icon: <InboxIcon />,
-      }],
     }],
   },
-  {
-    name: 'Memo Management',
-    navigation: 'memo-management',
-    id: 6,
-    url: '/layout',
-    icon: <InboxIcon />,
-  },
 ];
+
+export const menuItemMapper: menuBlo = {
+  ['/add-user']: [1, 3],
+  ['/user']: [1, 2],
+  ['/']: [1],
+  ['/layout']: [1],
+};
+
+
+type menuBlo = {
+  [key: string]: number[];
+};

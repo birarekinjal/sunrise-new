@@ -5,8 +5,10 @@ export type apiHooksValues = {
   dependencyArray?:any,
   apiCallCondition?: boolean,
   defaultResponseValue ?:any,
-  hideErrorMessage?:boolean,
+  showErrorMessage?:boolean,
   errorMessage?:string,
-  showSuccessMessage?:string,
-  successMessage?:string
+  showSuccessMessage?:boolean,
+  successMessage?:string,
+  successCallback?: () => void;
+  FailureCallback?:() => void;
 };

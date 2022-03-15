@@ -22,6 +22,7 @@ export const permission = [
   { name: 'KYC', value: 2 },
   { name: 'User', value: 3 },
 ];
+
 export const constants = {
   loginPage: {
     title: 'Account Login',
@@ -44,12 +45,12 @@ export const constants = {
   },
   forgotPassword: {
     heading: 'Forgot Password',
-    title: 'Enter your email address so we will verify your email id and send you otp number.',
+    title:
+      'Enter your email address so we will verify your email id and send you otp number.',
     emailPlaceholder: 'Enter Email here..',
     emailLabel: 'Email',
     backToLogin: 'Back To Login',
   },
-
   addNewUser: {
     firstNamePlaceholder: 'Enter First Name Here...',
     firstNameLabel: 'First Name',
@@ -93,15 +94,28 @@ export const constants = {
       submit: 'submit',
     },
   },
-  profile:{
-    manageProfile:'Manage Profile',
-    changePassword:'Change Password',
+  profile: {
+    manageProfile: 'Manage Profile',
+    changePassword: 'Change Password',
   },
   notifications: {
-    user:'User Created account at Tntra',
-    notification:' Notification is Created from Botree technologies',
+    user: 'User Created account at Tntra',
+    notification: ' Notification is Created from Botree technologies',
   },
   searchBar: {
-    searchPlaceholder:'Search',
+    searchPlaceholder: 'Search',
+  },
+  sideBar: {
+    companyName: 'Sunrise Diamonds Ltd.',
+    drawerWidth: {
+      height: 300,
+      width: 80,
+    },
+  },
+  header: {
+    drawerWidth: {
+      height: 300,
+      width: 80,
+    },
   },
 };

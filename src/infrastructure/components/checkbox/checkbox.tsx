@@ -12,7 +12,6 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
   disabled,
   defaultChecked,
   id,
-  inputRef,
   required,
   value,
   onChange,
@@ -33,7 +32,6 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
                 disabled={disabled}
                 defaultChecked={defaultChecked}
                 id={id}
-                inputRef={inputRef}
                 required={required}
                 value={value}
                 onChange={onChange}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { LoginDataType } from '../models/loginDataModel';
 import { Login } from '../redux/action-creators';
 import toast from 'react-hot-toast';
-import { useAppDispatch } from '../../../../../application/hooks/hooks';
+import { useAppDispatch } from '../../../../../application/hooks/useReduxTypeHooks';
 
 export const useSetUserData = () => {
   const dispatch = useAppDispatch();
