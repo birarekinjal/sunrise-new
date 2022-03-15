@@ -9,8 +9,7 @@ export type CustomSwitchProps = {
   | 'warning';
   defaultChecked?: boolean;
   disabled?: boolean;
-  edge?: 'end'
-  | 'start';
+  edge?: 'end' | 'start';
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   value?: any

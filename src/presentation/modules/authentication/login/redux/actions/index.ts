@@ -2,7 +2,8 @@ import { ActionType } from '../action-types/index';
 
 interface LoginAction {
   type: ActionType.LOGIN,
-  payload: any
+  accessToken:any,
+  refreshToken : any
 }
 
-export type Action =  LoginAction ;
+export type Action =  LoginAction  ;

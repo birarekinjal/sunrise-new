@@ -3,7 +3,6 @@ export type NumberInputType = {
   count?: Number;
   placeholder?: string;
   label?: string;
-  variant?: any;
   registeredEvents?: any;
   name?: string;
 };

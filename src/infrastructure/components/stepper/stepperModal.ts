@@ -1,5 +1,5 @@
 export type CustomStepperProps = {
-  activeStep?: any;
+  activeStep?: number;
   alternativeLabel?: boolean;
   children?: React.ReactNode;
   classes?: object;

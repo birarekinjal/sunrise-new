@@ -7,25 +7,26 @@ import { Action } from '../actions/index';
 
 const loginService = new LoginService();
 
-export const Login = (loginData:LoginDataType) => async (dispatch:Dispatch<Action>) => {
-  let response =   await loginService.login(loginData);
-   
-  saveToken(response?.data?.payload?.token);
-  dispatch({
-    type: ActionType.LOGIN,
-    payload: response?.data?.payload?.token,
-  });
+export const setAccessToken = (rest : any) => {
+  return (dispatch: Dispatch<Action>) => {
+    saveToken(rest?.payload?.access, rest?.payload?.refresh );
+    dispatch({
+      type: ActionType.LOGIN,
+      accessToken: rest?.payload?.access,
+      refreshToken : rest?.payload?.refresh,
+    });
+  };
+};
 
+export const Login = (loginData:LoginDataType) => async (dispatch:any) => {
+  let response =   await loginService.login(loginData);
+  dispatch(setAccessToken(response.data));
   return response.data;
 };
 
-// export const Login = (loginData:LoginDataType): AppThunk<Promise<string>> => async (dispatch) => {
-//   let response =   await loginService.login(loginData);
-   
-//   saveToken(response?.data?.payload?.token);
-//   dispatch({
-//     type: ActionType.LOGIN,
-//     payload: response?.data?.payload?.token,
-//   });
-//   return response.data
-// }
+export const refreshToken = (token:string) => async () => {
+  let response =   await loginService.refreshToken({ refresh :token });
+  setAccessToken(response?.data);
+  return response?.data;
+};
+

@@ -22,11 +22,17 @@ export const permission = [
   { name: 'KYC', value: 2 },
   { name: 'User', value: 3 },
 ];
+
+
 export const constants = {
   loginPage: {
     title: 'Account Login',
-    emailPlaceholder: 'Email',
+    welcomeMessage: 'Welcome back',
+    information: 'To keep connected with us please login with your personal information by email address & password.',
+    emailPlaceholder: 'Email Address',
+    emailLabel:'Email',
     passwordPlaceholder: 'Password',
+    passwordLabel:'Password',
     rememberMePlaceholder: 'Remember Me',
     forgotPassword: 'forgot Password',
     buttons: {
@@ -49,7 +55,6 @@ export const constants = {
     emailLabel: 'Email',
     backToLogin: 'Back To Login',
   },
-
   addNewUser: {
     firstNamePlaceholder: 'Enter First Name Here...',
     firstNameLabel: 'First Name',
@@ -104,4 +109,5 @@ export const constants = {
   searchBar: {
     searchPlaceholder:'Search',
   },
+  
 };

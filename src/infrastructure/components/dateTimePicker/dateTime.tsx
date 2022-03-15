@@ -20,7 +20,6 @@ const CustomDateTimePicker: React.FC<DateTimePickerProps> = ({
   readOnly,
   views,
   value,
-  ref,
   onChange,
 }) => {
   return (
@@ -29,7 +28,6 @@ const CustomDateTimePicker: React.FC<DateTimePickerProps> = ({
         renderInput={(props) => <TextField {...props} />}
         label={label}
         className={className}
-        ref={ref}
         value={value}
         onChange={onChange}
         disabled={disabled}

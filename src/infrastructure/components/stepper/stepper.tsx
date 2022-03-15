@@ -4,7 +4,6 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import { CustomStepperProps } from './stepperModal';
 import './stepper.scss';
 
@@ -61,14 +60,14 @@ const CustomStepper: React.FC<CustomStepperProps> = ({
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep} orientation={orientation}>
-        {steps.map((label:any, index:any) => {
+        {steps.map((label: any, index: any) => {
           const stepProps: { completed?: boolean } = {};
           const labelProps: {
             optional?: React.ReactNode;
           } = {};
           if (isStepOptional(index)) {
             labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
+              <p> Optional</p>
             );
           }
           if (isStepSkipped(index)) {
@@ -83,9 +82,10 @@ const CustomStepper: React.FC<CustomStepperProps> = ({
       </Stepper>
       {activeStep === steps.length ? (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
+          <p>
+            All steps completed - you&apos;re finished</p>
+          {/* <Typography sx={{ mt: 2, mb: 1 }}>
+          </Typography> */}
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
             <Button onClick={handleReset} color={'secondary'} variant={'outlined'}>Reset</Button>
@@ -93,12 +93,12 @@ const CustomStepper: React.FC<CustomStepperProps> = ({
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
+          <p>
             {getStepContent(activeStep)}
-          </Typography>
+          </p>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
-              color={'primary'} 
+              color={'primary'}
               variant={'outlined'}
               disabled={activeStep === 0}
               onClick={handleBack}
@@ -107,16 +107,16 @@ const CustomStepper: React.FC<CustomStepperProps> = ({
             </Button>
             <Box sx={{ flex: '1 1 auto' }} />
             {isStepOptional(activeStep) && (
-              <Button 
-                color="primary" 
-                onClick={handleSkip} 
+              <Button
+                color="primary"
+                onClick={handleSkip}
                 sx={{ mr: 1 }}>
                 Skip
               </Button>
             )}
             <Button
-              color={'primary'} 
-              variant={'contained'} 
+              color={'primary'}
+              variant={'contained'}
               onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>

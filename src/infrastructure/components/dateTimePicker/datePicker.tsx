@@ -23,7 +23,6 @@ const CustomDatePicker: React.FC<DateTimePickerProps> = ({
   label,
   views,
   value,
-  ref,
   onChange,
 }) => {
   return (
@@ -46,7 +45,6 @@ const CustomDatePicker: React.FC<DateTimePickerProps> = ({
         orientation={orientation}
         reduceAnimations={reduceAnimations}
         onChange={onChange}
-        ref={ref}
         renderInput={(params: JSX.IntrinsicAttributes & TextFieldProps) => <TextField {...params} />}
       />
     </LocalizationProvider>

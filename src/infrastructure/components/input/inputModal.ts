@@ -6,7 +6,7 @@ export type CustomInputProps = {
   autoComplete?: string;
   autoFocus?: boolean;
   color?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
-  defaultValue?: any;
+  defaultValue?: unknown;
   disabled?: boolean;
   type?: string;
   value?: any;
@@ -20,7 +20,7 @@ export type CustomInputProps = {
   rows?: number | string;
   maxRows?: number | string;
   minRows?: number | string;
-  error?: any;
+  error?: string;
   showError?: boolean;
   helperText?: React.ReactNode;
   isPassword?:boolean;

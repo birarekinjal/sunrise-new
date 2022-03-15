@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type CustomButtonProps = {
   label?: string;
   onClick?: () => void;
@@ -8,10 +10,10 @@ export type CustomButtonProps = {
   isLoading?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  withStartSvg?: any;
-  withEndSvg?: any;
-  className?: any;
-  sx?:any;
+  withStartSvg?: React.ReactNode;
+  withEndSvg?: React.ReactNode;
+  className?: string;
+  sx?: any;
   color?:
   | 'inherit'
   | 'primary'

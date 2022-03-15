@@ -3,13 +3,14 @@ import { ActionType } from '../action-types/index';
 import { Action } from '../actions';
 
 const initialState = {
-  token: '',
+  accessToken:'',
+  refreshToken : '',
 };
 
 const reducer = (state: any = initialState, action: Action): any => {
   switch (action.type) {
     case ActionType.LOGIN:
-      return { ...state, token :action.payload };
+      return { ...state, accessToken :action?.accessToken, refreshToken :action?.refreshToken  };
     default:
       return state;
   }

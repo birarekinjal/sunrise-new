@@ -8,10 +8,8 @@ import TabContext from '@mui/lab/TabContext/TabContext';
 import TabList from '@mui/lab/TabList/TabList';
 import TabPanel from '@mui/lab/TabPanel/TabPanel';
 import './tabs.scss';
+import { CustomTabsProps } from './tabsModal';
 
-type CustomTabsProps = {
-  data?: any;
-};
 
 const CustomTabs: React.FC<CustomTabsProps> = ({ data }) => {
   const [value, setValue] = React.useState('1');

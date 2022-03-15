@@ -13,14 +13,17 @@ import { FullScreenLoader, Toaster } from '../../infrastructure/components';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import { RootState } from '../reducer/rootReducer';
 import PrivateRoute from './privateRoute';
-const UserManagement = lazy(() => import('../modules/users/userList/userManagement'));
+import UserManagement from '../modules/users/userList/userManagement';
+import CreateUser from '../modules/users/addUser/createUser';
+
+// const UserManagement = lazy(() => import('../modules/users/userList/userManagement'));
 const ListTodo = lazy(() => import('../modules/todo/listTodo/listTodo'));
 const Layout = lazy(() => import('../modules/layout/layout'));
 const PageNotFound = lazy(() => import('../../infrastructure/components/pageNotFound/PageNotFound'));
 const Login = lazy(() => import('../modules/authentication/login/login'));
 const ForgotPassword = lazy(() => import('../modules/authentication/forgotPassword/forgotPassword'));
 const ResetPassword = lazy(() => import('../modules/authentication/resetPassword/resetPassword'));
-const CreateUser = lazy(() => import('../modules/users/addUser/createUser'));
+// const CreateUser = lazy(() => import('../modules/users/addUser/createUser'));
 
 
 const ScrollToTop = (props: { children: any; }) => {
@@ -36,8 +39,8 @@ const ScrollToTop = (props: { children: any; }) => {
 
 function RoutesData() {
 
-  const { token } = useSelector((state: RootState) => state.login);
-  let isAuthenticated = token;
+  const { accessToken } = useSelector((state: RootState) => state.login);
+  let isAuthenticated = accessToken;
   return (
     <ErrorBoundary>
       <Router>

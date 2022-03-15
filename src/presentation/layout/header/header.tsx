@@ -14,6 +14,7 @@ import ManageProfile from './profile/manageProfile';
 import './header.scss';
 
 function Header(props: any) {
+
   const dispatch = useDispatch();
   const headerData = useSelector((state: RootState) => state.header);
   const { collapseData } = headerData;
@@ -28,7 +29,6 @@ function Header(props: any) {
     document.body.classList.remove('collapse-menu');
   };
 
-  // const drawerWidth = 300;
   const drawerWidth = collapseData === false ? 300 : 80;
   return (
     <>
@@ -62,13 +62,13 @@ function Header(props: any) {
                 >
                   <ArrowForwardIcon />
                 </IconButton>
-                : 
+                :
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
                   edge="start"
                   onClick={() => handleDrawerCollapse()}
-                sx={{ mr: 2, display: { sm: 'none' } }}
+                  sx={{ mr: 2, display: { sm: 'none' } }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -77,9 +77,9 @@ function Header(props: any) {
             {/* for chrome */}
             <SearchBar />
           </div>
-          
+
           <Typography variant="h6" noWrap component="div" className="right-panel">
-          <div className='noti-icon'><Notification /></div>
+            <div className='noti-icon'><Notification /></div>
             <ManageProfile />
           </Typography>
         </Toolbar>
