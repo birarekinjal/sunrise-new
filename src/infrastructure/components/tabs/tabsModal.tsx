@@ -1,3 +1,3 @@
 export type CustomTabsProps = {
-  data?: any;
+  data?: object[];
 };

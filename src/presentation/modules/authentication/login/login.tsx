@@ -7,10 +7,14 @@ import { authenticationTopSvg } from '../../../../application/constants/svgConst
 import logo from '../../../../application/images/sunrise-diamond-logo.webp';
 import Link from '@mui/material/Link';
 import '../authentication.scss';
+import { constants } from '../../../../application/constants/constant';
 
 const Login = () => {
 
   const { handleOnSubmit, isLoading } = useSetUserData();
+
+  const { welcomeMessage, information } = constants.loginPage;
+ 
   return (
     <section className='authentication'>
       <main>
@@ -20,8 +24,8 @@ const Login = () => {
               <Link href="#"><img src={logo} alt="Sunrise Diamond" /></Link>
             </Grid>
             <Grid item xs={12} md={6} className="right-content">
-              <h1>Welcome back <span className='color-cerulean'>:)</span></h1>
-              <p>To keep connected with us please login with your personal information by email address &amp; password.</p>
+              <h1>{welcomeMessage}<span className='color-cerulean'>:)</span></h1>
+              <p>{information}</p>
               <LoginForm handleOnSubmit={handleOnSubmit} loading={isLoading} />
             </Grid>
           </Grid>

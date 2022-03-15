@@ -15,7 +15,7 @@ import schema from './schema/createUserSchema';
 import { Grid } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import FileUploadDropZone from '../../../../infrastructure/components/dropzone/dropzone';
+
 
 const CreateUserForm = (props: any) => {
   const { handleOnSubmit, isLoading } = props;

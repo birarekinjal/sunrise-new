@@ -8,6 +8,9 @@ import Toolbar from '@mui/material/Toolbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCollapse, setCollapseData } from './redux/action-creators';
 import { RootState } from '../../reducer/rootReducer';
+import Notification from './notification/notification';
+import SearchBar from './searchBar/searchBar';
+import ManageProfile from './profile/manageProfile';
 import './header.scss';
 
 function Header(props: any) {
@@ -67,12 +70,12 @@ function Header(props: any) {
               </IconButton>
             }
           </span>
-          {/* <Typography variant="h6" noWrap component="div">
-          Header
-          </Typography> */}
-          <h4>
-            Header
-          </h4>
+          <Typography variant="h6" noWrap component="div">
+            <ManageProfile />
+            <SearchBar />
+            Responsive drawer
+            <Notification />
+          </Typography>
         </Toolbar>
       </AppBar>
     </>

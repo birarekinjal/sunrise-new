@@ -4,5 +4,5 @@ export interface UploadFileProps {
   name?: string;
   size?: number;
   type?: string;
-  accept?: any;
+  accept?: string | undefined;
 }

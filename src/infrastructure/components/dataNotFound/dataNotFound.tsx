@@ -1,5 +1,5 @@
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
-import { dataNotFoundProps } from './noDataFound';
+import { dataNotFoundProps } from './noDataFoundModal';
 
 const DataNotFound:React.FC<dataNotFoundProps> = ({ errorMessage }) => {
   return (

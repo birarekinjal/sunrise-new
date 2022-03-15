@@ -14,5 +14,5 @@ export interface HeadCell {
   label?: string;
   numeric?: boolean;
   subject?: string;
-  role?:string;
+  role?: string;
 }
