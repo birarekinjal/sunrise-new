@@ -16,7 +16,6 @@ const Notification = () => {
   };
 
   const { user, notification } = constants.notifications;
-
   return (
     <div>
       <Tooltip title='Notification'>
