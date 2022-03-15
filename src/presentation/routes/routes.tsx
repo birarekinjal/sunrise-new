@@ -40,7 +40,6 @@ const ScrollToTop = (props: { children: any; }) => {
 function RoutesData() {
 
   const { accessToken } = useSelector((state: RootState) => state.login);
-
   let isAuthenticated = accessToken;
   return (
     <ErrorBoundary>

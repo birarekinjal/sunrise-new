@@ -32,6 +32,17 @@ export const getToken = async () => {
   }
 };
 
+export const getRefreshToken = async () => {
+  try {
+    const token = await localStorage.getItem('REFRESH_TOKEN');
+    if (token !== null) {
+      return token;
+    }
+  } catch (e) {
+    return e;
+  }
+};
+
 export function useStateCallback<S>(initialState: S) {
   const [state, setState] = useReducer<Reducer<S, Partial<S>>>(
     (state, newState) => ({ ...state, ...newState }),

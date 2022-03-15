@@ -11,7 +11,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
   placeholder,
   id,
   onChange,
-  autoComplete,
   autoFocus,
   color,
   defaultValue,
@@ -57,14 +56,13 @@ const CustomInput: React.FC<CustomInputProps> = ({
   return (
     <FormControl variant='standard'>
       <div className='mb-2 password-field'>
-      {/* <div className='mb-2'>   Conditionally class show "password-field" when input type password  */}
+        {/* <div className='mb-2'>   Conditionally class show "password-field" when input type password  */}
         {isControlled ? (
           <TextField
             id={id}
             label={label}
             placeholder={placeholder}
             onChange={onChange}
-            autoComplete={autoComplete}
             autoFocus={autoFocus}
             defaultValue={defaultValue}
             disabled={disabled}
@@ -75,6 +73,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
             name={name}
             required={required}
             rows={rows}
+            autoComplete='off'
             maxRows={maxRows}
             minRows={minRows}
             multiline={multiLine}
@@ -88,7 +87,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
             label={label}
             placeholder={placeholder}
             onChange={onChange}
-            autoComplete={autoComplete}
             autoFocus={autoFocus}
             defaultValue={defaultValue}
             disabled={disabled}
@@ -105,6 +103,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
             multiline={multiLine}
             error={error}
             helperText={helperText}
+            autoComplete='off'
           />
         )}
         {isPassword && (
