@@ -1,12 +1,12 @@
 import { Menu, MenuItem } from '@mui/material';
 import { Image } from '../../../../infrastructure/components/index';
 import { constants } from '../../../../application/constants/constant';
-import { collapsibleSidebar } from '../../../../application/hooks/collapsibleSidebarHooks';
+import { collapsiblePopup } from '../../../../application/hooks/collapsiblePopupHooks';
 import logo from '../../../../application/images/Sunrise-Diamonds-only-white-logo.png';
 import ExpandCircleDownOutlinedIcon from '@mui/icons-material/ExpandCircleDownOutlined';
 
 const ManageProfile = () => {
-  const { menuProps, openMenu, closeMenu } = collapsibleSidebar();
+  const { menuProps, openMenu, closeMenu } = collapsiblePopup();
 
   const { changePassword, manageProfile } = constants.profile;
 
