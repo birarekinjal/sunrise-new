@@ -25,42 +25,50 @@ function Header(props: any) {
         sx={{
           width: { md: `calc(100% - ${drawerWidth}px)` },
           ml: { md: `${drawerWidth}px` },
-        }}>
-        <Toolbar>
-          {/* for chrome  */}
-          <span className='menuIconClose'>
-            <IconButton
-              color='inherit'
-              aria-label='open drawer'
-              edge='start'
-              onClick={() => handleDrawerToggle()}
-              sx={{ display: { md: 'none' } }}>
-              <MenuIcon />
-            </IconButton>
-            {collapseData == true ? (
+        }}
+      >
+        <Toolbar className='top-header'>
+          <div className='left-panel'>
+            {/* for chrome  */}
+            <span className='menuIconClose'>
               <IconButton
-                color='inherit'
-                aria-label='open drawer'
-                edge='start'
-                onClick={() => handleDrawerCollapse()}>
-                <ArrowForwardIcon />
-              </IconButton>
-            ) : (
-              <IconButton
-                color='inherit'
-                aria-label='open drawer'
-                edge='start'
-                onClick={() => handleDrawerCollapse()}>
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={() => handleDrawerToggle()}
+                sx={{ display: { md: 'none' } }}
+              >
                 <MenuIcon />
               </IconButton>
-            )}
-          </span>
-          {/* for chrome */}
-          <Typography variant='h6' noWrap component='div'>
-            <ManageProfile />
+              {collapseData == true ?
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={() => handleDrawerCollapse()}
+                // sx={{ mr: 2, display: { sm: 'none' } }}
+                >
+                  <ArrowForwardIcon />
+                </IconButton>
+                : 
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={() => handleDrawerCollapse()}
+                sx={{ mr: 2, display: { sm: 'none' } }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              }
+            </span>
+            {/* for chrome */}
             <SearchBar />
-            Responsive drawer
-            <Notification />
+          </div>
+          
+          <Typography variant="h6" noWrap component="div" className="right-panel">
+          <div className='noti-icon'><Notification /></div>
+            <ManageProfile />
           </Typography>
         </Toolbar>
       </AppBar>
