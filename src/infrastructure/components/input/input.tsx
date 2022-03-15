@@ -46,7 +46,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
           onClick={managePasswordVisibility}
           edge="end"
         >
-          {hidePassword ? <Visibility /> : <VisibilityOff />}
+          {hidePassword ? <VisibilityOff /> : <Visibility /> }
         </IconButton>
       );
     }

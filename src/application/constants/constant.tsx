@@ -30,9 +30,9 @@ export const constants = {
     welcomeMessage: 'Welcome back',
     information: 'To keep connected with us please login with your personal information by email address & password.',
     emailPlaceholder: 'Email Address',
-    emailLabel:'Email',
+    emailLabel: 'Email',
     passwordPlaceholder: 'Password',
-    passwordLabel:'Password',
+    passwordLabel: 'Password',
     rememberMePlaceholder: 'Remember Me',
     forgotPassword: 'forgot Password',
     buttons: {
@@ -50,7 +50,8 @@ export const constants = {
   },
   forgotPassword: {
     heading: 'Forgot Password',
-    title: 'Enter your email address so we will verify your email id and send you otp number.',
+    title:
+      'Enter your email address so we will verify your email id and send you otp number.',
     emailPlaceholder: 'Enter Email here..',
     emailLabel: 'Email',
     backToLogin: 'Back To Login',
@@ -98,16 +99,28 @@ export const constants = {
       submit: 'submit',
     },
   },
-  profile:{
-    manageProfile:'Manage Profile',
-    changePassword:'Change Password',
+  profile: {
+    manageProfile: 'Manage Profile',
+    changePassword: 'Change Password',
   },
   notifications: {
-    user:'User Created account at Tntra',
-    notification:' Notification is Created from Botree technologies',
+    user: 'User Created account at Tntra',
+    notification: ' Notification is Created from Botree technologies',
   },
   searchBar: {
-    searchPlaceholder:'Search',
+    searchPlaceholder: 'Search',
   },
-  
+  sideBar: {
+    companyName: 'Sunrise Diamonds Ltd.',
+    drawerWidth: {
+      height: 300,
+      width: 80,
+    },
+  },
+  header: {
+    drawerWidth: {
+      height: 300,
+      width: 80,
+    },
+  },
 };

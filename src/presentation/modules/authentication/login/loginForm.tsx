@@ -9,10 +9,10 @@ import { constants } from '../../../../application/constants/constant';
 const LoginForm = (props: any) => {
   const { handleOnSubmit, loading } = props;
 
-  const { 
-    emailPlaceholder, 
-    passwordPlaceholder, 
-    forgotPassword, 
+  const {
+    emailPlaceholder,
+    passwordPlaceholder,
+    forgotPassword,
     rememberMePlaceholder,
     emailLabel,
     passwordLabel,
@@ -53,8 +53,8 @@ const LoginForm = (props: any) => {
         label={passwordLabel}
         variant="outlined"
         registeredEvents={register('password')}
-        name="password"
-        type="password"
+        name='password'
+        type='password'
         isPassword={true}
         showError={touchedFields && touchedFields.password}
         error={errors.password?.message}
@@ -77,7 +77,6 @@ const LoginForm = (props: any) => {
         isLoading={loading}
       />
     </form>
-
   );
 };
 

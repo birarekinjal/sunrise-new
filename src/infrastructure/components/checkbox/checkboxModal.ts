@@ -17,7 +17,6 @@ export type CheckboxProps = {
   required?: boolean;
   size?: 'medium' | 'small';
   value?: any;
-  inputRef?: React.ForwardedRef<HTMLInputElement>;
   label?: any;
   registeredEvents?: any;
   isControlled?: boolean;

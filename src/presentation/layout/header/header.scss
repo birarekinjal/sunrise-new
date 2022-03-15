@@ -9,21 +9,97 @@ header{
       padding-left: 30px;
       padding-right: 30px;
     }
-    span{
-      &.menuIconClose{
-        margin-right: 10px;
-        button{
-          color: $color-spanishGray;
-          &:hover{
-            color: $color-black;
-          }
-          &:nth-child(2n){
-            @include bellow-md{
-              display: none;
+    .top-header{
+      display: flex;
+      justify-content: space-between;
+      .left-panel, .right-panel{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // @include above-md{
+        //   .menuIconClose{
+        //     display:none;
+        //   }        
+        // }
+      }
+      
+      .left-panel{
+        span{
+          &.menuIconClose{
+            margin-right: 10px;
+            button{
+              color: $color-spanishGray;
+              &:hover{
+                color: $color-black;
+              }
+              &:nth-child(2n){
+                @include bellow-md{
+                  display: none;
+                }
+              }
             }
           }
         }
       }
+      .right-panel {
+        .noti-icon {
+          margin-right: 40px;
+          .MuiSvgIcon-root{
+            fill: #014a7e;
+          }
+          .MuiBadge-anchorOriginTopRightRectangular {
+            background-color: $color-secondary;
+          }
+         }
+         .right-menu-header {
+        .admin_icon, .admin_info {
+          display: inline-block;
+          vertical-align: middle;
+          cursor: pointer;
+          img {
+            background-color: $color-primary;
+            padding: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 100%;
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+           p {
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $color-spanishGray;
+          }
+          h3 {
+            margin: 0;
+            padding: 0;
+            color:$color-darkCharcoal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+          }
+        }
+        .MuiSvgIcon-root {
+          padding-left: 25px;
+          fill: #99b7cb;
+          cursor: pointer;
+          font-size: 1.3rem;
+          min-height: 2rem;
+          vertical-align: middle;
+        }
+      }    
+      }
     }
   }
 }
+
+
+
+
+
+
+
+
