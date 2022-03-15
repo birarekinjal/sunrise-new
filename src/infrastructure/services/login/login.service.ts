@@ -6,8 +6,8 @@ export class LoginService {
     return response;
   }
 
-  public async refreshToken(token : string): Promise<any> {
-    const response = await post('user/get-refresh-token', { token });
+  public async refreshToken(token : object): Promise<any> {
+    const response = await post('user/get-refresh-token',  token);
     return response;
   }
 }

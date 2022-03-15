@@ -37,7 +37,7 @@ const TableData = ({ usersDetails, handlePageChange, page, handleChangeRowsPerPa
         </Table>
       </TableContainer>
 
-      <TablePagination
+      {/* <TablePagination
         component="div"
         rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
         count={usersDetails.total_count}
@@ -45,7 +45,7 @@ const TableData = ({ usersDetails, handlePageChange, page, handleChangeRowsPerPa
         onPageChange={handlePageChange}
         rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+      /> */}
     </>
   );
 };

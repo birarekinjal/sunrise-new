@@ -9,7 +9,7 @@ const loginService = new LoginService();
 
 export const setAccessToken = (rest : any) => {
   return (dispatch: Dispatch<Action>) => {
-    saveToken(rest?.accessToken, rest?.refreshToken );
+    saveToken(rest?.payload?.access, rest?.payload?.refresh );
     dispatch({
       type: ActionType.LOGIN,
       accessToken: rest?.payload?.access,
@@ -25,7 +25,7 @@ export const Login = (loginData:LoginDataType) => async (dispatch:any) => {
 };
 
 export const refreshToken = (token:string) => async () => {
-  let response =   await loginService.refreshToken(token);
+  let response =   await loginService.refreshToken({ refresh :token });
   setAccessToken(response?.data);
   return response?.data;
 };
