@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuProps } from '@mui/material/Menu';
 
-export const useMenu = () => {
+export const collapsibleSidebar = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
   const openMenu = React.useCallback((event: React.MouseEvent<HTMLElement>) => {
