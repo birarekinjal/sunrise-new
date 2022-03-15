@@ -20,4 +20,5 @@ export type CheckboxProps = {
   label?: any;
   registeredEvents?: any;
   isControlled?: boolean;
+  ref?:any;
 };

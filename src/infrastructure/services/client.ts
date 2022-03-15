@@ -104,15 +104,15 @@ client.interceptors.request.use(async (config:any) => {
 //     return Promise.reject(error);
 
 
-    // if (error.config && error.response && error.response.status === 401) {
-    //   return updateToken().then((token) => {
-    //   error.config.headers.xxxx <= set the token
-    //   return axios.request(config);
-    //   });
-    //   }
+// if (error.config && error.response && error.response.status === 401) {
+//   return updateToken().then((token) => {
+//   error.config.headers.xxxx <= set the token
+//   return axios.request(config);
+//   });
+//   }
         
-    //   return Promise.reject(error);
-    //   });
+//   return Promise.reject(error);
+//   });
 
 
 //   },

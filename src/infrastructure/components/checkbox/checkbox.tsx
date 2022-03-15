@@ -18,6 +18,7 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
   label,
   isControlled,
   registeredEvents,
+  ref,
 }) => {
   return (
     <>
@@ -43,6 +44,7 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
           <FormControlLabel
             control={
               <Checkbox
+                ref={ref}
                 {...(registeredEvents || {})}
                 size={size}
                 color={color}

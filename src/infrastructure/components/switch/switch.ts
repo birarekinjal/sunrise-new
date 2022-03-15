@@ -12,5 +12,8 @@ export type CustomSwitchProps = {
   edge?: 'end' | 'start';
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
-  value?: any
+  value?: any;
+  registeredEvents?: any;
+  isControlled?: boolean;
+  ref?:any;
 };
