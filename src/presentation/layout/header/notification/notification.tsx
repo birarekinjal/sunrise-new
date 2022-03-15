@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { constants } from '../../../../application/constants/constant';
 import Badge from '@mui/material/Badge';
 
-
 const Notification = () => {
   const { menuProps, openMenu, closeMenu } = collapsiblePopup();
 
@@ -20,31 +19,20 @@ const Notification = () => {
 
   return (
     <div>
-      <Tooltip title="Notification">
-          <IconButton
-            onClick={openMenu}
-            size='medium'
-            sx={{ ml: 2 }}
-          >
-            <Badge badgeContent={3} color='success'>
-           <NotificationsIcon />
-           </Badge>
-          </IconButton>
-        </Tooltip>
-    
-    <Menu {...menuProps}>
-        <MenuItem onClick={handleRoute} >
-            {user}
-        </MenuItem>
-        <MenuItem onClick={closeMenu} >
-            {notification}
-        </MenuItem>
+      <Tooltip title='Notification'>
+        <IconButton onClick={openMenu} size='medium' sx={{ ml: 2 }}>
+          <Badge badgeContent={3} color='success'>
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+      </Tooltip>
+
+      <Menu {...menuProps}>
+        <MenuItem onClick={handleRoute}>{user}</MenuItem>
+        <MenuItem onClick={closeMenu}>{notification}</MenuItem>
       </Menu>
-        
     </div>
   );
 };
 
 export default Notification;
-
-

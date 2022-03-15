@@ -23,12 +23,12 @@ export const permission = [
   { name: 'User', value: 3 },
 ];
 
-
 export const constants = {
   loginPage: {
     title: 'Account Login',
     welcomeMessage: 'Welcome back',
-    information: 'To keep connected with us please login with your personal information by email address & password.',
+    information:
+      'To keep connected with us please login with your personal information by email address & password.',
     emailPlaceholder: 'Email Address',
     emailLabel: 'Email',
     passwordPlaceholder: 'Password',
@@ -104,8 +104,8 @@ export const constants = {
     changePassword: 'Change Password',
   },
   notifications: {
-    user: 'User Created account at Tntra',
-    notification: ' Notification is Created from Botree technologies',
+    user: 'Notification 1',
+    notification: 'Notification 2',
   },
   searchBar: {
     searchPlaceholder: 'Search',
