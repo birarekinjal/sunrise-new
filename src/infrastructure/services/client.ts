@@ -7,7 +7,7 @@ import { getBaseURL, getRefreshToken, getToken, showToast } from '../utility/com
 
 
 const client = axios.create({
-  baseURL: 'http://0cc22b03700f.ngrok.io/',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',

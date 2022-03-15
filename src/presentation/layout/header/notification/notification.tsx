@@ -1,14 +1,14 @@
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Menu from '@mui/material/Menu';
 import { IconButton, MenuItem, Tooltip } from '@mui/material';
-import { useMenu } from '../../../../application/hooks/useMenu';
+import { collapsiblePopup } from '../../../../application/hooks/collapsiblePopupHooks';
 import { useNavigate } from 'react-router-dom';
 import { constants } from '../../../../application/constants/constant';
 import Badge from '@mui/material/Badge';
 
 
 const Notification = () => {
-  const { menuProps, openMenu, closeMenu } = useMenu();
+  const { menuProps, openMenu, closeMenu } = collapsiblePopup();
 
   const navigate = useNavigate();
 

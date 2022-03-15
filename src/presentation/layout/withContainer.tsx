@@ -4,25 +4,25 @@ import './layout.scss';
 import Sidebar from './sidebar/sidebar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { useSelector } from 'react-redux';
-import { RootState } from '../reducer/rootReducer';
-
+import useSetSidebar from './sidebar/hook/useSetSidebar';
 
 const WithContainerLayout = ({ children }: any) => {
-  const headerData = useSelector((state: RootState) => state.header);
-  const { collapseData } = headerData;
-  const drawerWidth = collapseData === false ? 300 : 80;
+  const { drawerWidth } = useSetSidebar();
 
   return (
-    <section className="main-body-container">
+    <section className='main-body-container'>
       <aside>
         <Sidebar />
       </aside>
       <Box
-        component="article"
-        className="main-box-container"
-        sx={{ flexGrow: 1, p: 3, width: { md: `calc(100% - ${drawerWidth}px)` }, ml: { md: `${drawerWidth}px` } }}
-      >
+        component='article'
+        className='main-box-container'
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
+        }}>
         <Header />
         <Toolbar />
         {children}
@@ -33,5 +33,3 @@ const WithContainerLayout = ({ children }: any) => {
 };
 
 export default WithContainerLayout;
-
-
